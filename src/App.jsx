@@ -12,7 +12,9 @@ import VideoModal from './components/VideoModal';
 import Toast from './components/Toast';
 import BackgroundSky from './components/BackgroundSky';
 
-// ─── EXACT REAL GITHUB V3 RELEASE DATA (WITH 3 NEW OFFICIAL SCREENSHOTS) ───
+// ══════════════════════════════════════════════════════════════════════
+// 🚀 STRUCTURED CS LAUNCHER VERSIONS DATA (V3, V2, V1 CLEAN DIRECT URLS)
+// ══════════════════════════════════════════════════════════════════════
 const APP_DATA = {
   branding: {
     appName: "CS Launcher",
@@ -20,9 +22,9 @@ const APP_DATA = {
     logoImage: "https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b765.png",
     copyright: "© 2026 Craft Studio Development Group. All Rights Reserved.",
     screenshots: [
+      "https://i.ibb.co/BDP6t2f/homescreen.jpg",
       "https://i.ibb.co/spqkyRXb/skin-and-Cap.jpg",
-      "https://i.ibb.co/20dMMmQJ/In-game-mod-eresource-pack-shades-download.jpg",
-      "https://i.ibb.co/BDP6t2f/homescreen.jpg"
+      "https://i.ibb.co/20dMMmQJ/In-game-mod-eresource-pack-shades-download.jpg"
     ]
   },
   hero: {
@@ -30,26 +32,51 @@ const APP_DATA = {
     subtitle: "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, cleaner UI, and enhanced Minecraft Java experience on Android.",
     statsBar: "Android 7.0+"
   },
-  latestDownload: {
-    version: "v3",
-    downloadUrl: "https://github.com/craftstudioteam/CS-LAUNCHER-v3/releases/download/v3/CS-LAUNCHER-V3.apk",
-    fileSize: "185.8 MB",
-    compatibility: "Android 7.0+",
-    requirements: "2GB / 4GB RAM",
-    releaseName: "CS Launcher V3",
-    releaseDate: "August 2026",
-    changelog: "• Improved launcher performance and stability\n• Better profile management\n• Improved download and installation system\n• Cleaner and more modern UI\n• Improved Minecraft version and profile handling\n• Various bug fixes and optimizations"
-  },
-  archiveDownloads: {
-    "v1.0.0": {
-      version: "v1.0.0",
-      releaseName: "Legacy Build",
-      downloadUrl: "https://github.com/Mineradi/CS-LAUNCHER/releases/download/v.1.0.0/CSLauncher.apk",
-      fileSize: "300 MB",
+  downloads: {
+    "v3": {
+      version: "v3",
+      tag: "v3",
+      isLatest: true,
+      badge: "Latest Official Release",
+      releaseName: "CS Launcher V3 Official",
+      releaseDate: "August 2026",
+      fileSize: "185.8 MB",
+      compatibility: "Android 7.0+",
+      requirements: "2GB / 4GB RAM",
+      architecture: "ARM64 / ARM32",
+      status: "Verified Stable (Recommended)",
+      downloadUrl: "https://github.com/craftstudioteam/CS-LAUNCHER-v3/releases/download/v3/CS-LAUNCHER-V3.apk",
+      changelog: "• Improved launcher performance and stability\n• Better profile management\n• Improved download and installation system\n• Cleaner and more modern UI\n• Improved Minecraft version and profile handling\n• Various bug fixes and optimizations"
+    },
+    "v2": {
+      version: "v2.0",
+      tag: "v2",
+      isLatest: false,
+      badge: "V2 Stable Build",
+      releaseName: "CS Launcher V2",
       releaseDate: "2026",
-      compatibility: "Android 7+",
-      changelog: "Original PojavLauncher base build",
-      enabled: true
+      fileSize: "160 MB",
+      compatibility: "Android 7.0+",
+      requirements: "2GB RAM",
+      architecture: "ARM64 / ARM32",
+      status: "Stable Release",
+      downloadUrl: "https://github.com/Mineradi/CS-LAUNCHER/releases/download/v.1.0.0/CSLauncher.apk",
+      changelog: "• High FPS rendering engine\n• Custom skin & cape changer support\n• Touch controller customization"
+    },
+    "v1": {
+      version: "v1.0.0",
+      tag: "v1",
+      isLatest: false,
+      badge: "Legacy Archive Build",
+      releaseName: "CS Launcher V1 Legacy",
+      releaseDate: "2026",
+      fileSize: "300 MB",
+      compatibility: "Android 7.0+",
+      requirements: "2GB RAM",
+      architecture: "ARM64 / ARM32",
+      status: "Archived Build",
+      downloadUrl: "https://github.com/Mineradi/CS-LAUNCHER/releases/download/v.1.0.0/CSLauncher.apk",
+      changelog: "• Original PojavLauncher base build\n• Classic controller layout\n• Legacy Java runtime support"
     }
   },
   features: {
@@ -149,11 +176,13 @@ export default function App() {
     setTimeout(() => setToast(null), 3000);
   };
 
-  // ─── 🚀 CLEAN URL ROUTING & SEO METADATA ───
-  const updatePageMetadata = useCallback((tab) => {
+  // ─── 🚀 CLEAN URL ROUTING & SEO METADATA (/download/v1, /download/v2, /download/v3) ───
+  const updatePageMetadata = useCallback((tab, version = null) => {
     const titles = {
       home: `CS Launcher — Minecraft Java on Mobile Android (v3)`,
-      download: `Download APK (v3) — CS Launcher V3 Official`,
+      download: version 
+        ? `Download CS Launcher ${version.toUpperCase()} APK — Official Release` 
+        : `Download APK (v3, v2, v1) — CS Launcher Official`,
       features: `Features & Capabilities — CS Launcher`,
       videos: `Gameplay Showcases & Setup Tutorials — CS Launcher`,
       team: `Craft Studio Team & Credits — CS Launcher`,
@@ -170,13 +199,25 @@ export default function App() {
 
     if (hashStr && hashStr.length > 1) {
       const cleanHash = hashStr.replace(/^#\/?/, '').split('?')[0];
-      if (VALID_ROUTES.includes(cleanHash)) {
-        rawPath = cleanHash;
-        window.history.replaceState({}, '', '/' + cleanHash + (searchStr || ''));
-      }
+      rawPath = cleanHash;
     }
 
-    const targetTab = VALID_ROUTES.includes(rawPath) ? rawPath : 'home';
+    const parts = rawPath.split('/').filter(Boolean);
+    let targetTab = parts[0] || 'home';
+    let targetVersion = null;
+
+    // Handle clean paths like /download/v1, /download/v2, /download/v3, /download/1, /download/2, /download/3
+    if (targetTab === 'download' && parts.length > 1) {
+      const verPart = parts[1].toLowerCase().replace(/^v\./, 'v');
+      if (verPart === 'v3' || verPart === '3') targetVersion = 'v3';
+      else if (verPart === 'v2' || verPart === '2') targetVersion = 'v2';
+      else if (verPart === 'v1' || verPart === '1' || verPart === 'v1.0.0' || verPart === '1.0.0') targetVersion = 'v1';
+      else targetVersion = verPart;
+    }
+
+    if (!VALID_ROUTES.includes(targetTab)) {
+      targetTab = 'home';
+    }
 
     const params = {};
     if (searchStr) {
@@ -186,13 +227,24 @@ export default function App() {
       }
     }
 
+    if (params.v && targetTab === 'download') {
+      const pVer = params.v.toLowerCase();
+      if (pVer === 'v3' || pVer === '3') targetVersion = 'v3';
+      else if (pVer === 'v2' || pVer === '2') targetVersion = 'v2';
+      else if (pVer === 'v1' || pVer === '1') targetVersion = 'v1';
+    }
+
+    if (targetVersion) {
+      params.version = targetVersion;
+    }
+
     if (targetTab === 'videos' && params.v) {
       setActiveVideoId(params.v);
     }
 
     setActiveTab(targetTab);
     setRouteParams(params);
-    updatePageMetadata(targetTab);
+    updatePageMetadata(targetTab, targetVersion);
   }, [updatePageMetadata]);
 
   useEffect(() => {
@@ -204,12 +256,21 @@ export default function App() {
   const handleNavigate = (tab, paramsObj = null) => {
     if (!VALID_ROUTES.includes(tab)) tab = 'home';
 
-    const cleanPath = tab === 'home' ? '/' : '/' + tab;
-    let newUrl = cleanPath;
+    let cleanPath = tab === 'home' ? '/' : '/' + tab;
+    
+    // Direct clean URLs like /download/v1, /download/v2, /download/v3
+    if (tab === 'download' && paramsObj && paramsObj.version) {
+      cleanPath = `/download/${paramsObj.version}`;
+    }
 
-    if (paramsObj && Object.keys(paramsObj).length > 0) {
-      const sp = new URLSearchParams(paramsObj);
-      newUrl += '?' + sp.toString();
+    let newUrl = cleanPath;
+    if (paramsObj) {
+      const sp = new URLSearchParams();
+      for (const [k, v] of Object.entries(paramsObj)) {
+        if (k !== 'version') sp.set(k, v);
+      }
+      const spStr = sp.toString();
+      if (spStr) newUrl += '?' + spStr;
     }
 
     if (window.location.pathname + window.location.search !== newUrl) {
@@ -218,13 +279,13 @@ export default function App() {
 
     setActiveTab(tab);
     setRouteParams(paramsObj || {});
-    updatePageMetadata(tab);
+    updatePageMetadata(tab, paramsObj?.version || null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // 🔥 DIRECT APK DOWNLOAD TRIGGER + AUTOMATIC DOWNLOAD COUNTER INCREMENT (+1)
   const handleDownload = (url, versionTag) => {
-    const targetUrl = url || APP_DATA.latestDownload.downloadUrl;
+    const targetUrl = url || APP_DATA.downloads.v3.downloadUrl;
 
     // Automatic download counter increment
     setExtraClicks(prev => {
@@ -246,13 +307,13 @@ export default function App() {
 
   return (
     <div>
-      {/* 🌌 Authentic Animated Minecraft Sky Background */}
+      {/* 🌌 Zero-Lag Clean Sky Background */}
       <BackgroundSky />
 
-      {/* Top Header with mc-tools.net Style Branding */}
+      {/* Top Header */}
       <Header 
         branding={APP_DATA.branding} 
-        activeVersion={APP_DATA.latestDownload.version} 
+        activeVersion={APP_DATA.downloads.v3.version} 
         activeTab={activeTab}
         onNavigate={handleNavigate} 
       />
@@ -263,7 +324,7 @@ export default function App() {
           <Hero 
             hero={APP_DATA.hero} 
             branding={APP_DATA.branding} 
-            activeVersion={APP_DATA.latestDownload.version}
+            activeVersion={APP_DATA.downloads.v3.version}
             liveDownloadCount={totalDownloads}
             discordUrl={APP_DATA.social.discord}
             onNavigate={handleNavigate} 
@@ -273,11 +334,12 @@ export default function App() {
 
         {activeTab === 'download' && (
           <DownloadHub 
-            latest={APP_DATA.latestDownload} 
-            archive={APP_DATA.archiveDownloads} 
+            downloads={APP_DATA.downloads}
             routeParams={routeParams}
             liveDownloadCount={totalDownloads}
+            onNavigate={handleNavigate}
             onDownload={handleDownload} 
+            showToast={showToast}
           />
         )}
 
@@ -300,7 +362,7 @@ export default function App() {
         )}
 
         {activeTab === 'notice' && (
-          <Notice branding={APP_DATA.branding} activeVersion={APP_DATA.latestDownload.version} />
+          <Notice branding={APP_DATA.branding} activeVersion={APP_DATA.downloads.v3.version} />
         )}
 
         {activeTab === 'help' && (

@@ -7,7 +7,7 @@ export default function Header({ branding, activeTab, onNavigate }) {
 
   const rawName = branding.appName || "CS Launcher";
   const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim() || "CS Launcher";
-  const logoUrl = branding.logoImage || "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png";
+  const logoUrl = branding.logoImage || "https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b765.png";
 
   const getPageUrl = () => {
     const base = window.location.origin;
