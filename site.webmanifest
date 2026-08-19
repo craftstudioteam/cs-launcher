@@ -1,0 +1,22 @@
+{
+  "name": "CS Launcher V3",
+  "short_name": "CS Launcher",
+  "description": "Minecraft Java Edition Launcher for Android Mobile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070A",
+  "theme_color": "#07070A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/jv7ZS03W/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/jv7ZS03W/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
