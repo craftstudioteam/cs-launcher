@@ -1,145 +1,21 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 // ══════════════════════════════════════════════════════════════════════
-// 🎮 60 FPS ULTRA-SMOOTH MINECRAFT ATMOSPHERE & PARTICLE ENGINE
-// Interactive 3D Pixel Cubes • Glowing Starfield • Aurora Pulse • Cloud Parallax
+// ⚡ ZERO-LAG AUTHENTIC MC-TOOLS.NET SKY & CLOUD ENGINE (PURE CSS)
+// Zero CPU/GPU Overhead • 100% Mobile 60 FPS • Twinkling Stars & Clouds
 // ══════════════════════════════════════════════════════════════════════
 
 export default function BackgroundSky() {
-  const canvasRef = useRef(null);
-
-  // 60 FPS Hardware-Accelerated Floating Minecraft Pixel Cubes
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    // Particle Palette (Diamond, Amethyst, Emerald, Gold, Redstone)
-    const CUBE_COLORS = [
-      { top: '#67e8f9', left: '#0891b2', right: '#06b6d4', glow: 'rgba(6, 182, 212, 0.6)' }, // Cyan Diamond
-      { top: '#c084fc', left: '#7e22ce', right: '#a855f7', glow: 'rgba(168, 85, 247, 0.6)' }, // Purple Amethyst
-      { top: '#86efac', left: '#15803d', right: '#22c55e', glow: 'rgba(34, 197, 94, 0.6)' },  // Green Emerald
-      { top: '#fef08a', left: '#b45309', right: '#eab308', glow: 'rgba(234, 179, 8, 0.6)' },  // Gold Core
-      { top: '#fca5a5', left: '#991b1b', right: '#ef4444', glow: 'rgba(239, 68, 68, 0.6)' },  // Redstone
-    ];
-
-    // Create 32 persistent floating 3D Minecraft cubes
-    const cubes = Array.from({ length: 28 }, (_, i) => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: 10 + Math.random() * 12,
-      speedY: 0.35 + Math.random() * 0.55,
-      speedX: (Math.random() - 0.5) * 0.3,
-      rotation: Math.random() * Math.PI * 2,
-      rotSpeed: (Math.random() - 0.5) * 0.015,
-      palette: CUBE_COLORS[i % CUBE_COLORS.length],
-      opacity: 0.4 + Math.random() * 0.5,
-      wobble: Math.random() * Math.PI * 2,
-      wobbleSpeed: 0.02 + Math.random() * 0.02
-    }));
-
-    // Render loop
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw floating cubes
-      for (let i = 0; i < cubes.length; i++) {
-        const c = cubes[i];
-
-        // Update positions
-        c.y -= c.speedY;
-        c.wobble += c.wobbleSpeed;
-        c.x += Math.sin(c.wobble) * 0.5 + c.speedX;
-        c.rotation += c.rotSpeed;
-
-        // Wrap around screen
-        if (c.y < -40) {
-          c.y = height + 30;
-          c.x = Math.random() * width;
-        }
-        if (c.x < -40) c.x = width + 30;
-        if (c.x > width + 40) c.x = -30;
-
-        // Draw 3D Isometric Minecraft Pixel Cube
-        ctx.save();
-        ctx.translate(c.x, c.y);
-        ctx.rotate(c.rotation);
-        ctx.globalAlpha = c.opacity;
-
-        const s = c.size;
-        const h = s * 0.58;
-
-        // Glow aura
-        ctx.shadowColor = c.palette.glow;
-        ctx.shadowBlur = 12;
-
-        // Top Isometric Face
-        ctx.fillStyle = c.palette.top;
-        ctx.beginPath();
-        ctx.moveTo(0, -h);
-        ctx.lineTo(s, 0);
-        ctx.lineTo(0, h);
-        ctx.lineTo(-s, 0);
-        ctx.closePath();
-        ctx.fill();
-
-        // Left Face
-        ctx.shadowBlur = 0; // Clear blur for crisp inner edges
-        ctx.fillStyle = c.palette.left;
-        ctx.beginPath();
-        ctx.moveTo(-s, 0);
-        ctx.lineTo(0, h);
-        ctx.lineTo(0, h + s);
-        ctx.lineTo(-s, s);
-        ctx.closePath();
-        ctx.fill();
-
-        // Right Face
-        ctx.fillStyle = c.palette.right;
-        ctx.beginPath();
-        ctx.moveTo(0, h);
-        ctx.lineTo(s, 0);
-        ctx.lineTo(s, s);
-        ctx.lineTo(0, h + s);
-        ctx.closePath();
-        ctx.fill();
-
-        ctx.restore();
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  // Generate randomized stars once
+  // Pre-generate 70 lightweight CSS stars once
   const stars = useMemo(() => {
     const arr = [];
-    for (let i = 0; i < 110; i++) {
-      const isTwinkle = Math.random() > 0.25;
-      const size = Math.random() > 0.8 ? 3 : Math.random() > 0.4 ? 2 : 1.5;
+    for (let i = 0; i < 70; i++) {
+      const isTwinkle = Math.random() > 0.4;
+      const size = Math.random() > 0.8 ? 2.5 : Math.random() > 0.4 ? 2 : 1.5;
       const left = (Math.random() * 100).toFixed(2);
-      const top = (Math.random() * 85).toFixed(2);
-      const delay = (Math.random() * 5).toFixed(2);
-      const duration = (1.8 + Math.random() * 3).toFixed(2);
-      const opacity = (0.4 + Math.random() * 0.6).toFixed(2);
+      const top = (Math.random() * 80).toFixed(2);
+      const delay = (Math.random() * 4).toFixed(2);
+      const duration = (2.2 + Math.random() * 2.5).toFixed(2);
 
       arr.push({
         id: i,
@@ -149,7 +25,7 @@ export default function BackgroundSky() {
           top: `${top}%`,
           width: `${size}px`,
           height: `${size}px`,
-          opacity: opacity,
+          opacity: (0.35 + Math.random() * 0.55).toFixed(2),
           animationDelay: `${delay}s`,
           animationDuration: `${duration}s`,
         }
@@ -160,25 +36,19 @@ export default function BackgroundSky() {
 
   return (
     <div className="mc-sky-viewport">
-      {/* 🌌 Sky Deep Gradient */}
+      {/* 🌌 Base Sky Gradient */}
       <div className="mc-sky-gradient" />
 
-      {/* 🌌 Vibrant Animated Aurora Wave */}
-      <div className="mc-aurora-glow" />
-
-      {/* ✨ Twinkling Starfield */}
+      {/* ✨ Lightweight CSS Twinkling Stars */}
       <div className="mc-stars-container">
         {stars.map(star => (
           <div key={star.id} className={star.className} style={star.style} />
         ))}
       </div>
 
-      {/* 🎮 60 FPS HTML5 Canvas Floating Minecraft Cubes */}
-      <canvas ref={canvasRef} className="mc-canvas-cubes" />
-
-      {/* ☁️ 3-Layer Scrolling Minecraft Pixel Clouds */}
+      {/* ☁️ 3-Layer Scrolling Minecraft Pixel Clouds (Hardware-Accelerated CSS) */}
       <div className="cloud-scroll">
-        {/* Layer 1 - Fast Strip */}
+        {/* Layer 1 - High Speed */}
         <div className="cstrip cs1">
           <div className="cstrip-block">
             <div className="c ca" style={{ top: '5%', left: '60px' }} />
@@ -202,7 +72,7 @@ export default function BackgroundSky() {
           </div>
         </div>
 
-        {/* Layer 2 - Mid Strip */}
+        {/* Layer 2 - Mid Speed */}
         <div className="cstrip cs2">
           <div className="cstrip-block">
             <div className="c cc" style={{ top: '26%', left: '120px' }} />
@@ -222,7 +92,7 @@ export default function BackgroundSky() {
           </div>
         </div>
 
-        {/* Layer 3 - Slow Ambient Strip */}
+        {/* Layer 3 - Slow Ambient */}
         <div className="cstrip cs3">
           <div className="cstrip-block">
             <div className="c cb" style={{ top: '50%', left: '80px' }} />

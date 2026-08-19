@@ -3,6 +3,12 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const SCREENSHOTS_DATA = [
   {
+    url: "https://i.ibb.co/BDP6t2f/homescreen.jpg",
+    title: "CS Launcher Home UI",
+    subtitle: "Modern Launcher Home Screen & Profiles",
+    icon: "📱"
+  },
+  {
     url: "https://i.ibb.co/spqkyRXb/skin-and-Cap.jpg",
     title: "Skin & Cape Changer",
     subtitle: "Custom Java Skin & HD Cape System",
@@ -13,12 +19,6 @@ const SCREENSHOTS_DATA = [
     title: "Mod & Shaders Downloader",
     subtitle: "In-Game Mods, Resource Packs & Shaders",
     icon: "📦"
-  },
-  {
-    url: "https://i.ibb.co/BDP6t2f/homescreen.jpg",
-    title: "CS Launcher Home UI",
-    subtitle: "Modern Launcher Home Screen & Profiles",
-    icon: "📱"
   }
 ];
 

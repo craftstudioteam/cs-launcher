@@ -2,6 +2,7 @@ import React from 'react';
 import { Download } from 'lucide-react';
 import AdBanner from './AdBanner';
 import ShowcaseGallery from './ShowcaseGallery';
+import TypewriterText from './TypewriterText';
 import { DiscordIcon } from './MinecraftIcons';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
@@ -12,7 +13,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
     <div className="tab-transition-wrapper">
 
       {/* ══════════════════════════════════════════════════════════════
-          🕹️ AUTHENTIC MCTOOLS HERO TITLE BOX
+          🕹️ AUTHENTIC MCTOOLS HERO TITLE BOX WITH TYPEWRITER ANIMATION
           ══════════════════════════════════════════════════════════════ */}
       <div className="home-hero-wrap">
         <div className="mctools-title-block">
@@ -21,7 +22,9 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
         <div>
           <div className="mctools-sub-pill">
-            <span className="mctools-sub-text">Minecraft Java on Android</span>
+            <span className="mctools-sub-text">
+              <TypewriterText />
+            </span>
           </div>
         </div>
 
