@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
-import { Download, Sparkles, Image, X, Video, Archive, Palette, ShieldCheck, Users, HelpCircle, ExternalLink } from 'lucide-react';
+import { Download, Image, X } from 'lucide-react';
 import AdBanner from './AdBanner';
-import {
-  TotemIcon,
-  MusicDiscIcon,
-  PaintingIcon,
-  PlayerHeadIcon,
-  CapeIcon,
-  ArmorStandIcon,
-  ApkPackageIcon,
-  ShieldGplIcon,
-  DiscordIcon
-} from './MinecraftIcons';
+import { DiscordIcon } from './MinecraftIcons';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
   const [lightboxImg, setLightboxImg] = useState(null);
@@ -63,11 +53,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       </div>
 
       {/* ══════════════════════════════════════════════════════════════
-          🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MC-TOOLS.NET STYLE)
+          🧱 2-COLUMN MINECRAFT GRID CARDS (AUTHENTIC PIXEL PNG ICONS)
           ══════════════════════════════════════════════════════════════ */}
       <div className="section-label-mctools">
-        <span>Launcher Tools</span>
-        <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)', letterSpacing: 0 }}>Tap any tool</span>
+        <span>Launcher Features</span>
+        <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)', letterSpacing: 0 }}>Tap any feature</span>
       </div>
 
       <div className="mctools-grid-2col">
@@ -75,7 +65,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-yellow" onClick={() => onDownload(null, currentVer)}>
           <span className="mctools-card-badge">v3</span>
           <div className="mctools-card-icon">
-            <ApkPackageIcon size={46} />
+            <img src="/icons/icon-converter.png" alt="Download APK" className="mc-card-img" />
           </div>
           <div>
             <div className="mctools-card-title">Download APK</div>
@@ -87,7 +77,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('features')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#000' }}>NEW</span>
           <div className="mctools-card-icon">
-            <CapeIcon size={46} />
+            <img src="/icons/icon-capebuilder.png" alt="Skin & Cape" className="mc-card-img" />
           </div>
           <div>
             <div className="mctools-card-title">Skin & Cape</div>
@@ -99,66 +89,67 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-green" onClick={() => onNavigate('videos')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-green)', color: '#000' }}>HD</span>
           <div className="mctools-card-icon">
-            <MusicDiscIcon size={46} />
+            <img src="/icons/icon-musicdisc.png" alt="Video Guides" className="mc-card-img" />
           </div>
           <div>
             <div className="mctools-card-title">Video Guides</div>
-            <div className="mctools-card-desc">Gameplay & Setup</div>
+            <div className="mctools-card-desc">Setup & 60 FPS Tips</div>
           </div>
         </div>
 
-        {/* Card 4: Archive Builds (Cyan Stripe) */}
+        {/* Card 4: Build Archive (Cyan Stripe) */}
         <div className="mctools-card stripe-cyan" onClick={() => onNavigate('download')}>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-cyan)', color: '#000' }}>ZIP</span>
           <div className="mctools-card-icon">
-            <PaintingIcon size={46} />
+            <img src="/icons/icon-portal.png" alt="Build Archive" className="mc-card-img" />
           </div>
           <div>
-            <div className="mctools-card-title">Old Builds</div>
-            <div className="mctools-card-desc">v1.0.0 Archive</div>
+            <div className="mctools-card-title">Build Archive</div>
+            <div className="mctools-card-desc">Legacy v1.0.0 APK</div>
           </div>
         </div>
 
         {/* Card 5: Craft Studio Team (Yellow Stripe) */}
         <div className="mctools-card stripe-yellow" onClick={() => onNavigate('team')}>
           <div className="mctools-card-icon">
-            <PlayerHeadIcon size={46} />
+            <img src="/icons/icon-playerheads.png" alt="Craft Team" className="mc-card-img" />
           </div>
           <div>
             <div className="mctools-card-title">Craft Team</div>
-            <div className="mctools-card-desc">Credits & Pojav</div>
+            <div className="mctools-card-desc">Developers & Pojav</div>
           </div>
         </div>
 
         {/* Card 6: Legal Notice & GPLv3 (Red Stripe) */}
         <div className="mctools-card stripe-red" onClick={() => onNavigate('notice')}>
           <div className="mctools-card-icon">
-            <ShieldGplIcon size={46} />
+            <img src="/icons/icon-totem.png" alt="Legal & GPL" className="mc-card-img" />
           </div>
           <div>
             <div className="mctools-card-title">Legal & GPL</div>
-            <div className="mctools-card-desc">Open Source GNU</div>
+            <div className="mctools-card-desc">Pojav & Amethyst</div>
           </div>
         </div>
 
-        {/* Card 7: Armor Stand / Setup (Orange Stripe) */}
+        {/* Card 7: Setup & RAM Settings (Orange Stripe) */}
         <div className="mctools-card stripe-orange" onClick={() => onNavigate('help')}>
           <div className="mctools-card-icon">
-            <ArmorStandIcon size={46} />
+            <img src="/icons/icon-armorstand.png" alt="RAM & Setup" className="mc-card-img" />
           </div>
           <div>
-            <div className="mctools-card-title">Setup Help</div>
-            <div className="mctools-card-desc">RAM & Controls</div>
+            <div className="mctools-card-title">RAM & Setup</div>
+            <div className="mctools-card-desc">Settings & Controls</div>
           </div>
         </div>
 
-        {/* Card 8: Totem / FAQs (Purple Stripe) */}
+        {/* Card 8: Community Support (Purple Stripe) */}
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('help')}>
           <div className="mctools-card-icon">
-            <TotemIcon size={46} />
+            <img src="/icons/icon-skinpack.png" alt="Help & Support" className="mc-card-img" />
           </div>
           <div>
-            <div className="mctools-card-title">Community FAQ</div>
-            <div className="mctools-card-desc">Discord & Guides</div>
+            <div className="mctools-card-title">Help & Support</div>
+            <div className="mctools-card-desc">Discord & FAQs</div>
           </div>
         </div>
       </div>

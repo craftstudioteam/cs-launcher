@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Download, CheckCircle2, Archive, Copy, Check } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { ApkPackageIcon, PaintingIcon } from './MinecraftIcons';
 
 export default function DownloadHub({ latest, archive, onDownload }) {
   const [copiedLink, setCopiedLink] = useState(false);
@@ -57,13 +56,13 @@ export default function DownloadHub({ latest, archive, onDownload }) {
         <div className="release-main-row">
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 44, height: 44, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <ApkPackageIcon size={34} />
+              <img src="/icons/icon-converter.png" alt="Release Box" style={{ height: 32, width: 'auto', imageRendering: 'pixelated' }} />
             </div>
             <div>
               <div className="release-version-title">
                 CS Launcher {latest.version || 'v3'}
               </div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', marginTop: 2 }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', marginTop: 2, lineHeight: 1.3 }}>
                 {latest.releaseName || 'CS Launcher V3'} • {latest.releaseDate || 'August 2026'}
               </div>
             </div>
@@ -99,7 +98,7 @@ export default function DownloadHub({ latest, archive, onDownload }) {
 
         {/* Changelog */}
         <div className="changelog-box">
-          <div style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
+          <div style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--mc-yellow)', marginBottom: 6 }}>
             What's New in V3 Release:
           </div>
           <ul className="changelog-list">
@@ -134,8 +133,8 @@ export default function DownloadHub({ latest, archive, onDownload }) {
               <div key={key} className="app-card" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <div style={{ width: 34, height: 34, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <PaintingIcon size={24} />
+                    <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <img src="/icons/icon-portal.png" alt="Portal Icon" style={{ height: 26, width: 'auto', imageRendering: 'pixelated' }} />
                     </div>
                     <div>
                       <div style={{ fontSize: '0.88rem', color: 'var(--mc-yellow)' }}>CS Launcher {item.version || 'v1.0'}</div>

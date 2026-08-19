@@ -1,7 +1,6 @@
 import React from 'react';
 import { Palette, Sparkles, CheckCircle2 } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { CapeIcon } from './MinecraftIcons';
 
 export default function Features({ features }) {
   const featureList = features ? Object.entries(features).map(([k, v]) => ({ id: k, ...v })) : [];
@@ -41,10 +40,10 @@ export default function Features({ features }) {
               )}
               <div style={{ padding: 18 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <div style={{ width: 34, height: 34, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <CapeIcon size={26} />
+                  <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <img src="/icons/icon-capebuilder.png" alt="Cape Icon" style={{ height: 30, width: 'auto', imageRendering: 'pixelated' }} />
                   </div>
-                  <h3 style={{ fontSize: '0.92rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000' }}>
+                  <h3 style={{ fontSize: '0.92rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000', lineHeight: 1.3 }}>
                     {item.title || 'Skin and Cape Changer'}
                   </h3>
                 </div>

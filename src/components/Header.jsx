@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Download, Share2, Check } from 'lucide-react';
+import { Share2, Check } from 'lucide-react';
 import { DiscordIcon } from './MinecraftIcons';
 
-export default function Header({ branding, activeVersion, activeTab, onNavigate }) {
+export default function Header({ branding, activeTab, onNavigate }) {
   const [copied, setCopied] = useState(false);
 
   const rawName = branding.appName || "CS Launcher";
   const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim() || "CS Launcher";
-  const ver = activeVersion || "v3";
   const logoUrl = branding.logoImage || "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png";
 
   const getPageUrl = () => {
@@ -22,7 +21,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
     if (navigator.share) {
       navigator.share({
         title: `${cleanName} — ${tabName}`,
-        text: `Download ${cleanName} (${ver}) on Android!`,
+        text: `Download ${cleanName} on Android!`,
         url: pageUrl
       }).catch(() => {});
     } else {
@@ -35,7 +34,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
   return (
     <header className="app-header">
       <div className="header-container">
-        {/* Left: Brand Logo & Title */}
+        {/* Left: Brand Logo & ONLY "CS Launcher" (No extra sub-text) */}
         <div className="brand-wrapper" onClick={() => onNavigate('home')}>
           <div className="brand-icon-box">
             <img 
@@ -43,17 +42,12 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
               alt="CS Logo" 
             />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div className="brand-title">
-              <span>{cleanName}</span>
-            </div>
-            <div className="brand-tagline">
-              {branding.tagline || "Minecraft Java on Android"}
-            </div>
+          <div className="brand-title">
+            <span>{cleanName}</span>
           </div>
         </div>
 
-        {/* Right: Actions (About, Discord, Get APK, Share) — NO TOOLS DROPDOWN */}
+        {/* Right: Actions (About, Discord, Share) — Clean & Minimalist */}
         <div className="header-actions">
           {/* About Link */}
           <button 
@@ -73,16 +67,6 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
           >
             <DiscordIcon size={18} color="currentColor" />
           </a>
-
-          {/* Get APK Quick Button */}
-          <button 
-            className="btn-mc-3d" 
-            style={{ padding: '6px 12px', fontSize: '0.7rem' }}
-            onClick={() => onNavigate('download')}
-          >
-            <Download size={13} />
-            <span>Get APK</span>
-          </button>
 
           {/* Share Button */}
           <button 

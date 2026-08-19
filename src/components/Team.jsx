@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, ExternalLink } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { PlayerHeadIcon, DiscordIcon } from './MinecraftIcons';
+import { DiscordIcon } from './MinecraftIcons';
 
 export default function Team({ team }) {
   const members = team ? Object.entries(team).map(([k, v]) => ({ id: k, ...v })) : [];
@@ -37,7 +37,7 @@ export default function Team({ team }) {
               />
             </div>
             
-            <h3 style={{ fontSize: '0.9rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000' }}>
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000', lineHeight: 1.3 }}>
               {member.name || 'Member'}
             </h3>
             
@@ -76,10 +76,10 @@ export default function Team({ team }) {
       {/* PojavLauncher Attribution Box */}
       <div className="app-card" style={{ borderLeft: '4px solid var(--mc-cyan)' }}>
         <div style={{ fontSize: '0.88rem', color: 'var(--mc-cyan)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span>PojavLauncher Attribution & Thanks</span>
+          <span>PojavLauncher & Amethyst Attribution</span>
         </div>
         <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.6 }}>
-          CS Launcher is built upon the open-source foundations of the PojavLauncher project (licensed under GNU GPLv3). We express immense gratitude to the PojavLauncher contributors and the Minecraft Java modding community.
+          CS Launcher is built upon the open-source foundations of the PojavLauncher project and Amethyst Launcher base (licensed under GNU GPLv3). We express immense gratitude to the PojavLauncher developers, Amethyst contributors, and the Minecraft Java modding community.
         </p>
       </div>
     </div>
