@@ -7,18 +7,21 @@ const LOGO_URL = 'https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b76
 const ROUTES = [
   {
     path: 'download/v3',
+    version: 'v3',
     title: 'Download CS Launcher V3 APK (Latest) — Minecraft Java on Android',
     description: 'Download official CS Launcher V3 APK (185.8 MB) for Android. Play Minecraft Java Edition with 60+ FPS, custom skins, HD capes, and zero lag.',
     image: LOGO_URL
   },
   {
     path: 'download/v2',
+    version: 'v2',
     title: 'Download CS Launcher V2 APK (Stable) — Minecraft Java on Android',
     description: 'Download CS Launcher V2 APK (160 MB) for Android. Stable release with high FPS rendering and custom skin & cape support.',
     image: LOGO_URL
   },
   {
     path: 'download/v1',
+    version: 'v1',
     title: 'Download CS Launcher V1 APK (Legacy) — Minecraft Java on Android',
     description: 'Download CS Launcher V1.0.0 Legacy Archive Build (300 MB) for Android. Original PojavLauncher base build archive.',
     image: LOGO_URL
@@ -72,6 +75,11 @@ for (const route of ROUTES) {
 
   let html = templateHtml;
 
+  // Ensure absolute asset paths
+  html = html.replace(/src="\.\/assets\//g, 'src="/assets/');
+  html = html.replace(/href="\.\/assets\//g, 'href="/assets/');
+  html = html.replace(/href="\.\/site\.webmanifest"/g, 'href="/site.webmanifest"');
+
   // Replace Title
   html = html.replace(/<title>.*?<\/title>/gi, `<title>${route.title}</title>`);
   html = html.replace(/<meta name="title" content=".*?" \/>/gi, `<meta name="title" content="${route.title}" />`);
@@ -100,4 +108,4 @@ for (const route of ROUTES) {
   console.log(`Generated: ${route.path}/index.html`);
 }
 
-console.log('✅ All static route previews generated successfully!');
+console.log('✅ All static route previews generated with absolute asset paths!');
