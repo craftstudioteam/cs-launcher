@@ -1,5 +1,4 @@
-# CS Launcher — Web App (Pure Client Portal)
+# CS Launcher — Official Web Portal (V3 Release)
 
-Fast, lightweight, zero-lag Minecraft Java launcher portal.
-Official V3 Release: 4,091+ Downloads (185.8 MB APK)
+Official Minecraft Java Edition mobile launcher portal with Minecraft Silkscreen mini pixel font styling.
 Direct Download: https://github.com/craftstudioteam/CS-LAUNCHER-v3/releases/download/v3/CS-LAUNCHER-V3.apk

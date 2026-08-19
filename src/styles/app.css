@@ -1,12 +1,18 @@
 /* ═════════════════════════════════════════════════════════════
-   CS LAUNCHER — PRO GAMING GLASSMORPHIC UI (MCTOOLS INSPIRED)
-   Aesthetic: Deep Obsidian, Frosted Glass, Neon Glow & Pixel Accents
+   CS LAUNCHER — MINECRAFT PIXEL MINI FONT UI
+   Aesthetic: Deep Obsidian, Frosted Glass, Neon Glow & Minecraft Silkscreen Pixel Font
    Zero Blue Color • Touch-First Haptic Feel • 60+ FPS Smooth
    ═════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 :root {
+  /* Fonts */
+  --font-pixel: 'Silkscreen', 'Press Start 2P', monospace;
+  --font-gaming: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
   /* Deep Obsidian & Charcoal Gaming Palette (Strictly No Blue) */
   --bg-main: #060609;
   --bg-surface: #0c0c12;
@@ -20,7 +26,6 @@
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-default: rgba(255, 255, 255, 0.14);
   --border-active: rgba(255, 255, 255, 0.35);
-  --border-glow: rgba(255, 255, 255, 0.2);
 
   /* Typography */
   --text-white: #ffffff;
@@ -42,12 +47,6 @@
   --radius-xl: 32px;
   --radius-pill: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.65);
-  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.85);
-  --shadow-glow: 0 0 25px rgba(255, 255, 255, 0.08);
-
   /* Heights */
   --header-height: 64px;
   --bottom-nav-height: 70px;
@@ -61,7 +60,7 @@
 }
 
 html {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-main);
   color: var(--text-white);
   font-size: 15px;
@@ -161,7 +160,7 @@ body {
 }
 
 .brand-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 1.06rem;
   font-weight: 800;
   color: var(--text-white);
@@ -171,15 +170,17 @@ body {
   line-height: 1.2;
 }
 
+/* 🎮 MINECRAFT MINI PIXEL FONT BADGE */
 .brand-version-pill {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.66rem;
-  font-weight: 800;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  font-weight: 700;
   padding: 3px 8px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-pill);
   color: var(--text-white);
+  letter-spacing: 0.5px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.06);
 }
 
@@ -199,7 +200,7 @@ body {
   border-radius: var(--radius-pill);
   background: #ffffff;
   color: #060609;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 0.85rem;
   font-weight: 800;
   border: none;
@@ -236,7 +237,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── MCTOOLS INSPIRED HERO CONSOLE CARD ─── */
+/* ─── HERO CONSOLE CARD (MINECRAFT PIXEL ACCENTS) ─── */
 .hero-card-container {
   background: linear-gradient(165deg, rgba(26, 26, 38, 0.95) 0%, rgba(14, 14, 22, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -259,6 +260,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
+/* 🎮 MINECRAFT MINI PIXEL FONT STATUS TAG */
 .hero-status-tag {
   display: inline-flex;
   align-items: center;
@@ -267,9 +269,10 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-pill);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.76rem;
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.8px;
   color: var(--text-white);
   margin-bottom: 18px;
   backdrop-filter: blur(8px);
@@ -284,7 +287,7 @@ body {
 }
 
 .hero-main-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: clamp(2rem, 6.8vw, 3.4rem);
   font-weight: 900;
   line-height: 1.12;
@@ -326,7 +329,7 @@ body {
   gap: 12px;
   background: #ffffff;
   color: #060609;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 1.06rem;
   font-weight: 900;
   border-radius: var(--radius-pill);
@@ -361,7 +364,7 @@ body {
   gap: 6px;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-white);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 0.84rem;
   font-weight: 700;
   border-radius: var(--radius-md);
@@ -379,7 +382,7 @@ body {
   transform: scale(0.95);
 }
 
-/* Feature Badges Strip */
+/* 🎮 MINECRAFT MINI PIXEL FONT CHIPS */
 .hero-feature-tags-strip {
   display: flex;
   flex-wrap: wrap;
@@ -389,14 +392,15 @@ body {
 }
 
 .hero-feature-chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 4px 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-pill);
   color: var(--text-muted);
+  letter-spacing: 0.5px;
 }
 
 /* ─── LIVE STATS STRIP ─── */
@@ -423,19 +427,21 @@ body {
 }
 
 .stat-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 1.4rem;
   font-weight: 900;
   color: var(--text-white);
   letter-spacing: -0.5px;
 }
 
+/* 🎮 MINECRAFT MINI PIXEL FONT ON STAT LABELS */
 .stat-label {
-  font-size: 0.72rem;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
   color: var(--text-muted);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   margin-top: 4px;
 }
 
@@ -511,17 +517,20 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+/* 🎮 MINECRAFT MINI PIXEL FONT BADGE */
 .featured-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 14px;
+  padding: 5px 14px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  font-weight: 700;
   color: #ffffff;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
@@ -536,7 +545,7 @@ body {
 }
 
 .release-version-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 1.8rem;
   font-weight: 900;
   color: var(--text-white);
@@ -559,14 +568,16 @@ body {
 }
 
 .spec-key {
-  font-size: 0.68rem;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
   color: var(--text-muted);
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .spec-val {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.88rem;
   font-weight: 800;
   color: var(--text-white);
@@ -613,7 +624,7 @@ body {
   gap: 12px;
   background: #ffffff;
   color: #060609;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 1.06rem;
   font-weight: 900;
   border-radius: var(--radius-pill);
@@ -653,7 +664,7 @@ body {
 }
 
 .archive-version-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-gaming);
   font-size: 1.05rem;
   font-weight: 800;
   color: var(--text-white);
@@ -668,7 +679,7 @@ body {
   color: var(--text-white);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-pill);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-gaming);
   font-size: 0.82rem;
   font-weight: 800;
   cursor: pointer;
