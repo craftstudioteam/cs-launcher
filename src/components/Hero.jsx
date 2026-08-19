@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Download, Sparkles, Image, Zap, X, Video, Archive, Palette, ShieldCheck, Users, HelpCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, Sparkles, Image, X, Video, Archive, Palette, ShieldCheck, Users } from 'lucide-react';
 import AdBanner from './AdBanner';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
@@ -15,15 +15,15 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
   return (
     <div className="tab-transition-wrapper">
 
-      {/* 🕹️ MCTOOLS RETRO HERO BOX */}
+      {/* 🕹️ MCTOOLS RETRO HERO BOX (NORMAL CASE - NO ALL-CAPS) */}
       <div className="mctools-hero-box">
         <div className="mctools-title-frame">
-          <div className="mctools-title-text">CSLauncher</div>
+          <div className="mctools-title-text">CS Launcher</div>
         </div>
 
         <div>
           <div className="mctools-subtitle-pill">
-            MINECRAFT JAVA ON ANDROID
+            Minecraft Java on Android
           </div>
         </div>
 
@@ -33,29 +33,29 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
           onClick={() => onDownload(null, currentVer)}
         >
           <Download size={18} />
-          <span>DOWNLOAD APK ({currentVer.toUpperCase()})</span>
+          <span>Download APK ({currentVer})</span>
         </button>
 
         {/* Status Tag */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '0.66rem', color: 'var(--mc-green)', background: '#0a0a14', padding: '3px 8px', border: '1px solid #000' }}>
-            ● V3 OFFICIAL RELEASE
+          <span style={{ fontSize: '0.66rem', color: 'var(--mc-green)', background: '#0d0a22', padding: '4px 10px', border: '1px solid #000' }}>
+            ● v3 Official Release
           </span>
-          <span style={{ fontSize: '0.66rem', color: 'var(--mc-gold)', background: '#0a0a14', padding: '3px 8px', border: '1px solid #000' }}>
-            {count.toLocaleString()}+ DOWNLOADS
+          <span style={{ fontSize: '0.66rem', color: 'var(--mc-gold)', background: '#0d0a22', padding: '4px 10px', border: '1px solid #000' }}>
+            {count.toLocaleString()}+ Downloads
           </span>
         </div>
       </div>
 
       {/* 🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MCTOOLS STYLE) */}
       <div className="mctools-section-header">
-        <span>QUICK LAUNCHER HUB</span>
+        <span>Launcher Tools</span>
       </div>
 
       <div className="mctools-grid-2col">
         {/* Card 1: Download V3 */}
         <div className="mctools-card stripe-yellow" onClick={() => onDownload(null, currentVer)}>
-          <span className="mctools-card-badge">V3</span>
+          <span className="mctools-card-badge">v3</span>
           <div className="mctools-card-icon">
             <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Download size={20} color="#FFAA00" />
@@ -66,7 +66,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
         {/* Card 2: Skin & Cape */}
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('features')}>
-          <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#fff' }}>HOT</span>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#fff' }}>New</span>
           <div className="mctools-card-icon">
             <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Palette size={20} color="#B388FF" />
@@ -77,7 +77,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
         {/* Card 3: Video Tutorials */}
         <div className="mctools-card stripe-green" onClick={() => onNavigate('videos')}>
-          <span className="mctools-card-badge" style={{ background: 'var(--mc-green)' }}>HD</span>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-green)', color: '#000' }}>HD</span>
           <div className="mctools-card-icon">
             <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Video size={20} color="#55FF55" />
@@ -126,9 +126,9 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.88rem', color: 'var(--mc-yellow)' }}>
               <Image size={15} />
-              <span>SCREENSHOTS</span>
+              <span>Screenshots</span>
             </div>
-            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>TAP TO PREVIEW</span>
+            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>Tap to preview</span>
           </div>
           <div className="gallery-scroll-container">
             {screenshots.map((url, idx) => (
@@ -149,10 +149,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
           <div>
             <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
-              JOIN DISCORD COMMUNITY
+              Join CS Launcher Discord
             </div>
             <div style={{ fontSize: '0.68rem', color: 'var(--mc-grey)', marginTop: 2 }}>
-              Get instant setup help & updates
+              Get instant setup help and updates
             </div>
           </div>
 
@@ -163,7 +163,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             className="btn-mc-3d"
             style={{ fontSize: '0.72rem', padding: '8px 14px' }}
           >
-            <span>JOIN DISCORD ↗</span>
+            <span>Join Discord ↗</span>
           </a>
         </div>
       )}

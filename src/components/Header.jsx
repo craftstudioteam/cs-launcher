@@ -4,8 +4,8 @@ import { Download, Share2, Check } from 'lucide-react';
 export default function Header({ branding, activeVersion, activeTab, onNavigate }) {
   const [copied, setCopied] = useState(false);
 
-  const rawName = branding.appName || "CS LAUNCHER";
-  const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim().toUpperCase() || "CS LAUNCHER";
+  const rawName = branding.appName || "CS Launcher";
+  const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim() || "CS Launcher";
   const ver = activeVersion || "v3";
 
   const getPageUrl = () => {
@@ -36,7 +36,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
         <div className="brand-wrapper" onClick={() => onNavigate('home')}>
           <div className="brand-icon-box">
             <img 
-              src={branding.logoImage || branding.logoUrl || "https://i.ibb.co/jv7ZS03W/favicon.png"} 
+              src={branding.logoImage || "https://i.ibb.co/jv7ZS03W/favicon.png"} 
               alt="CS Logo" 
             />
           </div>
@@ -51,18 +51,18 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <button 
             className="social-icon-btn" 
             onClick={handleShare} 
-            title={`Copy Direct Link to ${activeTab || 'page'}`}
+            title={`Copy link to ${activeTab || 'page'}`}
           >
             {copied ? <Check size={16} color="#55FF55" /> : <Share2 size={16} />}
           </button>
           
-          <button className="btn-mc-3d" style={{ padding: '8px 14px', fontSize: '0.74rem' }} onClick={() => onNavigate('download')}>
-            <Download size={14} />
-            <span>GET APK</span>
+          <button className="btn-mc-3d" style={{ padding: '7px 12px', fontSize: '0.72rem' }} onClick={() => onNavigate('download')}>
+            <Download size={13} />
+            <span>Get APK</span>
           </button>
         </div>
       </div>
