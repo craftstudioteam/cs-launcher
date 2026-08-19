@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
-import { Download, Image, X } from 'lucide-react';
+import React from 'react';
+import { Download } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { DiscordIcon } from './MinecraftIcons';
+import ShowcaseGallery from './ShowcaseGallery';
+import {
+  CsDownloadIcon,
+  CsSkinCapeIcon,
+  CsVideoGuidesIcon,
+  CsArchiveVaultIcon,
+  CsTeamDevIcon,
+  CsGplShieldIcon,
+  CsRamSetupIcon,
+  CsSupportTotemIcon,
+  DiscordIcon
+} from './MinecraftIcons';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
-  const [lightboxImg, setLightboxImg] = useState(null);
-
   const currentVer = activeVersion || 'v3';
   const count = liveDownloadCount || 4091;
-
-  const screenshots = branding.screenshots && Array.isArray(branding.screenshots) && branding.screenshots.length > 0
-    ? branding.screenshots
-    : [];
 
   return (
     <div className="tab-transition-wrapper">
@@ -53,19 +58,15 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       </div>
 
       {/* ══════════════════════════════════════════════════════════════
-          🧱 2-COLUMN MINECRAFT GRID CARDS (AUTHENTIC PIXEL PNG ICONS)
+          🧱 2-COLUMN MINECRAFT GRID CARDS (EXCLUSIVE ANIMATED SVGS)
+          (Removed extra "Launcher Features" header per user instruction)
           ══════════════════════════════════════════════════════════════ */}
-      <div className="section-label-mctools">
-        <span>Launcher Features</span>
-        <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)', letterSpacing: 0 }}>Tap any feature</span>
-      </div>
-
-      <div className="mctools-grid-2col">
+      <div className="mctools-grid-2col" style={{ marginTop: 12 }}>
         {/* Card 1: Download V3 (Yellow Stripe) */}
         <div className="mctools-card stripe-yellow" onClick={() => onDownload(null, currentVer)}>
           <span className="mctools-card-badge">v3</span>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-converter.png" alt="Download APK" className="mc-card-img" />
+            <CsDownloadIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Download APK</div>
@@ -77,7 +78,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('features')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#000' }}>NEW</span>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-capebuilder.png" alt="Skin & Cape" className="mc-card-img" />
+            <CsSkinCapeIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Skin & Cape</div>
@@ -89,7 +90,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-green" onClick={() => onNavigate('videos')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-green)', color: '#000' }}>HD</span>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-musicdisc.png" alt="Video Guides" className="mc-card-img" />
+            <CsVideoGuidesIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Video Guides</div>
@@ -101,7 +102,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         <div className="mctools-card stripe-cyan" onClick={() => onNavigate('download')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-cyan)', color: '#000' }}>ZIP</span>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-portal.png" alt="Build Archive" className="mc-card-img" />
+            <CsArchiveVaultIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Build Archive</div>
@@ -112,7 +113,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         {/* Card 5: Craft Studio Team (Yellow Stripe) */}
         <div className="mctools-card stripe-yellow" onClick={() => onNavigate('team')}>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-playerheads.png" alt="Craft Team" className="mc-card-img" />
+            <CsTeamDevIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Craft Team</div>
@@ -123,7 +124,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         {/* Card 6: Legal Notice & GPLv3 (Red Stripe) */}
         <div className="mctools-card stripe-red" onClick={() => onNavigate('notice')}>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-totem.png" alt="Legal & GPL" className="mc-card-img" />
+            <CsGplShieldIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Legal & GPL</div>
@@ -134,7 +135,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         {/* Card 7: Setup & RAM Settings (Orange Stripe) */}
         <div className="mctools-card stripe-orange" onClick={() => onNavigate('help')}>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-armorstand.png" alt="RAM & Setup" className="mc-card-img" />
+            <CsRamSetupIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">RAM & Setup</div>
@@ -145,7 +146,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         {/* Card 8: Community Support (Purple Stripe) */}
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('help')}>
           <div className="mctools-card-icon">
-            <img src="/icons/icon-skinpack.png" alt="Help & Support" className="mc-card-img" />
+            <CsSupportTotemIcon size={46} />
           </div>
           <div>
             <div className="mctools-card-title">Help & Support</div>
@@ -157,29 +158,8 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {/* 📢 AD BANNER */}
       <AdBanner slotId="hero-mid" format="banner" />
 
-      {/* 📸 SCREENSHOT GALLERY */}
-      {screenshots.length > 0 && (
-        <div className="app-card">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.88rem', color: 'var(--mc-yellow)' }}>
-              <Image size={15} />
-              <span>Screenshots</span>
-            </div>
-            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>Tap to expand</span>
-          </div>
-          <div className="gallery-scroll-container">
-            {screenshots.map((url, idx) => (
-              <div 
-                key={idx} 
-                className="gallery-card-item"
-                onClick={() => setLightboxImg(url)}
-              >
-                <img src={url} alt={`Screenshot ${idx + 1}`} loading="lazy" />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* 📸 MCTOOLS AUTHENTIC AUTO-SLIDING GALLERY CAROUSEL */}
+      <ShowcaseGallery />
 
       {/* 💬 COMMUNITY DISCORD CARD */}
       {discordUrl && (
@@ -207,28 +187,6 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
           >
             <span>Join Server ↗</span>
           </a>
-        </div>
-      )}
-
-      {/* Lightbox Modal */}
-      {lightboxImg && (
-        <div className="modal-overlay" onClick={() => setLightboxImg(null)}>
-          <div 
-            style={{ maxWidth: '92vw', maxHeight: '85vh', position: 'relative' }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button 
-              onClick={() => setLightboxImg(null)}
-              style={{ position: 'absolute', top: -36, right: 0, background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}
-            >
-              <X size={26} />
-            </button>
-            <img 
-              src={lightboxImg} 
-              alt="Expanded Preview" 
-              style={{ width: '100%', height: '100%', maxHeight: '80vh', objectFit: 'contain', border: '3px solid #000', boxShadow: '0 20px 50px rgba(0,0,0,0.9)' }} 
-            />
-          </div>
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { TotemIcon, DiscordIcon } from './MinecraftIcons';
+import { DiscordIcon, CsSupportTotemIcon } from './MinecraftIcons';
 
 const FAQ_ITEMS = [
   {

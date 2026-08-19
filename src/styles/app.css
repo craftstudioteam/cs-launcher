@@ -250,7 +250,7 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   🕹️ NAVBAR HEADER (CLEAN BRAND & ACTIONS - NO TOOLS DROPDOWN)
+   🕹️ NAVBAR HEADER (CLEAN BRAND ONLY "CS LAUNCHER")
    ══════════════════════════════════════════════════════════════════════ */
 
 .app-header {
@@ -318,17 +318,11 @@ body {
   letter-spacing: 1.5px;
   text-shadow: 2px 2px 0 #000;
   line-height: 1.2;
-  margin-bottom: 2px;
+  margin: 0;
 }
 
 .brand-title:hover {
   color: var(--mc-yellow);
-}
-
-.brand-tagline {
-  font-size: 0.58rem;
-  color: var(--mc-grey);
-  line-height: 1.2;
 }
 
 /* Nav Actions */
@@ -342,7 +336,7 @@ body {
   background: none;
   border: none;
   color: var(--mc-grey);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   padding: 6px 10px;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
@@ -450,23 +444,8 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MC-TOOLS.NET STYLE)
+   🧱 2-COLUMN MINECRAFT GRID CARDS
    ══════════════════════════════════════════════════════════════════════ */
-
-.section-label-mctools {
-  font-family: var(--mc-font);
-  font-size: 0.95rem;
-  color: var(--mc-purple);
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 0 #000, 0 0 8px rgba(180, 144, 255, 0.2);
-  margin: 1.6rem 0 0.8rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid rgba(180, 144, 255, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  line-height: 1.3;
-}
 
 .mctools-grid-2col {
   display: grid;
@@ -594,6 +573,233 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
+   ✨ CS LAUNCHER SVG ICONS 60FPS MICRO-ANIMATIONS
+   ══════════════════════════════════════════════════════════════════════ */
+
+.cs-icon {
+  display: block;
+  overflow: visible;
+}
+
+.anim-dl-arrow {
+  animation: csArrowPulse 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes csArrowPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+.anim-cape-flutter {
+  animation: csCapeWave 2.5s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+@keyframes csCapeWave {
+  0% { transform: rotate(0deg) skewX(0deg); }
+  100% { transform: rotate(2.5deg) skewX(-2deg); }
+}
+
+.anim-pulse-play {
+  animation: csPlayPulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes csPlayPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #55ff55); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 6px #55ff55); }
+}
+
+.anim-portal-swirl {
+  animation: csPortalSpin 12s linear infinite;
+  transform-origin: 24px 24px;
+}
+
+@keyframes csPortalSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.anim-crown-float {
+  animation: csCrownHover 2.2s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes csCrownHover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-2px); }
+}
+
+.anim-shield-shine {
+  animation: csShieldGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes csShieldGlow {
+  0% { opacity: 0.85; }
+  100% { opacity: 1; filter: drop-shadow(0 0 4px #fef08a); }
+}
+
+.anim-bolt-spark {
+  animation: csBoltSparkle 1.6s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes csBoltSparkle {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 4px #fef08a); }
+}
+
+.anim-totem-wings {
+  animation: csTotemWings 2.4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes csTotemWings {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(0.85); }
+}
+
+.anim-totem-eyes {
+  animation: csEyesBlink 3.5s infinite;
+}
+
+@keyframes csEyesBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.2; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   📸 MCTOOLS AUTHENTIC AUTO-SLIDING GALLERY CAROUSEL
+   ══════════════════════════════════════════════════════════════════════ */
+
+.showcase-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.gal-slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.gal-slider-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+.gal-slide-card {
+  flex: 0 0 100%;
+  min-width: 100%;
+  cursor: pointer;
+}
+
+.gal-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #0e0b24;
+  overflow: hidden;
+}
+
+.gal-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sc-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 8, 22, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 2px solid #000;
+}
+
+.sc-caption-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.sc-caption-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--mc-yellow);
+  text-shadow: 1px 1px 0 #000;
+  letter-spacing: 0.5px;
+}
+
+.gal-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 34px;
+  height: 34px;
+  background: rgba(26, 21, 56, 0.9);
+  border: 2px solid #000;
+  border-top-color: #3a2f6a;
+  border-left-color: #3a2f6a;
+  box-shadow: 2px 2px 0 #000;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.gal-nav-arrow:hover {
+  background: rgba(36, 28, 74, 0.98);
+  color: var(--mc-yellow);
+}
+
+.gal-nav-arrow:active {
+  transform: translateY(calc(-50% + 2px));
+}
+
+.gal-nav-arrow.ga-left { left: 8px; }
+.gal-nav-arrow.ga-right { right: 8px; }
+
+.gal-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.gal-dot-btn {
+  width: 8px;
+  height: 8px;
+  background: #2e2852;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.gal-dot-btn.active {
+  background: var(--mc-yellow);
+  border-color: #000;
+  box-shadow: 0 0 6px rgba(255, 255, 85, 0.7);
+  transform: scale(1.25);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
    🕹️ MINECRAFT 3D IN-GAME BEVELED BUTTONS
    ══════════════════════════════════════════════════════════════════════ */
 
@@ -701,37 +907,6 @@ body {
   padding: 18px 16px;
   margin-bottom: 18px;
   width: 100%;
-}
-
-/* 📸 SCREENSHOT GALLERY */
-.gallery-scroll-container {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-snap-type: x mandatory;
-}
-
-.gallery-card-item {
-  flex: 0 0 240px;
-  height: 145px;
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 #000;
-  background: #0e0b24;
-  scroll-snap-align: start;
-  cursor: pointer;
-  transition: transform 0.15s ease;
-  overflow: hidden;
-}
-
-.gallery-card-item:hover {
-  transform: scale(1.02);
-}
-
-.gallery-card-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* Modal */

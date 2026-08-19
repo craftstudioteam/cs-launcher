@@ -17,7 +17,7 @@ const APP_DATA = {
   branding: {
     appName: "CS Launcher",
     tagline: "Minecraft Java on Mobile Android",
-    logoImage: "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png",
+    logoImage: "https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b765.png",
     copyright: "© 2026 Craft Studio Development Group. All Rights Reserved.",
     screenshots: [
       "https://i.ibb.co/6zh10Ph/333231.jpg",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldAlert, Scale, AlertTriangle, BookOpen, ExternalLink, Code2, HeartHandshake } from 'lucide-react';
 import AdBanner from './AdBanner';
-import { ShieldGplIcon, PlayerHeadIcon } from './MinecraftIcons';
+import { CsGplShieldIcon, CsTeamDevIcon } from './MinecraftIcons';
 
 export default function Notice({ branding, activeVersion }) {
   const ver = activeVersion || "v3";
@@ -29,7 +29,7 @@ export default function Notice({ branding, activeVersion }) {
       <div className="app-card" style={{ borderLeft: '5px solid var(--mc-yellow)', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <PlayerHeadIcon size={26} />
+            <CsTeamDevIcon size={30} />
           </div>
           <div>
             <h3 style={{ fontSize: '0.94rem', color: 'var(--mc-yellow)', lineHeight: 1.3 }}>
@@ -136,7 +136,7 @@ export default function Notice({ branding, activeVersion }) {
       <div className="app-card" style={{ borderLeft: '5px solid var(--mc-green)', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <ShieldGplIcon size={26} />
+            <CsGplShieldIcon size={30} />
           </div>
           <div>
             <h3 style={{ fontSize: '0.94rem', color: 'var(--mc-green)', lineHeight: 1.3 }}>

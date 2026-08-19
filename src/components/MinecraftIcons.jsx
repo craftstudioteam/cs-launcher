@@ -1,240 +1,254 @@
 import React from 'react';
 
 // ══════════════════════════════════════════════════════════════════════
-// 100% AUTHENTIC MINECRAFT PIXEL ART ICONS (PIXEL-PERFECT MC RENDER)
+// EXCLUSIVE CS LAUNCHER ANIMATED 3D GAMING ICONS
+// Custom Crafted SVGs • 60 FPS Micro-Animations • Pixel Gaming Aesthetics
 // ══════════════════════════════════════════════════════════════════════
 
-// 1. 🛡️ MINECRAFT TOTEM OF UNDYING (Exact Vanilla Texture Proportion)
-export function TotemIcon({ size = 48, className = "" }) {
+// 1. 📥 CS LAUNCHER V3 APK DOWNLOAD BOX (Pulsing Download Arrow & Glowing Core)
+export function CsDownloadIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-download ${className}`}
     >
-      {/* Head Outline & Gold Base */}
-      <rect x="5" y="0" width="6" height="5" fill="#facc15" />
-      <rect x="6" y="1" width="4" height="4" fill="#fef08a" />
-      <rect x="5" y="2" width="6" height="1" fill="#ca8a04" />
-      {/* Green Emerald Eyes */}
-      <rect x="5" y="2" width="2" height="1" fill="#22c55e" />
-      <rect x="9" y="2" width="2" height="1" fill="#22c55e" />
-      <rect x="6" y="2" width="1" height="1" fill="#ffffff" />
-      <rect x="10" y="2" width="1" height="1" fill="#ffffff" />
-      {/* Nose */}
-      <rect x="7" y="3" width="2" height="2" fill="#a16207" />
-      {/* Wings / Arms */}
-      <rect x="1" y="5" width="14" height="2" fill="#0d9488" />
-      <rect x="2" y="6" width="12" height="1" fill="#14b8a6" />
-      <rect x="0" y="4" width="3" height="3" fill="#0f766e" />
-      <rect x="13" y="4" width="3" height="3" fill="#0f766e" />
-      {/* Body Core */}
-      <rect x="5" y="7" width="6" height="6" fill="#facc15" />
-      <rect x="6" y="8" width="4" height="4" fill="#fef08a" />
-      <rect x="6" y="9" width="4" height="1" fill="#0d9488" />
-      {/* Base / Skirt */}
-      <rect x="5" y="13" width="6" height="3" fill="#ca8a04" />
-      <rect x="6" y="14" width="4" height="2" fill="#a16207" />
+      {/* 3D Isometric Game Box */}
+      <polygon points="24,4 42,13 24,22 6,13" fill="#fbbf24" stroke="#78350f" strokeWidth="2" strokeLinejoin="round" />
+      <polygon points="6,13 24,22 24,42 6,33" fill="#b45309" stroke="#78350f" strokeWidth="2" strokeLinejoin="round" />
+      <polygon points="24,22 42,13 42,33 24,42" fill="#d97706" stroke="#78350f" strokeWidth="2" strokeLinejoin="round" />
+      
+      {/* Golden Corner Accents */}
+      <rect x="22" y="20" width="4" height="6" fill="#fef08a" stroke="#000" strokeWidth="1" />
+      <circle cx="24" cy="13" r="3" fill="#22c55e" />
+
+      {/* Floating Animated Download Arrow */}
+      <g className="anim-dl-arrow">
+        <path d="M24 2 L24 16 M19 11 L24 16 L29 11" stroke="#55ff55" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
     </svg>
   );
 }
 
-// 2. 💿 MINECRAFT GREEN MUSIC DISC ("Cat" / "13" Record)
-export function MusicDiscIcon({ size = 48, className = "" }) {
+// 2. 🦹 SKIN & CAPE CHANGER (Animated Waving Elytra Cape & 3D Steve Model)
+export function CsSkinCapeIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-cape ${className}`}
     >
-      {/* Vinyl Outer Rim */}
-      <rect x="5" y="0" width="6" height="1" fill="#1e1e24" />
-      <rect x="3" y="1" width="10" height="1" fill="#1e1e24" />
-      <rect x="2" y="2" width="12" height="1" fill="#1e1e24" />
-      <rect x="1" y="3" width="14" height="2" fill="#1e1e24" />
-      <rect x="0" y="5" width="16" height="6" fill="#1e1e24" />
-      <rect x="1" y="11" width="14" height="2" fill="#1e1e24" />
-      <rect x="2" y="13" width="12" height="1" fill="#1e1e24" />
-      <rect x="3" y="14" width="10" height="1" fill="#1e1e24" />
-      <rect x="5" y="15" width="6" height="1" fill="#1e1e24" />
-      {/* Vinyl Groove Rings */}
-      <rect x="3" y="3" width="10" height="10" fill="#2d2d38" />
-      <rect x="4" y="4" width="8" height="8" fill="#1e1e24" />
-      {/* Green Disc Center Label */}
-      <rect x="5" y="5" width="6" height="6" fill="#16a34a" />
-      <rect x="6" y="6" width="4" height="4" fill="#4ade80" />
-      {/* Center Hole */}
-      <rect x="7" y="7" width="2" height="2" fill="#000000" />
-      {/* Shine Highlight */}
-      <rect x="4" y="2" width="3" height="1" fill="#ffffff" opacity="0.4" />
-      <rect x="2" y="4" width="1" height="3" fill="#ffffff" opacity="0.4" />
+      {/* Animated Fluttering Cape in Background */}
+      <g className="anim-cape-flutter">
+        <path d="M12 16 C8 24 10 38 15 42 L24 40 L33 42 C38 38 40 24 36 16 Z" fill="#7c3aed" stroke="#3b0764" strokeWidth="1.5" />
+        <path d="M16 18 C13 25 15 36 18 39 L24 37 L30 39 C33 36 35 25 32 18 Z" fill="#a855f7" />
+        <rect x="21" y="22" width="6" height="6" fill="#fef08a" />
+      </g>
+
+      {/* 3D Steve Character Head & Shoulders */}
+      <rect x="18" y="6" width="12" height="12" rx="1" fill="#b45309" stroke="#000" strokeWidth="1.5" />
+      <rect x="19" y="7" width="10" height="4" fill="#451a03" />
+      {/* Eyes */}
+      <rect x="20" y="11" width="3" height="2" fill="#2563eb" />
+      <rect x="25" y="11" width="3" height="2" fill="#2563eb" />
+      <rect x="20" y="11" width="1" height="2" fill="#fff" />
+      <rect x="25" y="11" width="1" height="2" fill="#fff" />
+
+      {/* Golden Clasp */}
+      <circle cx="24" cy="18" r="2.5" fill="#fbbf24" stroke="#000" strokeWidth="1" />
     </svg>
   );
 }
 
-// 3. 🖼️ MINECRAFT PAINTING (Wooden Frame + Sunset Scene)
-export function PaintingIcon({ size = 48, className = "" }) {
+// 3. 🎬 VIDEO GUIDES & GAMEPLAY (Hologram Controller & 60 FPS Pulse)
+export function CsVideoGuidesIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-video ${className}`}
     >
-      {/* Wood Frame */}
-      <rect x="0" y="0" width="16" height="16" fill="#451a03" />
-      <rect x="1" y="1" width="14" height="14" fill="#78350f" />
-      {/* Canvas */}
-      <rect x="2" y="2" width="12" height="12" fill="#e2e8f0" />
-      {/* Sky */}
-      <rect x="2" y="2" width="12" height="6" fill="#38bdf8" />
-      {/* Sun */}
-      <rect x="3" y="3" width="2" height="2" fill="#facc15" />
-      {/* Mountain */}
-      <polygon points="2,8 6,4 10,8" fill="#64748b" />
-      <polygon points="7,8 11,3 14,8" fill="#475569" />
-      <polygon points="10,5 11,3 12,5" fill="#ffffff" />
-      {/* Grass Ground */}
-      <rect x="2" y="8" width="12" height="6" fill="#16a34a" />
-      <rect x="2" y="11" width="12" height="3" fill="#15803d" />
+      {/* Glowing Neon Gamepad Body */}
+      <path 
+        d="M10 18 C10 12 38 12 38 18 C41 24 43 36 38 40 C34 43 30 36 28 32 L20 32 C18 36 14 43 10 40 C5 36 7 24 10 18 Z" 
+        fill="#14532d" 
+        stroke="#22c55e" 
+        strokeWidth="2" 
+        strokeLinejoin="round" 
+      />
+      {/* D-Pad */}
+      <rect x="14" y="22" width="6" height="2" fill="#55ff55" />
+      <rect x="16" y="20" width="2" height="6" fill="#55ff55" />
+      {/* Action Buttons */}
+      <circle cx="31" cy="21" r="1.5" fill="#facc15" />
+      <circle cx="34" cy="24" r="1.5" fill="#ef4444" />
+      <circle cx="28" cy="24" r="1.5" fill="#38bdf8" />
+      <circle cx="31" cy="27" r="1.5" fill="#55ff55" />
+
+      {/* Animated Glowing Play Triangle */}
+      <g className="anim-pulse-play">
+        <polygon points="21,18 29,23 21,28" fill="#ffffff" stroke="#166534" strokeWidth="1" />
+      </g>
     </svg>
   );
 }
 
-// 4. 🗿 MINECRAFT ARMOR STAND
-export function ArmorStandIcon({ size = 48, className = "" }) {
+// 4. 🌀 BUILD ARCHIVE (Ancient Nether Portal Vault & Swirling Runes)
+export function CsArchiveVaultIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-portal ${className}`}
     >
-      {/* Stone Smooth Slab Base */}
-      <rect x="2" y="14" width="12" height="2" fill="#52525b" />
-      <rect x="3" y="14" width="10" height="1" fill="#71717a" />
-      {/* Wooden Legs */}
-      <rect x="5" y="9" width="1" height="5" fill="#b45309" />
-      <rect x="10" y="9" width="1" height="5" fill="#b45309" />
-      {/* Hip Bar */}
-      <rect x="4" y="8" width="8" height="1" fill="#d97706" />
-      {/* Torso Sticks */}
-      <rect x="6" y="4" width="1" height="4" fill="#b45309" />
-      <rect x="9" y="4" width="1" height="4" fill="#b45309" />
-      {/* Shoulders Bar */}
-      <rect x="3" y="3" width="10" height="1" fill="#d97706" />
-      {/* Neck Post */}
-      <rect x="7" y="1" width="2" height="2" fill="#92400e" />
+      {/* Obsidian Portal Frame */}
+      <rect x="10" y="6" width="28" height="36" rx="2" fill="#18181b" stroke="#09090b" strokeWidth="2.5" />
+      <rect x="16" y="12" width="16" height="24" fill="#3b0764" stroke="#581c87" strokeWidth="1.5" />
+
+      {/* Swirling Nether Energy Layers */}
+      <g className="anim-portal-swirl">
+        <circle cx="24" cy="24" r="8" fill="#9333ea" opacity="0.85" />
+        <rect x="20" y="16" width="8" height="16" fill="#c084fc" opacity="0.6" />
+        <rect x="16" y="20" width="16" height="8" fill="#e9d5ff" opacity="0.7" />
+        <circle cx="24" cy="24" r="3" fill="#ffffff" />
+      </g>
+
+      {/* Obsidian Corner Highlights */}
+      <rect x="10" y="6" width="6" height="6" fill="#27272a" />
+      <rect x="32" y="6" width="6" height="6" fill="#27272a" />
     </svg>
   );
 }
 
-// 5. 🎭 MINECRAFT PLAYER HEAD (3D Isometric Steve / Wither Head)
-export function PlayerHeadIcon({ size = 48, className = "" }) {
+// 5. 👑 CRAFT STUDIO TEAM (Developer Crown & 3D Diamond Helmet)
+export function CsTeamDevIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-team ${className}`}
     >
-      {/* 3D Isometric Player Head */}
-      {/* Top Face (Hair) */}
-      <polygon points="8,1 14,4 8,7 2,4" fill="#451a03" />
-      {/* Left Face (Shadowed Skin) */}
-      <polygon points="2,4 8,7 8,14 2,11" fill="#9a6540" />
-      {/* Right Face (Lit Skin) */}
-      <polygon points="8,7 14,4 14,11 8,14" fill="#c48a5e" />
-      {/* Steve Face Details on Right Face */}
-      {/* Front Hair */}
-      <polygon points="8,7 14,4 14,6 8,9" fill="#381804" />
-      {/* Blue Eyes */}
-      <rect x="10" y="7" width="2" height="1" fill="#2563eb" transform="skewY(-15)" />
-      <rect x="10" y="7" width="1" height="1" fill="#ffffff" transform="skewY(-15)" />
-      {/* Beard / Mouth */}
-      <rect x="10" y="10" width="2" height="1" fill="#582a12" transform="skewY(-15)" />
+      {/* 3D Diamond Helmet Face */}
+      <polygon points="24,8 40,16 24,24 8,16" fill="#38bdf8" stroke="#0369a1" strokeWidth="2" />
+      <polygon points="8,16 24,24 24,40 8,32" fill="#0284c7" stroke="#0369a1" strokeWidth="2" />
+      <polygon points="24,24 40,16 40,32 24,40" fill="#0ea5e9" stroke="#0369a1" strokeWidth="2" />
+
+      {/* Eye Slits */}
+      <rect x="14" y="22" width="6" height="3" fill="#082f49" />
+      <rect x="28" y="22" width="6" height="3" fill="#082f49" />
+      <rect x="16" y="23" width="2" height="1" fill="#bae6fd" />
+      <rect x="30" y="23" width="2" height="1" fill="#bae6fd" />
+
+      {/* Animated Floating Founder Crown */}
+      <g className="anim-crown-float">
+        <polygon points="16,6 18,2 24,5 30,2 32,6" fill="#fbbf24" stroke="#78350f" strokeWidth="1.5" />
+        <circle cx="24" cy="4" r="1.5" fill="#ef4444" />
+      </g>
     </svg>
   );
 }
 
-// 6. 🧥 MINECRAFT CAPE (Elytra / Custom Java Cape)
-export function CapeIcon({ size = 48, className = "" }) {
+// 6. ⚖️ LEGAL & GPLV3 NOTICE (Diamond Shield with GNU Scales of Justice)
+export function CsGplShieldIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-shield ${className}`}
     >
-      {/* Cape Gold Clasp */}
-      <rect x="6" y="1" width="4" height="1" fill="#f59e0b" />
-      {/* Cape Main Fabric */}
-      <rect x="4" y="2" width="8" height="13" fill="#6b21a8" />
-      <rect x="5" y="3" width="6" height="11" fill="#9333ea" />
-      {/* Minecraft Mojang / Founder Star Emblem */}
-      <rect x="6" y="4" width="4" height="4" fill="#e9d5ff" />
-      <rect x="7" y="3" width="2" height="6" fill="#f5f3ff" />
-      <rect x="5" y="5" width="6" height="2" fill="#f5f3ff" />
-      {/* Cape Bottom Gold Trim */}
-      <rect x="4" y="13" width="8" height="2" fill="#581c87" />
-      <rect x="5" y="14" width="2" height="1" fill="#facc15" />
-      <rect x="9" y="14" width="2" height="1" fill="#facc15" />
+      {/* Heavy 3D Diamond Shield */}
+      <path 
+        d="M8 8 L40 8 L40 26 C40 36 24 44 24 44 C24 44 8 36 8 26 Z" 
+        fill="#991b1b" 
+        stroke="#450a0a" 
+        strokeWidth="2.5" 
+        strokeLinejoin="round" 
+      />
+      <path 
+        d="M12 12 L36 12 L36 25 C36 33 24 39 24 39 C24 39 12 33 12 25 Z" 
+        fill="#dc2626" 
+      />
+
+      {/* GPL Scales of Justice Emblem */}
+      <g className="anim-shield-shine">
+        <line x1="24" y1="16" x2="24" y2="32" stroke="#fef08a" strokeWidth="2" strokeLinecap="round" />
+        <line x1="16" y1="20" x2="32" y2="20" stroke="#fef08a" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="16" cy="24" r="3" fill="#facc15" stroke="#78350f" strokeWidth="1" />
+        <circle cx="32" cy="24" r="3" fill="#facc15" stroke="#78350f" strokeWidth="1" />
+      </g>
     </svg>
   );
 }
 
-// 7. 📦 MINECRAFT CHEST / APK PACKAGE (Download Build Box)
-export function ApkPackageIcon({ size = 48, className = "" }) {
+// 7. ⚡ RAM & SETUP OPTIMIZATION (Turbo Memory Chipset & FPS Speedometer)
+export function CsRamSetupIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-ram ${className}`}
     >
-      {/* 3D Gold / Wood Chest */}
-      {/* Top Lid */}
-      <polygon points="8,1 14,4 8,7 2,4" fill="#eab308" />
-      {/* Left Wall */}
-      <polygon points="2,4 8,7 8,14 2,11" fill="#a16207" />
-      {/* Right Wall */}
-      <polygon points="8,7 14,4 14,11 8,14" fill="#ca8a04" />
-      {/* Iron Lock Clasp */}
-      <rect x="7" y="6" width="2" height="3" fill="#fef08a" stroke="#000" strokeWidth="0.4" />
-      {/* Green Android Antennas */}
-      <line x1="5" y1="2" x2="3" y2="0" stroke="#22c55e" strokeWidth="1" strokeLinecap="square" />
-      <line x1="11" y1="2" x2="13" y2="0" stroke="#22c55e" strokeWidth="1" strokeLinecap="square" />
+      {/* RAM Motherboard Chipset */}
+      <rect x="8" y="10" width="32" height="28" rx="3" fill="#7c2d12" stroke="#431407" strokeWidth="2" />
+      <rect x="14" y="16" width="20" height="16" rx="1" fill="#ea580c" stroke="#9a3412" strokeWidth="1.5" />
+
+      {/* Gold Connectors */}
+      <rect x="11" y="38" width="4" height="4" fill="#fbbf24" />
+      <rect x="18" y="38" width="4" height="4" fill="#fbbf24" />
+      <rect x="25" y="38" width="4" height="4" fill="#fbbf24" />
+      <rect x="32" y="38" width="4" height="4" fill="#fbbf24" />
+
+      {/* Animated Turbo Lightning Bolt */}
+      <g className="anim-bolt-spark">
+        <polygon points="26,14 18,24 23,24 20,32 30,22 25,22" fill="#fef08a" stroke="#d97706" strokeWidth="1" />
+      </g>
     </svg>
   );
 }
 
-// 8. 🛡️ MINECRAFT SHIELD (GPLv3 Open Source Defense)
-export function ShieldGplIcon({ size = 48, className = "" }) {
+// 8. 🛡️ COMMUNITY SUPPORT & FAQS (Magic Totem with Heartbeat & Fluttering Wings)
+export function CsSupportTotemIcon({ size = 44, className = "" }) {
   return (
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 16 16" 
-      className={`mc-pixel-svg ${className}`}
-      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+      viewBox="0 0 48 48" 
+      fill="none" 
+      className={`cs-icon cs-icon-totem ${className}`}
     >
-      {/* Shield Iron Border */}
-      <polygon points="3,1 13,1 13,10 8,15 3,10" fill="#475569" />
-      {/* Shield Wooden Face */}
-      <polygon points="4,2 12,2 12,9 8,13 4,9" fill="#92400e" />
-      <rect x="5" y="3" width="6" height="6" fill="#b45309" />
-      {/* Shield Center Iron Boss */}
-      <circle cx="8" cy="6" r="1.8" fill="#e2e8f0" />
-      <rect x="7.5" y="5.5" width="1" height="1" fill="#ffffff" />
+      {/* Animated Wing Flap */}
+      <g className="anim-totem-wings">
+        <polygon points="4,16 16,20 16,28 4,22" fill="#0d9488" stroke="#042f2e" strokeWidth="1.5" />
+        <polygon points="44,16 32,20 32,28 44,22" fill="#0d9488" stroke="#042f2e" strokeWidth="1.5" />
+      </g>
+
+      {/* Totem Golden Body */}
+      <rect x="16" y="8" width="16" height="14" rx="2" fill="#facc15" stroke="#78350f" strokeWidth="2" />
+      <rect x="18" y="10" width="12" height="10" fill="#fef08a" />
+      <rect x="16" y="24" width="16" height="16" rx="2" fill="#eab308" stroke="#78350f" strokeWidth="2" />
+      <rect x="19" y="27" width="10" height="10" fill="#fde047" />
+
+      {/* Emerald Eyes */}
+      <g className="anim-totem-eyes">
+        <rect x="18" y="13" width="3" height="3" fill="#22c55e" />
+        <rect x="27" y="13" width="3" height="3" fill="#22c55e" />
+        <rect x="19" y="13" width="1" height="1" fill="#fff" />
+        <rect x="28" y="13" width="1" height="1" fill="#fff" />
+      </g>
     </svg>
   );
 }
