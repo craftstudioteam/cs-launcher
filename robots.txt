@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Direct Sitemaps for Google & Bing Indexing
-Sitemap: https://craftstudioteam.github.io/cs-launcher/sitemap.xml
+Sitemap: https://craftstudioteam.github.io/sitemap.xml
