@@ -1,29 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Sparkles, Image, Zap, X, Video, Archive, Palette, Github } from 'lucide-react';
+import { Download, Sparkles, Image, Zap, X, Video, Archive, Palette, ShieldCheck, Users, HelpCircle } from 'lucide-react';
 import AdBanner from './AdBanner';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
   const [lightboxImg, setLightboxImg] = useState(null);
-  const [typedText, setTypedText] = useState('');
 
   const currentVer = activeVersion || 'v3';
-  const fullStatusText = `CS LAUNCHER ${currentVer.toUpperCase()} OFFICIAL`;
   const count = liveDownloadCount || 4091;
-
-  useEffect(() => {
-    let index = 0;
-    setTypedText('');
-    const timer = setInterval(() => {
-      if (index <= fullStatusText.length) {
-        setTypedText(fullStatusText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 45);
-
-    return () => clearInterval(timer);
-  }, [currentVer, fullStatusText]);
 
   const screenshots = branding.screenshots && Array.isArray(branding.screenshots) && branding.screenshots.length > 0
     ? branding.screenshots
@@ -32,83 +15,105 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
   return (
     <div className="tab-transition-wrapper">
 
-      {/* 🎮 100% RESPONSIVE MINECRAFT HERO CARD */}
-      <div className="hero-card-container">
-        <div className="hero-status-tag">
-          <span className="status-dot"></span>
-          <span>{typedText || fullStatusText}</span>
+      {/* 🕹️ MCTOOLS RETRO HERO BOX */}
+      <div className="mctools-hero-box">
+        <div className="mctools-title-frame">
+          <div className="mctools-title-text">CSLauncher</div>
         </div>
 
-        <h1 className="hero-main-title">
-          MINECRAFT JAVA <span>ON MOBILE</span>
-        </h1>
-
-        <p className="hero-desc-text">
-          {hero.subtitle || "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, cleaner UI, and enhanced Minecraft Java experience on Android."}
-        </p>
-
-        {/* Structured Minecraft 3D Buttons Stack (Zero Overflow Guarantee) */}
-        <div className="hero-buttons-stack">
-          <button 
-            className="btn-mc-green-3d" 
-            onClick={() => onDownload(null, currentVer)}
-          >
-            <Download size={18} />
-            <span>DOWNLOAD V3 (185.8 MB)</span>
-          </button>
-
-          <div className="hero-sub-buttons-grid">
-            <button 
-              className="btn-mc-3d" 
-              onClick={() => onNavigate('features')}
-            >
-              <Sparkles size={14} />
-              <span>FEATURES</span>
-            </button>
-
-            <button 
-              className="btn-mc-3d" 
-              onClick={() => onNavigate('videos')}
-            >
-              <Video size={14} />
-              <span>VIDEOS</span>
-            </button>
-
-            <button 
-              className="btn-mc-3d" 
-              onClick={() => onNavigate('download')}
-            >
-              <Archive size={14} />
-              <span>BUILDS</span>
-            </button>
+        <div>
+          <div className="mctools-subtitle-pill">
+            MINECRAFT JAVA ON ANDROID
           </div>
         </div>
 
-        {/* Minecraft Pixel Feature Badges */}
-        <div className="hero-feature-tags-strip">
-          <span className="hero-feature-chip">⚡ 60+ FPS ENGINE</span>
-          <span className="hero-feature-chip">🎨 SKIN & CAPE</span>
-          <span className="hero-feature-chip">📱 ANDROID 7.0+</span>
+        {/* 🟢 Big 3D Green Download Button */}
+        <button 
+          className="btn-mc-green-3d" 
+          onClick={() => onDownload(null, currentVer)}
+        >
+          <Download size={18} />
+          <span>DOWNLOAD APK ({currentVer.toUpperCase()})</span>
+        </button>
+
+        {/* Status Tag */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '0.66rem', color: 'var(--mc-green)', background: '#0a0a14', padding: '3px 8px', border: '1px solid #000' }}>
+            ● V3 OFFICIAL RELEASE
+          </span>
+          <span style={{ fontSize: '0.66rem', color: 'var(--mc-gold)', background: '#0a0a14', padding: '3px 8px', border: '1px solid #000' }}>
+            {count.toLocaleString()}+ DOWNLOADS
+          </span>
         </div>
       </div>
 
-      {/* 📊 LIVE MINECRAFT STATS STRIP (No Overflow) */}
-      <div className="stats-bar-grid">
-        <div className="stat-box">
-          <div className="stat-number">
-            {count.toLocaleString()}+
+      {/* 🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MCTOOLS STYLE) */}
+      <div className="mctools-section-header">
+        <span>QUICK LAUNCHER HUB</span>
+      </div>
+
+      <div className="mctools-grid-2col">
+        {/* Card 1: Download V3 */}
+        <div className="mctools-card stripe-yellow" onClick={() => onDownload(null, currentVer)}>
+          <span className="mctools-card-badge">V3</span>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Download size={20} color="#FFAA00" />
+            </div>
           </div>
-          <div className="stat-label">
-            V3 DOWNLOADS
+          <div className="mctools-card-title">Download APK</div>
+        </div>
+
+        {/* Card 2: Skin & Cape */}
+        <div className="mctools-card stripe-purple" onClick={() => onNavigate('features')}>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#fff' }}>HOT</span>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Palette size={20} color="#B388FF" />
+            </div>
           </div>
+          <div className="mctools-card-title">Skin & Cape</div>
         </div>
-        <div className="stat-box">
-          <div className="stat-number">ANDROID 7+</div>
-          <div className="stat-label">COMPATIBILITY</div>
+
+        {/* Card 3: Video Tutorials */}
+        <div className="mctools-card stripe-green" onClick={() => onNavigate('videos')}>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-green)' }}>HD</span>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Video size={20} color="#55FF55" />
+            </div>
+          </div>
+          <div className="mctools-card-title">Video Guides</div>
         </div>
-        <div className="stat-box">
-          <div className="stat-number" style={{ color: 'var(--mc-text-green)' }}>100% FREE</div>
-          <div className="stat-label">OPEN SOURCE</div>
+
+        {/* Card 4: Archive Builds */}
+        <div className="mctools-card stripe-cyan" onClick={() => onNavigate('download')}>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Archive size={20} color="#55FFFF" />
+            </div>
+          </div>
+          <div className="mctools-card-title">Old Builds</div>
+        </div>
+
+        {/* Card 5: Team */}
+        <div className="mctools-card stripe-yellow" onClick={() => onNavigate('team')}>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Users size={20} color="#FFAA00" />
+            </div>
+          </div>
+          <div className="mctools-card-title">Craft Team</div>
+        </div>
+
+        {/* Card 6: Legal */}
+        <div className="mctools-card stripe-red" onClick={() => onNavigate('notice')}>
+          <div className="mctools-card-icon">
+            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <ShieldCheck size={20} color="#FF5555" />
+            </div>
+          </div>
+          <div className="mctools-card-title">Legal & GPL</div>
         </div>
       </div>
 
@@ -119,11 +124,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {screenshots.length > 0 && (
         <div className="app-card">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, fontSize: '0.9rem', color: 'var(--mc-text-yellow)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.88rem', color: 'var(--mc-yellow)' }}>
               <Image size={15} />
               <span>SCREENSHOTS</span>
             </div>
-            <span style={{ fontSize: '0.6rem', color: 'var(--mc-text-grey)' }}>TAP TO PREVIEW</span>
+            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>TAP TO PREVIEW</span>
           </div>
           <div className="gallery-scroll-container">
             {screenshots.map((url, idx) => (
@@ -139,44 +144,15 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </div>
       )}
 
-      {/* ⚡ CORE CAPABILITIES (HIGH-TECH CARDS) */}
-      <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 12, fontWeight: 700, fontSize: '0.9rem', color: 'var(--mc-text-yellow)' }}>
-          <Zap size={15} />
-          <span>LAUNCHER HIGHLIGHTS</span>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
-          <div className="app-card-elevated" style={{ padding: 14 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-yellow)', fontSize: '0.85rem' }}>
-              <Zap size={15} color="#FFFF55" />
-              <span>MAXIMUM FPS BOOST</span>
-            </div>
-            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.5 }}>
-              Custom rendering pipeline tuned for maximum frames per second on mobile GPUs.
-            </div>
-          </div>
-
-          <div className="app-card-elevated" style={{ padding: 14 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-gold)', fontSize: '0.85rem' }}>
-              <Palette size={15} color="#FFAA00" />
-              <span>SKIN & CAPE CHANGER</span>
-            </div>
-            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.5 }}>
-              Dynamic custom skin and HD cape applicator for offline and online Minecraft Java accounts.
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* 💬 COMMUNITY DISCORD CARD */}
       {discordUrl && (
         <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
-          <div style={{ minWidth: 180, flex: 1 }}>
-            <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>
+          <div>
+            <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
               JOIN DISCORD COMMUNITY
             </div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)', marginTop: 2 }}>
-              Get instant support, updates, and setup guides
+            <div style={{ fontSize: '0.68rem', color: 'var(--mc-grey)', marginTop: 2 }}>
+              Get instant setup help & updates
             </div>
           </div>
 
