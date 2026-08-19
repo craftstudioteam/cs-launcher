@@ -32,7 +32,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
   return (
     <div className="tab-transition-wrapper">
 
-      {/* 🎮 HERO SHOWCASE CONSOLE (ZERO OVERLAP) */}
+      {/* 🎮 100% MINECRAFT 3D HERO CARD */}
       <div className="hero-card-container">
         <div className="hero-status-tag">
           <span className="status-dot"></span>
@@ -44,72 +44,71 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </h1>
 
         <p className="hero-desc-text">
-          {hero.subtitle || "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, cleaner UI, and enhanced Minecraft Java experience on Android."}
+          {hero.subtitle || "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, and enhanced Minecraft Java experience on Android."}
         </p>
 
-        {/* Structured Buttons Stack */}
+        {/* Structured Minecraft 3D Buttons Stack */}
         <div className="hero-buttons-stack">
           <button 
-            className="btn-hero-primary-download" 
+            className="btn-mc-green-3d" 
             onClick={() => onDownload(null, currentVer)}
           >
-            <Download size={20} strokeWidth={2.5} />
-            <span>Download CS Launcher ({currentVer})</span>
+            <Download size={18} />
+            <span>DOWNLOAD CS LAUNCHER ({currentVer.toUpperCase()})</span>
           </button>
 
           <div className="hero-sub-buttons-grid">
             <button 
-              className="btn-hero-sub-action" 
+              className="btn-mc-3d" 
               onClick={() => onNavigate('features')}
             >
-              <Sparkles size={15} />
-              <span>Features</span>
+              <Sparkles size={14} />
+              <span>FEATURES</span>
             </button>
 
             <button 
-              className="btn-hero-sub-action" 
+              className="btn-mc-3d" 
               onClick={() => onNavigate('videos')}
             >
-              <Video size={15} />
-              <span>Videos</span>
+              <Video size={14} />
+              <span>VIDEOS</span>
             </button>
 
             <button 
-              className="btn-hero-sub-action" 
+              className="btn-mc-3d" 
               onClick={() => onNavigate('download')}
             >
-              <Archive size={15} />
-              <span>Versions</span>
+              <Archive size={14} />
+              <span>BUILDS</span>
             </button>
           </div>
         </div>
 
-        {/* Feature Badges Strip */}
+        {/* Minecraft Pixel Feature Badges */}
         <div className="hero-feature-tags-strip">
-          <span className="hero-feature-chip">⚡ 60+ FPS Engine</span>
-          <span className="hero-feature-chip">🎨 Skin & Cape</span>
-          <span className="hero-feature-chip">📱 Android 7.0+</span>
+          <span className="hero-feature-chip">⚡ 60+ FPS ENGINE</span>
+          <span className="hero-feature-chip">🎨 SKIN & CAPE</span>
+          <span className="hero-feature-chip">📱 ANDROID 7.0+</span>
         </div>
       </div>
 
-      {/* 📊 LIVE STATS STRIP (AUTOMATIC LIVE DOWNLOAD COUNTER) */}
+      {/* 📊 LIVE MINECRAFT STATS STRIP */}
       <div className="stats-bar-grid">
         <div className="stat-box">
-          <div className="stat-number" style={{ color: 'var(--text-white)' }}>
+          <div className="stat-number">
             {count.toLocaleString()}+
           </div>
-          <div className="stat-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
-            <Github size={11} />
-            <span>V3 APK Downloads</span>
+          <div className="stat-label">
+            V3 DOWNLOADS
           </div>
         </div>
         <div className="stat-box">
-          <div className="stat-number">Android 7+</div>
-          <div className="stat-label">Compatibility</div>
+          <div className="stat-number">ANDROID 7+</div>
+          <div className="stat-label">COMPATIBILITY</div>
         </div>
         <div className="stat-box">
-          <div className="stat-number" style={{ color: 'var(--accent-emerald)' }}>100% Free</div>
-          <div className="stat-label">Open Source</div>
+          <div className="stat-number" style={{ color: 'var(--mc-text-green)' }}>100% FREE</div>
+          <div className="stat-label">OPEN SOURCE</div>
         </div>
       </div>
 
@@ -120,11 +119,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {screenshots.length > 0 && (
         <div className="app-card">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontSize: '1.05rem', fontFamily: 'Space Grotesk' }}>
-              <Image size={18} />
-              <span>Launcher Screenshots</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, fontSize: '0.95rem', color: 'var(--mc-text-yellow)' }}>
+              <Image size={16} />
+              <span>LAUNCHER SCREENSHOTS</span>
             </div>
-            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Tap to preview</span>
+            <span style={{ fontSize: '0.62rem', color: 'var(--mc-text-grey)' }}>TAP TO PREVIEW</span>
           </div>
           <div className="gallery-scroll-container">
             {screenshots.map((url, idx) => (
@@ -140,33 +139,29 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </div>
       )}
 
-      {/* ⚡ CORE CAPABILITIES (2 AUTHENTIC CARDS) */}
+      {/* ⚡ CORE CAPABILITIES (MINECRAFT 3D CARDS) */}
       <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14, fontWeight: 800, fontSize: '1.05rem', fontFamily: 'Space Grotesk' }}>
-          <Zap size={18} />
-          <span>Core Capabilities</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14, fontWeight: 700, fontSize: '0.95rem', color: 'var(--mc-text-yellow)' }}>
+          <Zap size={16} />
+          <span>LAUNCHER HIGHLIGHTS</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
-          <div style={{ background: 'var(--bg-card-elevated)', padding: 16, borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, marginBottom: 6, fontFamily: 'Space Grotesk' }}>
-              <div style={{ width: 28, height: 28, borderRadius: 'var(--radius-xs)', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Zap size={16} color="#ffffff" />
-              </div>
-              <span>Maximum FPS Boost</span>
+          <div className="app-card-elevated" style={{ padding: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-yellow)', fontSize: '0.85rem' }}>
+              <Zap size={16} color="#FFFF55" />
+              <span>MAXIMUM FPS BOOST</span>
             </div>
-            <div style={{ fontSize: '0.84rem', color: 'var(--text-grey)', lineHeight: 1.5 }}>
+            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.55 }}>
               Custom rendering pipeline tuned for maximum frames per second on mobile GPUs.
             </div>
           </div>
 
-          <div style={{ background: 'var(--bg-card-elevated)', padding: 16, borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, marginBottom: 6, fontFamily: 'Space Grotesk' }}>
-              <div style={{ width: 28, height: 28, borderRadius: 'var(--radius-xs)', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Palette size={16} color="#F59E0B" />
-              </div>
-              <span>Skin & Cape Changer</span>
+          <div className="app-card-elevated" style={{ padding: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-gold)', fontSize: '0.85rem' }}>
+              <Palette size={16} color="#FFAA00" />
+              <span>SKIN & CAPE CHANGER</span>
             </div>
-            <div style={{ fontSize: '0.84rem', color: 'var(--text-grey)', lineHeight: 1.5 }}>
+            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.55 }}>
               Dynamic custom skin and HD cape applicator for offline and online Minecraft Java accounts.
             </div>
           </div>
@@ -177,11 +172,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {discordUrl && (
         <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div>
-            <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.02rem', fontWeight: 800, color: 'var(--text-white)' }}>
-              Join CS Launcher Community
+            <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>
+              JOIN CS LAUNCHER DISCORD
             </div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--text-grey)', marginTop: 2 }}>
-              Get instant support, updates, and setup guides on Discord
+            <div style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)', marginTop: 4 }}>
+              Get instant support, updates, and setup guides
             </div>
           </div>
 
@@ -189,10 +184,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             href={discordUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-primary-action"
-            style={{ textDecoration: 'none', padding: '10px 20px', fontSize: '0.84rem' }}
+            className="btn-mc-3d"
+            style={{ fontSize: '0.74rem', padding: '8px 16px' }}
           >
-            <span>Join Discord ↗</span>
+            <span>JOIN DISCORD ↗</span>
           </a>
         </div>
       )}
@@ -213,7 +208,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             <img 
               src={lightboxImg} 
               alt="Expanded Preview" 
-              style={{ width: '100%', height: '100%', maxHeight: '80vh', objectFit: 'contain', borderRadius: 'var(--radius-lg)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }} 
+              style={{ width: '100%', height: '100%', maxHeight: '80vh', objectFit: 'contain', border: '3px solid #000', boxShadow: '0 20px 50px rgba(0,0,0,0.9)' }} 
             />
           </div>
         </div>

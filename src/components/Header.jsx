@@ -8,7 +8,6 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
   const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim().toUpperCase() || "CS LAUNCHER";
   const ver = activeVersion || "v3";
 
-  // Clean URL generation (Zero Hashtags)
   const getPageUrl = () => {
     const base = window.location.origin;
     return activeTab === 'home' ? `${base}/` : `${base}/${activeTab}`;
@@ -21,7 +20,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
     if (navigator.share) {
       navigator.share({
         title: `${cleanName} — ${tabName}`,
-        text: `Check out ${cleanName} (${ver}) on Android!`,
+        text: `Download ${cleanName} (${ver}) on Android!`,
         url: pageUrl
       }).catch(() => {});
     } else {
@@ -38,7 +37,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
           <div className="brand-icon-box">
             <img 
               src={branding.logoImage || branding.logoUrl || "https://i.ibb.co/jv7ZS03W/favicon.png"} 
-              alt="CS Launcher Logo" 
+              alt="CS Logo" 
             />
           </div>
           <div>
@@ -57,14 +56,13 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
             className="social-icon-btn" 
             onClick={handleShare} 
             title={`Copy Direct Link to ${activeTab || 'page'}`}
-            style={{ width: 36, height: 36, position: 'relative' }}
           >
-            {copied ? <Check size={16} color="#10B981" /> : <Share2 size={16} />}
+            {copied ? <Check size={16} color="#55FF55" /> : <Share2 size={16} />}
           </button>
           
-          <button className="header-btn-primary" onClick={() => onNavigate('download')}>
-            <Download size={15} />
-            <span>Get APK</span>
+          <button className="btn-mc-3d" style={{ padding: '8px 14px', fontSize: '0.74rem' }} onClick={() => onNavigate('download')}>
+            <Download size={14} />
+            <span>GET APK</span>
           </button>
         </div>
       </div>
