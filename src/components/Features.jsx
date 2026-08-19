@@ -28,16 +28,14 @@ export default function Features({ features }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: 16 }}>
           {featureList.map((item) => (
             <div key={item.id} className="app-card" style={{ padding: 0, overflow: 'hidden' }}>
-              {item.imageUrl && (
-                <div style={{ width: '100%', height: 200, background: '#09071c', borderBottom: '2px solid #000', overflow: 'hidden' }}>
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title || 'Feature'} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                    loading="lazy" 
-                  />
-                </div>
-              )}
+              <div style={{ width: '100%', height: 210, background: '#09071c', borderBottom: '2px solid #000', overflow: 'hidden' }}>
+                <img 
+                  src={item.imageUrl || "https://i.ibb.co/spqkyRXb/skin-and-Cap.jpg"} 
+                  alt={item.title || 'Feature'} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  loading="lazy" 
+                />
+              </div>
               <div style={{ padding: 18 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                   <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

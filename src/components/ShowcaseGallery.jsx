@@ -1,31 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, X, Image as ImageIcon } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const SCREENSHOTS_DATA = [
   {
-    url: "https://i.ibb.co/6zh10Ph/333231.jpg",
-    title: "60 FPS Java Gameplay",
-    icon: "🎮"
-  },
-  {
-    url: "https://i.ibb.co/tTF5F3JL/333232.jpg",
-    title: "Custom Capes & Skins",
+    url: "https://i.ibb.co/spqkyRXb/skin-and-Cap.jpg",
+    title: "Skin & Cape Changer",
+    subtitle: "Custom Java Skin & HD Cape System",
     icon: "🎨"
   },
   {
-    url: "https://i.ibb.co/M5VMw9qf/333233.jpg",
-    title: "Custom Touch Controls",
-    icon: "🕹️"
+    url: "https://i.ibb.co/20dMMmQJ/In-game-mod-eresource-pack-shades-download.jpg",
+    title: "Mod & Shaders Downloader",
+    subtitle: "In-Game Mods, Resource Packs & Shaders",
+    icon: "📦"
   },
   {
-    url: "https://i.ibb.co/CKFjXs1x/333234.jpg",
-    title: "Java 1.21.x Profiles",
-    icon: "⚡"
-  },
-  {
-    url: "https://i.ibb.co/qLHHH4sh/333235.jpg",
-    title: "RAM & Shaders Optimizer",
-    icon: "🚀"
+    url: "https://i.ibb.co/BDP6t2f/homescreen.jpg",
+    title: "CS Launcher Home UI",
+    subtitle: "Modern Launcher Home Screen & Profiles",
+    icon: "📱"
   }
 ];
 
@@ -60,8 +53,8 @@ export default function ShowcaseGallery() {
       {/* Gallery Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.9rem', color: 'var(--mc-yellow)' }}>
-          <span style={{ fontSize: '1rem' }}>🖼️</span>
-          <span>Gallery</span>
+          <span style={{ fontSize: '1.05rem' }}>🖼️</span>
+          <span>Official Gallery</span>
         </div>
         <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>
           {currIndex + 1} of {total} • Auto Slide
@@ -107,7 +100,10 @@ export default function ShowcaseGallery() {
                   {/* Caption Bar */}
                   <div className="sc-caption-bar">
                     <span className="sc-caption-icon">{item.icon}</span>
-                    <span className="sc-caption-name">{item.title}</span>
+                    <div>
+                      <div className="sc-caption-name">{item.title}</div>
+                      <div style={{ fontSize: '0.58rem', color: 'var(--mc-grey)', marginTop: 1 }}>{item.subtitle}</div>
+                    </div>
                   </div>
                 </div>
               </div>
