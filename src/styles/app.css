@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700;800;900&display=swap');
 
 /* ══════════════════════════════════════════════════════════════════════
-   CS LAUNCHER — ZERO-LAG HIGH PERFORMANCE GAMING UI
-   Clean Space Grotesk Typography • 0% CPU Load • Instant 60/120 FPS
-   Clean Normal Case • Zero Lag • Blue Text Selection Highlight
+   CS LAUNCHER — OFFICIAL MOJANGLES MINECRAFT GAMING UI
+   Mojangles Font • Normal Case Typography (NO ALL-CAPS) • Zero Lag
+   GPU-Accelerated Parallax Clouds • Native Blue Long-Press Highlight
    ══════════════════════════════════════════════════════════════════════ */
 
 @font-face {
@@ -14,15 +14,14 @@
 }
 
 :root {
-  --font-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-pixel: 'Mojangles', 'Press Start 2P', monospace;
+  --mc-font: 'Mojangles', monospace;
 
   /* Deep Gaming Sky Palette */
   --sky-a: #0c0a1f;
   --sky-b: #141032;
   --sky-c: #1c1644;
 
-  /* Card Surfaces (Solid for Zero Lag) */
+  /* Solid Surfaces (Zero Lag) */
   --panel-bg: #161234;
   --panel-border: #2c2460;
   --panel-hi: #3c3280;
@@ -46,7 +45,7 @@
   --mc-white: #ffffff;
   --mc-grey: #a09cc0;
 
-  --header-height: 62px;
+  --header-height: 60px;
   --bottom-nav-height: 66px;
 }
 
@@ -55,31 +54,36 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  font-family: var(--mc-font) !important;
+  text-transform: none !important; /* STRICTLY NO ALL-CAPS */
 }
 
 /* 📱 NATIVE MOBILE BLUE TEXT-SELECTION HIGHLIGHT */
 ::selection {
-  background: rgba(41, 121, 255, 0.45);
+  background: rgba(33, 150, 243, 0.45);
   color: #ffffff;
+  text-shadow: 1px 1px 0 #000;
 }
 
 ::-moz-selection {
-  background: rgba(41, 121, 255, 0.45);
+  background: rgba(33, 150, 243, 0.45);
   color: #ffffff;
+  text-shadow: 1px 1px 0 #000;
 }
 
 html {
-  font-family: var(--font-main);
+  font-family: var(--mc-font);
   background-color: var(--sky-a);
   color: var(--mc-white);
-  font-size: 15px;
+  font-size: 14px;
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  text-shadow: 1px 1px 0px #000000;
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--mc-font);
   min-height: 100vh;
   min-height: 100dvh;
   width: 100%;
@@ -87,13 +91,13 @@ body {
   background-color: var(--sky-a);
   position: relative;
   overflow-x: hidden;
-  line-height: 1.55;
+  line-height: 1.5;
   padding-bottom: calc(var(--bottom-nav-height) + 24px);
   -webkit-font-smoothing: antialiased;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   🌌 ZERO-LAG PURE CSS SKY & STARS ENGINE
+   ☁️ OPTIMIZED HARDWARE-ACCELERATED CLOUDS & SKY ENGINE (ZERO LAG)
    ══════════════════════════════════════════════════════════════════════ */
 
 .mc-sky-viewport {
@@ -111,20 +115,73 @@ body {
   z-index: 0;
 }
 
-.mc-stars-static {
+/* Starfield */
+.mc-stars-container {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 60px 110px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 120px 70px, #ffff55, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 200px 180px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 280px 40px, #55ffff, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 340px 150px, #ffffff, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 380px 240px;
-  opacity: 0.6;
   z-index: 1;
+  pointer-events: none;
+}
+
+.mc-star {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.mc-star.tw {
+  animation: mcTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes mcTwinkle {
+  0% { opacity: 0.25; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 3px #ffffff; }
+  100% { opacity: 0.35; transform: scale(0.85); }
+}
+
+/* GPU-Accelerated Cloud Tracks */
+.mc-clouds-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3200px;
+  height: 200px;
+  display: flex;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.track-fast {
+  animation: mcCloudScrollFast 85s linear infinite;
+  z-index: 2;
+}
+
+.track-slow {
+  animation: mcCloudScrollSlow 135s linear infinite;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.mc-cloud-svg-strip {
+  width: 1600px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.mc-cloud-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes mcCloudScrollFast {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-1600px, 0, 0); }
+}
+
+@keyframes mcCloudScrollSlow {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-1600px, 0, 0); }
 }
 
 .mc-mountain-ridge {
@@ -133,7 +190,7 @@ body {
   left: 0;
   width: 100%;
   height: 240px;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -162,7 +219,6 @@ mark {
   border-radius: 3px;
   display: inline;
   box-shadow: 0 0 8px rgba(41, 121, 255, 0.35);
-  font-weight: 600;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -191,7 +247,7 @@ mark {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .brand-wrapper {
@@ -204,11 +260,11 @@ mark {
 }
 
 .brand-icon-box {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   background: #18143a;
   border: 2px solid #2c2460;
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,9 +279,8 @@ mark {
 }
 
 .brand-title {
-  font-family: var(--font-pixel);
-  font-size: 1.12rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--mc-gold);
   letter-spacing: 1px;
   text-shadow: 1.5px 1.5px 0 #000;
@@ -248,11 +303,10 @@ mark {
   background: none;
   border: none;
   color: var(--mc-grey);
-  font-family: var(--font-main);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.76rem;
   padding: 6px 10px;
   cursor: pointer;
+  text-shadow: 1px 1px 0 #000;
   transition: color 0.15s ease;
 }
 
@@ -264,11 +318,11 @@ mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   background: rgba(88, 101, 242, 0.15);
   border: 1px solid rgba(88, 101, 242, 0.4);
-  border-radius: 6px;
+  border-radius: 4px;
   color: #a8b5ff;
   text-decoration: none;
   transition: all 0.15s ease;
@@ -282,11 +336,11 @@ mark {
 }
 
 .social-icon-btn {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   background: #18143a;
   border: 1px solid #2c2460;
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,16 +370,15 @@ mark {
   display: inline-block;
   background: #18143a;
   border: 2px solid #2e2664;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 10px 28px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   margin-bottom: 8px;
 }
 
 .mctools-title-main {
-  font-family: var(--font-pixel);
   font-size: clamp(1.8rem, 6vw, 2.6rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
   color: var(--mc-white);
   text-shadow: 2px 2px 0 #000;
@@ -337,7 +390,7 @@ mark {
   display: inline-block;
   background: linear-gradient(180deg, #5b3daa, #3a2580);
   border: 2px solid #7b5dca;
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 5px 16px;
   margin-top: 6px;
   margin-bottom: 16px;
@@ -345,11 +398,10 @@ mark {
 }
 
 .mctools-sub-text {
-  font-family: var(--font-main);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.76rem;
   color: #ffffff;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #000;
 }
 
 .hero-actions-container {
@@ -368,7 +420,7 @@ mark {
 .showcase-carousel-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -376,7 +428,7 @@ mark {
   overflow: hidden;
   width: 100%;
   border: 2px solid #2c2460;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .gal-slider-track {
@@ -411,7 +463,7 @@ mark {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #120e2ecc;
+  background: #120e2ee6;
   padding: 10px 14px;
   display: flex;
   align-items: center;
@@ -425,10 +477,9 @@ mark {
 }
 
 .sc-caption-name {
-  font-family: var(--font-main);
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.82rem;
   color: var(--mc-yellow);
+  text-shadow: 1px 1px 0 #000;
 }
 
 .gal-nav-arrow {
@@ -436,11 +487,11 @@ mark {
   top: 50%;
   transform: translateY(-50%);
   z-index: 15;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   background: #18143aee;
   border: 1px solid #2e2664;
-  border-radius: 50%;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -469,7 +520,7 @@ mark {
   width: 8px;
   height: 8px;
   background: #2e2852;
-  border-radius: 50%;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -495,12 +546,11 @@ mark {
   gap: 10px;
   background: linear-gradient(180deg, #3c8527, #237829);
   color: var(--mc-white);
-  font-family: var(--font-pixel);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 400;
   border: 2px solid #5cad3e;
   border-bottom: 4px solid #144e0e;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
   transition: all 0.12s ease;
@@ -527,12 +577,11 @@ mark {
   padding: 8px 14px;
   background: #241c50;
   color: var(--mc-white);
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.76rem;
   border: 1px solid #3d3080;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
+  text-shadow: 1px 1px 0 #000;
   text-decoration: none;
   transition: all 0.12s ease;
 }
@@ -573,7 +622,7 @@ mark {
 .app-card {
   background: #161234;
   border: 1px solid #2a2258;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
   padding: 18px 16px;
   margin-bottom: 18px;
@@ -599,7 +648,7 @@ mark {
 .featured-release-card {
   background: #18143a;
   border: 1px solid #2e2664;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5);
   padding: 22px 16px;
   margin-bottom: 22px;
@@ -613,8 +662,7 @@ mark {
   background: #100d28;
   border: 1px solid #282054;
   border-radius: 4px;
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.68rem;
   color: var(--mc-gold);
   margin-bottom: 14px;
 }
@@ -629,10 +677,9 @@ mark {
 }
 
 .release-version-title {
-  font-family: var(--font-main);
-  font-size: 1.35rem;
-  font-weight: 800;
+  font-size: 1.25rem;
   color: var(--mc-yellow);
+  text-shadow: 1px 1px 0 #000;
 }
 
 .release-specs-grid {
@@ -641,7 +688,7 @@ mark {
   gap: 8px;
   background: #0e0b24;
   border: 1px solid #241c52;
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 12px;
   margin-bottom: 16px;
 }
@@ -652,14 +699,12 @@ mark {
 }
 
 .spec-key {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   color: var(--mc-grey);
-  font-weight: 500;
 }
 
 .spec-val {
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 0.78rem;
   color: var(--mc-white);
   margin-top: 2px;
 }
@@ -668,7 +713,7 @@ mark {
   background: #0e0b24;
   border: 1px solid #241c52;
   border-left: 4px solid var(--mc-yellow);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 12px 14px;
   margin-bottom: 20px;
 }
@@ -682,18 +727,18 @@ mark {
 }
 
 .changelog-list li {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--mc-grey);
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .changelog-list li::before {
   content: "■";
   color: var(--mc-yellow);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -703,7 +748,7 @@ mark {
 .video-card-item {
   background: #161234;
   border: 1px solid #2a2258;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s ease;
@@ -750,7 +795,7 @@ mark {
   background: #161234;
   border: 1px solid #2a2258;
   border-left: 4px solid var(--mc-gold);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 20px 14px;
   text-align: center;
   display: flex;
@@ -763,7 +808,7 @@ mark {
   height: 68px;
   background: #000;
   border: 2px solid #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 10px;
   overflow: hidden;
 }
@@ -781,7 +826,7 @@ mark {
 .accordion-item {
   background: #161234;
   border: 1px solid #2a2258;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
@@ -791,15 +836,14 @@ mark {
   background: none;
   border: none;
   color: var(--mc-white);
-  font-family: var(--font-main);
-  font-size: 0.86rem;
-  font-weight: 700;
+  font-size: 0.78rem;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   line-height: 1.4;
+  text-shadow: 1px 1px 0 #000;
 }
 
 .accordion-trigger:hover {
@@ -808,9 +852,10 @@ mark {
 
 .accordion-content {
   padding: 0 14px 14px;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   color: var(--mc-grey);
-  line-height: 1.6;
+  line-height: 1.55;
+  text-shadow: 1px 1px 0 #000;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -824,17 +869,16 @@ mark {
   transform: translateX(-50%);
   background: #1c1543;
   border: 1px solid var(--mc-gold);
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
   padding: 10px 18px;
   color: var(--mc-yellow);
-  font-family: var(--font-main);
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 0.76rem;
   display: flex;
   align-items: center;
   gap: 10px;
   z-index: 300;
+  text-shadow: 1px 1px 0 #000;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -860,9 +904,7 @@ mark {
   background: none;
   border: none;
   color: var(--mc-grey);
-  font-family: var(--font-main);
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.58rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -872,6 +914,7 @@ mark {
   flex: 1 1 0px;
   min-width: 0;
   transition: all 0.15s ease;
+  text-shadow: 1px 1px 0 #000;
 }
 
 .nav-tab-btn span {
@@ -900,6 +943,7 @@ mark {
 }
 
 .footer-credits {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--mc-grey);
+  text-shadow: 1px 1px 0 #000;
 }
