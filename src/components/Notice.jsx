@@ -17,7 +17,7 @@ export default function Notice({ branding, activeVersion }) {
         </div>
         <div>
           <div className="mctools-sub-pill">
-            <span className="mctools-sub-text">GNU GPLv3 • Bases & Attributions</span>
+            <span className="mctools-sub-text">GNU GPLv3 • PojavLauncher Attribution</span>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ export default function Notice({ branding, activeVersion }) {
       {/* Ad Banner */}
       <AdBanner slotId="notice-top" format="banner" />
 
-      {/* 1. 📌 PROJECT INFORMATION CARD */}
+      {/* 1. 📌 PROJECT INFORMATION CARD (HIGHLIGHTED) */}
       <div className="app-card" style={{ borderLeft: '5px solid var(--mc-yellow)', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -36,7 +36,7 @@ export default function Notice({ branding, activeVersion }) {
               Project Information
             </h3>
             <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
-              Official metadata & development team credits
+              Official development metadata & credentials
             </div>
           </div>
         </div>
@@ -44,95 +44,73 @@ export default function Notice({ branding, activeVersion }) {
         <div className="release-specs-grid" style={{ marginBottom: 12 }}>
           <div className="spec-item">
             <span className="spec-key">Project Name</span>
-            <span className="spec-val">CS Launcher ({ver})</span>
+            <span className="spec-val"><mark className="hl-yellow">CS Launcher ({ver})</mark></span>
           </div>
           <div className="spec-item">
             <span className="spec-key">Organization</span>
-            <span className="spec-val">Craft Studio Development Group</span>
+            <span className="spec-val"><mark className="hl-cyan">Craft Studio Development Group</mark></span>
           </div>
           <div className="spec-item">
             <span className="spec-key">Lead Developer</span>
-            <span className="spec-val">ROHIT_45</span>
+            <span className="spec-val"><mark className="hl-green">ROHIT_45</mark></span>
           </div>
           <div className="spec-item">
             <span className="spec-key">License</span>
-            <span className="spec-val" style={{ color: 'var(--mc-green)' }}>GNU GPLv3 (Open Source)</span>
+            <span className="spec-val"><mark className="hl-green">GNU GPLv3 (Open Source)</mark></span>
           </div>
         </div>
 
         <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.5, marginTop: 4 }}>
-          Copyright © 2026 Craft Studio Development Group. All Rights Reserved.
+          <mark className="hl-gold">Copyright © 2026 Craft Studio Development Group. All Rights Reserved.</mark>
         </p>
       </div>
 
-      {/* 2. 🌟 UPSTREAM OPEN SOURCE ATTRIBUTIONS (POJAVLAUNCHER & AMETHYST LAUNCHER) */}
-      <div className="app-card" style={{ borderLeft: '5px solid var(--mc-purple)', marginBottom: 16 }}>
+      {/* 2. 🌟 UPSTREAM OPEN SOURCE ATTRIBUTION (POJAVLAUNCHER EXCLUSIVE) */}
+      <div className="app-card" style={{ borderLeft: '5px solid var(--mc-cyan)', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <HeartHandshake size={22} color="var(--mc-purple)" />
+            <HeartHandshake size={22} color="var(--mc-cyan)" />
           </div>
           <div>
-            <h3 style={{ fontSize: '0.94rem', color: 'var(--mc-purple)', lineHeight: 1.3 }}>
-              Open Source Attributions & Bases
+            <h3 style={{ fontSize: '0.94rem', color: 'var(--mc-cyan)', lineHeight: 1.3 }}>
+              Open Source Attribution (PojavLauncher Base)
             </h3>
             <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
-              Built upon PojavLauncher & Amethyst Launcher foundations
+              Built upon official PojavLauncher foundations
             </div>
           </div>
         </div>
 
         <p style={{ fontSize: '0.74rem', color: 'var(--mc-white)', lineHeight: 1.6, marginBottom: 12 }}>
-          CS Launcher is built upon and contains modified source code derived from the following incredible open-source projects:
+          CS Launcher is based on and contains modified source code derived from the <mark className="hl-cyan">PojavLauncher</mark> project:
         </p>
 
         {/* PojavLauncher Attribution Box */}
         <div style={{ background: '#0e0b24', border: '2px solid #000', borderLeft: '4px solid var(--mc-cyan)', padding: '12px 14px', marginBottom: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, flexWrap: 'wrap', gap: 6 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, flexWrap: 'wrap', gap: 6 }}>
             <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--mc-cyan)' }}>
-              1. PojavLauncher Project
+              <mark className="hl-cyan">PojavLauncher Team & Contributors</mark>
             </div>
             <a 
               href="https://github.com/PojavLauncherTeam/PojavLauncher" 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ fontSize: '0.64rem', color: 'var(--mc-yellow)', display: 'inline-flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
+              style={{ fontSize: '0.66rem', color: 'var(--mc-yellow)', display: 'inline-flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
             >
-              <span>github.com/PojavLauncherTeam</span>
-              <ExternalLink size={12} />
+              <mark className="hl-gold">github.com/PojavLauncherTeam/PojavLauncher ↗</mark>
             </a>
           </div>
-          <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.55 }}>
-            CS Launcher utilizes core Java runtime bridge implementations, native rendering wrappers (GL4ES, LWJGL), and input management created by the <strong>PojavLauncher Team & Contributors</strong>, distributed under the <strong>GNU General Public License v3.0</strong>.
-          </p>
-        </div>
-
-        {/* Amethyst Launcher Attribution Box */}
-        <div style={{ background: '#0e0b24', border: '2px solid #000', borderLeft: '4px solid var(--mc-purple)', padding: '12px 14px', marginBottom: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, flexWrap: 'wrap', gap: 6 }}>
-            <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--mc-purple)' }}>
-              2. Amethyst Launcher Base
-            </div>
-            <a 
-              href="https://github.com/AmethystLauncher" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ fontSize: '0.64rem', color: 'var(--mc-yellow)', display: 'inline-flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
-            >
-              <span>github.com/AmethystLauncher</span>
-              <ExternalLink size={12} />
-            </a>
-          </div>
-          <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.55 }}>
-            CS Launcher integrates optimizations, enhancements, skin handling routines, and custom feature sets inspired by and derived from the <strong>Amethyst Launcher</strong> open-source project, distributed under the <strong>GNU General Public License v3.0</strong>.
+          <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.6 }}>
+            CS Launcher utilizes mobile Java runtime bridges, input mapping, OpenGL / Vulkan wrappers (GL4ES, LWJGL), and runtime hooks created by the <mark className="hl-white">PojavLauncher Team</mark>, distributed under the <mark className="hl-green">GNU General Public License Version 3 (GPLv3)</mark>.
           </p>
         </div>
 
         <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.5 }}>
-          We express our deepest gratitude to the PojavLauncher developers, Amethyst Launcher contributors, and the entire open-source Minecraft modding community for making Minecraft Java on Android possible.
+          <mark className="hl-purple">All modifications and enhancements made by Craft Studio Development Group are 100% compliant with GPLv3 copyleft terms.</mark>
         </p>
       </div>
 
-      {/* 3. 📜 GNU GPLv3 LICENSE INFORMATION */}
+      {/* 3. 📜 GNU GPLv3 LICENSE INFORMATION (HIGHLIGHTED CLAUSES) */}
       <div className="app-card" style={{ borderLeft: '5px solid var(--mc-green)', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -143,24 +121,24 @@ export default function Notice({ branding, activeVersion }) {
               GNU General Public License v3.0
             </h3>
             <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
-              Copyleft free software compliance & freedoms
+              Copyleft free software guarantees & user freedoms
             </div>
           </div>
         </div>
 
         <p style={{ fontSize: '0.74rem', color: 'var(--mc-grey)', lineHeight: 1.6, marginBottom: 12 }}>
-          CS Launcher is free software: you can redistribute it and/or modify it under the terms of the <strong>GNU General Public License as published by the Free Software Foundation</strong>, either version 3 of the License, or (at your option) any later version.
+          CS Launcher is free software: you are permitted to redistribute it and/or modify it under the terms of the <mark className="hl-green">GNU General Public License (Version 3)</mark> published by the Free Software Foundation.
         </p>
 
         <div style={{ background: '#0e0b24', border: '2px solid #000', padding: '12px 14px', marginBottom: 14 }}>
           <div style={{ fontSize: '0.74rem', color: 'var(--mc-yellow)', marginBottom: 8 }}>
-            GPLv3 Core Guarantees:
+            GPLv3 Core Freedoms:
           </div>
           <ul className="changelog-list">
-            <li><strong>Freedom 0:</strong> The freedom to run the program as you wish, for any purpose.</li>
-            <li><strong>Freedom 1:</strong> The freedom to study how the program works, and change it.</li>
-            <li><strong>Freedom 2:</strong> The freedom to redistribute copies to help your friends.</li>
-            <li><strong>Freedom 3:</strong> The freedom to distribute copies of your modified versions to others.</li>
+            <li><mark className="hl-green">Freedom 0:</mark> The freedom to run the program as you wish, for any purpose.</li>
+            <li><mark className="hl-cyan">Freedom 1:</mark> The freedom to study how the program works, and modify it.</li>
+            <li><mark className="hl-yellow">Freedom 2:</mark> The freedom to redistribute copies to help others.</li>
+            <li><mark className="hl-purple">Freedom 3:</mark> The freedom to distribute copies of your modified versions to the public.</li>
           </ul>
         </div>
 
@@ -171,7 +149,7 @@ export default function Notice({ branding, activeVersion }) {
           className="btn-mc-3d"
           style={{ width: '100%', justifyContent: 'center', padding: '10px 16px', fontSize: '0.76rem' }}
         >
-          <span>View Full GNU GPLv3 License Official Text ↗</span>
+          <span>View Full GNU GPLv3 Official License Text ↗</span>
         </a>
       </div>
 
@@ -181,20 +159,20 @@ export default function Notice({ branding, activeVersion }) {
           Mojang Studios & Microsoft Trademark Disclaimer
         </div>
         <p style={{ fontSize: '0.74rem', color: 'var(--mc-white)', lineHeight: 1.6, marginBottom: 10 }}>
-          <strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong>
+          <mark className="hl-red">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</mark>
         </p>
         <p style={{ fontSize: '0.72rem', color: 'var(--mc-grey)', lineHeight: 1.6 }}>
-          "Minecraft", "Mojang", and associated trademarks, assets, and branding are registered trademarks of Mojang Synergies AB and Microsoft Corporation. CS Launcher is an independent community client wrapper and does not distribute any copyrighted Minecraft game assets. Users must log in with their valid Microsoft / Mojang account to download and play Minecraft Java Edition.
+          <mark className="hl-white">Minecraft</mark>, <mark className="hl-white">Mojang</mark>, and related assets are trademarks of <mark className="hl-gold">Mojang Synergies AB</mark> and <mark className="hl-gold">Microsoft Corporation</mark>. CS Launcher is an independent community project and does not distribute any proprietary Minecraft game assets. Valid account login is required.
         </p>
       </div>
 
-      {/* 5. ⚠️ NO WARRANTY (GPLv3 SECTIONS 15 & 16) */}
+      {/* 5. ⚠️ NO WARRANTY NOTICE (GPLV3 SECTIONS 15 & 16) */}
       <div className="app-card" style={{ borderLeft: '5px solid var(--mc-red)' }}>
         <div style={{ fontSize: '0.92rem', color: 'var(--mc-red)', marginBottom: 10 }}>
           Disclaimer of Warranty
         </div>
-        <p style={{ fontSize: '0.7rem', color: 'var(--mc-grey)', lineHeight: 1.55, textTransform: 'none' }}>
-          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE.
+        <p style={{ fontSize: '0.7rem', color: 'var(--mc-grey)', lineHeight: 1.55 }}>
+          <mark className="hl-red">THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</mark>
         </p>
       </div>
     </div>

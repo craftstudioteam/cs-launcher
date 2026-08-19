@@ -1,21 +1,21 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 // ══════════════════════════════════════════════════════════════════════
-// AUTHENTIC MC-TOOLS.NET ANIMATED SKY SYSTEM
-// Twinkling Starfield • 3-Layer Scrolling Pixel Clouds • Mountain Ridge • Floating Embers
+// ULTRA-PREMIUM MC-TOOLS.NET ANIMATED ATMOSPHERE & SKY ENGINE
+// Dynamic Aurora Glow • 120+ Twinkling Stars • 3-Layer Parallax Clouds • Glowing Nether Sparks
 // ══════════════════════════════════════════════════════════════════════
 
 export default function BackgroundSky() {
   // Generate randomized stars once
   const stars = useMemo(() => {
     const arr = [];
-    for (let i = 0; i < 90; i++) {
-      const isTwinkle = Math.random() > 0.35;
-      const size = Math.random() > 0.75 ? 3 : Math.random() > 0.4 ? 2 : 1;
+    for (let i = 0; i < 110; i++) {
+      const isTwinkle = Math.random() > 0.3;
+      const size = Math.random() > 0.8 ? 3 : Math.random() > 0.4 ? 2 : 1.5;
       const left = (Math.random() * 100).toFixed(2);
       const top = (Math.random() * 85).toFixed(2);
-      const delay = (Math.random() * 4).toFixed(2);
-      const duration = (2.5 + Math.random() * 3).toFixed(2);
+      const delay = (Math.random() * 5).toFixed(2);
+      const duration = (2 + Math.random() * 3.5).toFixed(2);
       const opacity = (0.35 + Math.random() * 0.65).toFixed(2);
 
       arr.push({
@@ -35,15 +35,15 @@ export default function BackgroundSky() {
     return arr;
   }, []);
 
-  // Generate floating Minecraft embers (sparks rising upwards)
+  // Generate floating Minecraft embers (sparks rising upwards with wavy drift)
   const embers = useMemo(() => {
-    const colors = ['#b388ff', '#55ffff', '#55ff55', '#ffff55', '#ffaa00'];
+    const colors = ['#b388ff', '#55ffff', '#55ff55', '#ffff55', '#ffaa00', '#f43f5e'];
     const arr = [];
-    for (let i = 0; i < 28; i++) {
+    for (let i = 0; i < 34; i++) {
       const size = Math.random() > 0.6 ? 4 : 3;
       const left = (Math.random() * 100).toFixed(2);
-      const delay = (Math.random() * 8).toFixed(2);
-      const duration = (6 + Math.random() * 8).toFixed(2);
+      const delay = (Math.random() * 7).toFixed(2);
+      const duration = (5.5 + Math.random() * 6).toFixed(2);
       const color = colors[i % colors.length];
 
       arr.push({
@@ -53,7 +53,7 @@ export default function BackgroundSky() {
           width: `${size}px`,
           height: `${size}px`,
           background: color,
-          boxShadow: `0 0 ${size * 2}px ${color}`,
+          boxShadow: `0 0 ${size * 2.5}px ${color}, 0 0 ${size * 5}px ${color}`,
           animationDelay: `${delay}s`,
           animationDuration: `${duration}s`,
         }
@@ -64,8 +64,11 @@ export default function BackgroundSky() {
 
   return (
     <div className="mc-sky-viewport">
-      {/* 🌌 Sky Base Gradient */}
+      {/* 🌌 Base Sky Gradient */}
       <div className="mc-sky-gradient" />
+
+      {/* 🌌 Dynamic Atmospheric Aurora Glow */}
+      <div className="mc-aurora-glow" />
 
       {/* ✨ Twinkling Starfield */}
       <div className="mc-stars-container">
@@ -159,7 +162,7 @@ export default function BackgroundSky() {
         </svg>
       </div>
 
-      {/* 🔥 Rising Minecraft Floating Embers */}
+      {/* 🔥 Rising Glowing Minecraft Embers */}
       <div className="mc-embers-layer">
         {embers.map(ember => (
           <div key={ember.id} className="mc-floating-ember" style={ember.style} />
