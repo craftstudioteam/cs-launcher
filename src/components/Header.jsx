@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Download, Share2, Check, ChevronDown, Wrench, Sparkles, Video, Archive, ShieldCheck, Users, HelpCircle } from 'lucide-react';
+import { Download, Share2, Check } from 'lucide-react';
 import { DiscordIcon } from './MinecraftIcons';
 
 export default function Header({ branding, activeVersion, activeTab, onNavigate }) {
   const [copied, setCopied] = useState(false);
-  const [toolsOpen, setToolsOpen] = useState(false);
 
   const rawName = branding.appName || "CS Launcher";
   const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim() || "CS Launcher";
   const ver = activeVersion || "v3";
+  const logoUrl = branding.logoImage || "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png";
 
   const getPageUrl = () => {
     const base = window.location.origin;
@@ -35,15 +35,15 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
   return (
     <header className="app-header">
       <div className="header-container">
-        {/* Left: Brand Logo & Title (mc-tools.net Gold Brand Style) */}
+        {/* Left: Brand Logo & Title */}
         <div className="brand-wrapper" onClick={() => onNavigate('home')}>
           <div className="brand-icon-box">
             <img 
-              src={branding.logoImage || "https://i.ibb.co/jv7ZS03W/favicon.png"} 
+              src={logoUrl} 
               alt="CS Logo" 
             />
           </div>
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div className="brand-title">
               <span>{cleanName}</span>
             </div>
@@ -53,7 +53,7 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
           </div>
         </div>
 
-        {/* Right: Actions (About, Discord, Tools Dropdown, Share) */}
+        {/* Right: Actions (About, Discord, Get APK, Share) — NO TOOLS DROPDOWN */}
         <div className="header-actions">
           {/* About Link */}
           <button 
@@ -74,99 +74,21 @@ export default function Header({ branding, activeVersion, activeTab, onNavigate 
             <DiscordIcon size={18} color="currentColor" />
           </a>
 
-          {/* Tools ▾ Dropdown */}
-          <div style={{ position: 'relative' }}>
-            <button 
-              className="nav-tools-btn"
-              onClick={() => setToolsOpen(!toolsOpen)}
-            >
-              <Wrench size={13} color="var(--mc-cyan)" />
-              <span>Tools</span>
-              <ChevronDown size={12} />
-            </button>
-
-            {toolsOpen && (
-              <>
-                <div 
-                  style={{ position: 'fixed', inset: 0, zIndex: 90 }} 
-                  onClick={() => setToolsOpen(false)} 
-                />
-                <div 
-                  style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    marginTop: 6,
-                    background: 'rgba(14, 11, 36, 0.98)',
-                    border: '2px solid #000',
-                    borderTopColor: '#3a2f6a',
-                    borderLeftColor: '#3a2f6a',
-                    boxShadow: '3px 3px 0 #000, 0 8px 24px rgba(0,0,0,0.8)',
-                    minWidth: 170,
-                    zIndex: 100,
-                    display: 'flex',
-                    flexDirection: 'column'
-                  }}
-                >
-                  <button 
-                    onClick={() => { onNavigate('download'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-yellow)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <Download size={13} color="var(--mc-gold)" />
-                    <span>Download V3</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('features'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-purple)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <Sparkles size={13} color="var(--mc-purple)" />
-                    <span>Skin & Cape</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('videos'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-green)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <Video size={13} color="var(--mc-green)" />
-                    <span>Video Guides</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('download'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-cyan)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <Archive size={13} color="var(--mc-cyan)" />
-                    <span>Old Builds</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('team'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-gold)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <Users size={13} color="var(--mc-gold)" />
-                    <span>Craft Team</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('notice'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--mc-red)', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <ShieldCheck size={13} color="var(--mc-red)" />
-                    <span>Legal & GPL</span>
-                  </button>
-                  <button 
-                    onClick={() => { onNavigate('help'); setToolsOpen(false); }}
-                    style={{ padding: '8px 12px', background: 'none', border: 'none', color: '#fff', fontSize: '0.68rem', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}
-                  >
-                    <HelpCircle size={13} color="var(--mc-grey)" />
-                    <span>Help & FAQs</span>
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
+          {/* Get APK Quick Button */}
+          <button 
+            className="btn-mc-3d" 
+            style={{ padding: '6px 12px', fontSize: '0.7rem' }}
+            onClick={() => onNavigate('download')}
+          >
+            <Download size={13} />
+            <span>Get APK</span>
+          </button>
 
           {/* Share Button */}
           <button 
             className="social-icon-btn" 
             onClick={handleShare} 
-            title={`Share link`}
+            title="Share link"
           >
             {copied ? <Check size={15} color="var(--mc-green)" /> : <Share2 size={15} />}
           </button>

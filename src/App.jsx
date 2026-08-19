@@ -12,12 +12,12 @@ import VideoModal from './components/VideoModal';
 import Toast from './components/Toast';
 import BackgroundSky from './components/BackgroundSky';
 
-// ─── EXACT REAL GITHUB V3 RELEASE DATA ───
+// ─── EXACT REAL GITHUB V3 RELEASE DATA (WITH NEW OFFICIAL LOGO) ───
 const APP_DATA = {
   branding: {
     appName: "CS Launcher",
     tagline: "Minecraft Java on Mobile Android",
-    logoImage: "https://i.ibb.co/jv7ZS03W/favicon.png",
+    logoImage: "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png",
     copyright: "© 2026 Craft Studio Development Group. All Rights Reserved.",
     screenshots: [
       "https://i.ibb.co/6zh10Ph/333231.jpg",

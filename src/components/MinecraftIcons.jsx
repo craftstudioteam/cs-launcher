@@ -1,180 +1,245 @@
 import React from 'react';
 
-// ═══════════════════════════════════════════════════════════════════
-// AUTHENTIC MINECRAFT PIXEL ART ICONS (MCTOOLS PIXEL-PERFECT SVGS)
-// ═══════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════════
+// 100% AUTHENTIC MINECRAFT PIXEL ART ICONS (PIXEL-PERFECT MC RENDER)
+// ══════════════════════════════════════════════════════════════════════
 
+// 1. 🛡️ MINECRAFT TOTEM OF UNDYING (Exact Vanilla Texture Proportion)
 export function TotemIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Totem Head */}
-      <rect x="11" y="2" width="10" height="9" fill="#c99718" stroke="#1c1404" strokeWidth="1" />
-      <rect x="13" y="3" width="6" height="7" fill="#f5d033" />
-      {/* Brow & Eyes */}
-      <rect x="11" y="5" width="10" height="2" fill="#8c650d" />
-      <rect x="12" y="6" width="2" height="2" fill="#3cd643" />
-      <rect x="18" y="6" width="2" height="2" fill="#3cd643" />
-      <rect x="13" y="6" width="1" height="1" fill="#ffffff" />
-      <rect x="19" y="6" width="1" height="1" fill="#ffffff" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Head Outline & Gold Base */}
+      <rect x="5" y="0" width="6" height="5" fill="#facc15" />
+      <rect x="6" y="1" width="4" height="4" fill="#fef08a" />
+      <rect x="5" y="2" width="6" height="1" fill="#ca8a04" />
+      {/* Green Emerald Eyes */}
+      <rect x="5" y="2" width="2" height="1" fill="#22c55e" />
+      <rect x="9" y="2" width="2" height="1" fill="#22c55e" />
+      <rect x="6" y="2" width="1" height="1" fill="#ffffff" />
+      <rect x="10" y="2" width="1" height="1" fill="#ffffff" />
       {/* Nose */}
-      <rect x="15" y="7" width="2" height="3" fill="#9e7510" />
+      <rect x="7" y="3" width="2" height="2" fill="#a16207" />
       {/* Wings / Arms */}
-      <rect x="5" y="11" width="22" height="4" fill="#38a3a5" stroke="#0a2a2b" strokeWidth="1" />
-      <rect x="7" y="12" width="18" height="2" fill="#57cc99" />
-      <rect x="3" y="9" width="4" height="4" fill="#22577a" />
-      <rect x="25" y="9" width="4" height="4" fill="#22577a" />
+      <rect x="1" y="5" width="14" height="2" fill="#0d9488" />
+      <rect x="2" y="6" width="12" height="1" fill="#14b8a6" />
+      <rect x="0" y="4" width="3" height="3" fill="#0f766e" />
+      <rect x="13" y="4" width="3" height="3" fill="#0f766e" />
       {/* Body Core */}
-      <rect x="12" y="15" width="8" height="11" fill="#c99718" stroke="#1c1404" strokeWidth="1" />
-      <rect x="14" y="16" width="4" height="9" fill="#f5d033" />
-      <rect x="13" y="18" width="6" height="2" fill="#38a3a5" />
-      <rect x="14" y="18" width="4" height="2" fill="#57cc99" />
-      {/* Base Legs */}
-      <rect x="11" y="26" width="10" height="4" fill="#8c650d" stroke="#1c1404" strokeWidth="1" />
-      <rect x="13" y="27" width="6" height="2" fill="#c99718" />
+      <rect x="5" y="7" width="6" height="6" fill="#facc15" />
+      <rect x="6" y="8" width="4" height="4" fill="#fef08a" />
+      <rect x="6" y="9" width="4" height="1" fill="#0d9488" />
+      {/* Base / Skirt */}
+      <rect x="5" y="13" width="6" height="3" fill="#ca8a04" />
+      <rect x="6" y="14" width="4" height="2" fill="#a16207" />
     </svg>
   );
 }
 
+// 2. 💿 MINECRAFT GREEN MUSIC DISC ("Cat" / "13" Record)
 export function MusicDiscIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Outer Vinyl Disc */}
-      <circle cx="16" cy="16" r="13" fill="#18181b" stroke="#09090b" strokeWidth="1" />
-      {/* Grooves */}
-      <circle cx="16" cy="16" r="10" fill="none" stroke="#27272a" strokeWidth="1.5" />
-      <circle cx="16" cy="16" r="7" fill="none" stroke="#1f1f23" strokeWidth="1" />
-      {/* Center Label (Green Cat Disc) */}
-      <circle cx="16" cy="16" r="5" fill="#22c55e" stroke="#15803d" strokeWidth="1" />
-      <circle cx="16" cy="16" r="3" fill="#4ade80" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Vinyl Outer Rim */}
+      <rect x="5" y="0" width="6" height="1" fill="#1e1e24" />
+      <rect x="3" y="1" width="10" height="1" fill="#1e1e24" />
+      <rect x="2" y="2" width="12" height="1" fill="#1e1e24" />
+      <rect x="1" y="3" width="14" height="2" fill="#1e1e24" />
+      <rect x="0" y="5" width="16" height="6" fill="#1e1e24" />
+      <rect x="1" y="11" width="14" height="2" fill="#1e1e24" />
+      <rect x="2" y="13" width="12" height="1" fill="#1e1e24" />
+      <rect x="3" y="14" width="10" height="1" fill="#1e1e24" />
+      <rect x="5" y="15" width="6" height="1" fill="#1e1e24" />
+      {/* Vinyl Groove Rings */}
+      <rect x="3" y="3" width="10" height="10" fill="#2d2d38" />
+      <rect x="4" y="4" width="8" height="8" fill="#1e1e24" />
+      {/* Green Disc Center Label */}
+      <rect x="5" y="5" width="6" height="6" fill="#16a34a" />
+      <rect x="6" y="6" width="4" height="4" fill="#4ade80" />
       {/* Center Hole */}
-      <circle cx="16" cy="16" r="1.5" fill="#000000" />
-      {/* Highlight Shine */}
-      <path d="M 6 12 A 12 12 0 0 1 12 6" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="7" y="7" width="2" height="2" fill="#000000" />
+      {/* Shine Highlight */}
+      <rect x="4" y="2" width="3" height="1" fill="#ffffff" opacity="0.4" />
+      <rect x="2" y="4" width="1" height="3" fill="#ffffff" opacity="0.4" />
     </svg>
   );
 }
 
+// 3. 🖼️ MINECRAFT PAINTING (Wooden Frame + Sunset Scene)
 export function PaintingIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Wooden Frame */}
-      <rect x="3" y="5" width="26" height="22" fill="#78350f" stroke="#451a03" strokeWidth="1" />
-      <rect x="5" y="7" width="22" height="18" fill="#92400e" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Wood Frame */}
+      <rect x="0" y="0" width="16" height="16" fill="#451a03" />
+      <rect x="1" y="1" width="14" height="14" fill="#78350f" />
       {/* Canvas */}
-      <rect x="6" y="8" width="20" height="16" fill="#f8fafc" stroke="#1e293b" strokeWidth="0.5" />
-      {/* Painting Scene (Minecraft Mountains & Sun) */}
-      <rect x="7" y="9" width="18" height="8" fill="#38bdf8" />
-      <rect x="8" y="10" width="3" height="3" fill="#facc15" />
+      <rect x="2" y="2" width="12" height="12" fill="#e2e8f0" />
+      {/* Sky */}
+      <rect x="2" y="2" width="12" height="6" fill="#38bdf8" />
+      {/* Sun */}
+      <rect x="3" y="3" width="2" height="2" fill="#facc15" />
       {/* Mountain */}
-      <polygon points="7,17 13,11 18,17" fill="#64748b" />
-      <polygon points="12,17 18,10 24,17" fill="#475569" />
-      <polygon points="16,12 18,10 20,12" fill="#ffffff" />
+      <polygon points="2,8 6,4 10,8" fill="#64748b" />
+      <polygon points="7,8 11,3 14,8" fill="#475569" />
+      <polygon points="10,5 11,3 12,5" fill="#ffffff" />
       {/* Grass Ground */}
-      <rect x="7" y="17" width="18" height="6" fill="#4ade80" />
-      <rect x="7" y="19" width="18" height="4" fill="#15803d" />
+      <rect x="2" y="8" width="12" height="6" fill="#16a34a" />
+      <rect x="2" y="11" width="12" height="3" fill="#15803d" />
     </svg>
   );
 }
 
-export function PlayerHeadIcon({ size = 48, className = "" }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Steve / Mob 3D Isometric Head */}
-      {/* Top Face */}
-      <polygon points="16,4 27,9 16,14 5,9" fill="#583822" stroke="#26170d" strokeWidth="1" />
-      {/* Left Face (Shadowed) */}
-      <polygon points="5,9 16,14 16,26 5,21" fill="#9f6d4d" stroke="#26170d" strokeWidth="1" />
-      {/* Right Face (Lit) */}
-      <polygon points="16,14 27,9 27,21 16,26" fill="#b98462" stroke="#26170d" strokeWidth="1" />
-      {/* Hair on Front */}
-      <polygon points="16,14 27,9 27,13 16,18" fill="#4a2e1b" />
-      {/* Eyes */}
-      <rect x="18" y="17" width="3" height="2" fill="#2563eb" transform="skewY(-15)" />
-      <rect x="23" y="15" width="3" height="2" fill="#2563eb" transform="skewY(-15)" />
-      <rect x="18" y="17" width="1" height="2" fill="#ffffff" transform="skewY(-15)" />
-      <rect x="23" y="15" width="1" height="2" fill="#ffffff" transform="skewY(-15)" />
-      {/* Nose & Beard */}
-      <rect x="20" y="19" width="3" height="2" fill="#8c5837" transform="skewY(-15)" />
-      <polygon points="16,23 27,18 27,21 16,26" fill="#4a2e1b" />
-    </svg>
-  );
-}
-
-export function CapeIcon({ size = 48, className = "" }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Cape Cloth */}
-      <rect x="9" y="4" width="14" height="24" rx="1" fill="#7c3aed" stroke="#3b0764" strokeWidth="1" />
-      <rect x="10" y="5" width="12" height="22" fill="#8b5cf6" />
-      {/* Inner Cape Pattern (Mojang / Founder Star) */}
-      <rect x="12" y="8" width="8" height="8" fill="#c4b5fd" />
-      <rect x="14" y="6" width="4" height="12" fill="#ddd6fe" />
-      <rect x="11" y="9" width="10" height="6" fill="#ede9fe" />
-      {/* Cape Clasp */}
-      <rect x="13" y="3" width="6" height="3" fill="#f59e0b" stroke="#78350f" strokeWidth="1" />
-      <circle cx="16" cy="4.5" r="1" fill="#fef08a" />
-      {/* Cape Bottom Trim */}
-      <rect x="10" y="24" width="12" height="3" fill="#6d28d9" />
-      <rect x="12" y="25" width="2" height="2" fill="#fbbf24" />
-      <rect x="18" y="25" width="2" height="2" fill="#fbbf24" />
-    </svg>
-  );
-}
-
+// 4. 🗿 MINECRAFT ARMOR STAND
 export function ArmorStandIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Stone Base */}
-      <rect x="6" y="27" width="20" height="3" fill="#71717a" stroke="#27272a" strokeWidth="1" />
-      <rect x="8" y="28" width="16" height="1" fill="#a1a1aa" />
-      {/* Wooden Poles (Legs) */}
-      <rect x="10" y="16" width="3" height="11" fill="#b45309" stroke="#451a03" strokeWidth="0.5" />
-      <rect x="19" y="16" width="3" height="11" fill="#b45309" stroke="#451a03" strokeWidth="0.5" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Stone Smooth Slab Base */}
+      <rect x="2" y="14" width="12" height="2" fill="#52525b" />
+      <rect x="3" y="14" width="10" height="1" fill="#71717a" />
+      {/* Wooden Legs */}
+      <rect x="5" y="9" width="1" height="5" fill="#b45309" />
+      <rect x="10" y="9" width="1" height="5" fill="#b45309" />
       {/* Hip Bar */}
-      <rect x="9" y="15" width="14" height="2" fill="#d97706" stroke="#451a03" strokeWidth="0.5" />
+      <rect x="4" y="8" width="8" height="1" fill="#d97706" />
       {/* Torso Sticks */}
-      <rect x="12" y="7" width="3" height="8" fill="#b45309" stroke="#451a03" strokeWidth="0.5" />
-      <rect x="17" y="7" width="3" height="8" fill="#b45309" stroke="#451a03" strokeWidth="0.5" />
+      <rect x="6" y="4" width="1" height="4" fill="#b45309" />
+      <rect x="9" y="4" width="1" height="4" fill="#b45309" />
       {/* Shoulders Bar */}
-      <rect x="6" y="6" width="20" height="3" fill="#d97706" stroke="#451a03" strokeWidth="1" />
+      <rect x="3" y="3" width="10" height="1" fill="#d97706" />
       {/* Neck Post */}
-      <rect x="14" y="2" width="4" height="4" fill="#92400e" stroke="#451a03" strokeWidth="0.5" />
+      <rect x="7" y="1" width="2" height="2" fill="#92400e" />
     </svg>
   );
 }
 
+// 5. 🎭 MINECRAFT PLAYER HEAD (3D Isometric Steve / Wither Head)
+export function PlayerHeadIcon({ size = 48, className = "" }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* 3D Isometric Player Head */}
+      {/* Top Face (Hair) */}
+      <polygon points="8,1 14,4 8,7 2,4" fill="#451a03" />
+      {/* Left Face (Shadowed Skin) */}
+      <polygon points="2,4 8,7 8,14 2,11" fill="#9a6540" />
+      {/* Right Face (Lit Skin) */}
+      <polygon points="8,7 14,4 14,11 8,14" fill="#c48a5e" />
+      {/* Steve Face Details on Right Face */}
+      {/* Front Hair */}
+      <polygon points="8,7 14,4 14,6 8,9" fill="#381804" />
+      {/* Blue Eyes */}
+      <rect x="10" y="7" width="2" height="1" fill="#2563eb" transform="skewY(-15)" />
+      <rect x="10" y="7" width="1" height="1" fill="#ffffff" transform="skewY(-15)" />
+      {/* Beard / Mouth */}
+      <rect x="10" y="10" width="2" height="1" fill="#582a12" transform="skewY(-15)" />
+    </svg>
+  );
+}
+
+// 6. 🧥 MINECRAFT CAPE (Elytra / Custom Java Cape)
+export function CapeIcon({ size = 48, className = "" }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Cape Gold Clasp */}
+      <rect x="6" y="1" width="4" height="1" fill="#f59e0b" />
+      {/* Cape Main Fabric */}
+      <rect x="4" y="2" width="8" height="13" fill="#6b21a8" />
+      <rect x="5" y="3" width="6" height="11" fill="#9333ea" />
+      {/* Minecraft Mojang / Founder Star Emblem */}
+      <rect x="6" y="4" width="4" height="4" fill="#e9d5ff" />
+      <rect x="7" y="3" width="2" height="6" fill="#f5f3ff" />
+      <rect x="5" y="5" width="6" height="2" fill="#f5f3ff" />
+      {/* Cape Bottom Gold Trim */}
+      <rect x="4" y="13" width="8" height="2" fill="#581c87" />
+      <rect x="5" y="14" width="2" height="1" fill="#facc15" />
+      <rect x="9" y="14" width="2" height="1" fill="#facc15" />
+    </svg>
+  );
+}
+
+// 7. 📦 MINECRAFT CHEST / APK PACKAGE (Download Build Box)
 export function ApkPackageIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* 3D Minecraft Chest / Package */}
-      <polygon points="16,3 28,9 16,15 4,9" fill="#eab308" stroke="#713f12" strokeWidth="1" />
-      <polygon points="4,9 16,15 16,27 4,21" fill="#a16207" stroke="#713f12" strokeWidth="1" />
-      <polygon points="16,15 28,9 28,21 16,27" fill="#ca8a04" stroke="#713f12" strokeWidth="1" />
-      {/* Lock latch */}
-      <rect x="15" y="13" width="2" height="4" fill="#fef08a" stroke="#000" strokeWidth="0.5" />
-      {/* Android Antenna / Java Spark */}
-      <line x1="10" y1="5" x2="7" y2="2" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="22" y1="5" x2="25" y2="2" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* 3D Gold / Wood Chest */}
+      {/* Top Lid */}
+      <polygon points="8,1 14,4 8,7 2,4" fill="#eab308" />
+      {/* Left Wall */}
+      <polygon points="2,4 8,7 8,14 2,11" fill="#a16207" />
+      {/* Right Wall */}
+      <polygon points="8,7 14,4 14,11 8,14" fill="#ca8a04" />
+      {/* Iron Lock Clasp */}
+      <rect x="7" y="6" width="2" height="3" fill="#fef08a" stroke="#000" strokeWidth="0.4" />
+      {/* Green Android Antennas */}
+      <line x1="5" y1="2" x2="3" y2="0" stroke="#22c55e" strokeWidth="1" strokeLinecap="square" />
+      <line x1="11" y1="2" x2="13" y2="0" stroke="#22c55e" strokeWidth="1" strokeLinecap="square" />
     </svg>
   );
 }
 
+// 8. 🛡️ MINECRAFT SHIELD (GPLv3 Open Source Defense)
 export function ShieldGplIcon({ size = 48, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" className={`mc-pixel-icon ${className}`} style={{ imageRendering: 'pixelated' }}>
-      {/* Minecraft 3D Shield */}
-      <polygon points="6,3 26,3 26,18 16,29 6,18" fill="#475569" stroke="#0f172a" strokeWidth="1.5" />
-      <polygon points="8,5 24,5 24,17 16,26 8,17" fill="#94a3b8" />
-      {/* Wooden Center Planks */}
-      <rect x="10" y="7" width="12" height="11" fill="#b45309" />
-      <rect x="12" y="8" width="8" height="9" fill="#d97706" />
-      {/* Iron Boss Center */}
-      <circle cx="16" cy="12" r="3" fill="#cbd5e1" stroke="#334155" strokeWidth="1" />
-      <circle cx="16" cy="12" r="1" fill="#ffffff" />
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      className={`mc-pixel-svg ${className}`}
+      style={{ imageRendering: 'pixelated', shapeRendering: 'crispEdges' }}
+    >
+      {/* Shield Iron Border */}
+      <polygon points="3,1 13,1 13,10 8,15 3,10" fill="#475569" />
+      {/* Shield Wooden Face */}
+      <polygon points="4,2 12,2 12,9 8,13 4,9" fill="#92400e" />
+      <rect x="5" y="3" width="6" height="6" fill="#b45309" />
+      {/* Shield Center Iron Boss */}
+      <circle cx="8" cy="6" r="1.8" fill="#e2e8f0" />
+      <rect x="7.5" y="5.5" width="1" height="1" fill="#ffffff" />
     </svg>
   );
 }
 
+// 9. 💬 DISCORD ICON
 export function DiscordIcon({ size = 20, color = "currentColor" }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>

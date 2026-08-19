@@ -4,17 +4,17 @@
   "description": "Minecraft Java Edition Launcher for Android Mobile",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#07070A",
-  "theme_color": "#07070A",
+  "background_color": "#0d0a24",
+  "theme_color": "#0d0a24",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://i.ibb.co/jv7ZS03W/favicon.png",
+      "src": "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://i.ibb.co/jv7ZS03W/favicon.png",
+      "src": "https://i.ibb.co/jv48XLds/Picsart-26-05-04-20-20-15-578.png",
       "sizes": "512x512",
       "type": "image/png"
     }
