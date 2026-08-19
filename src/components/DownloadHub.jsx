@@ -28,12 +28,25 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
     return `${base}/download/${vTag}`;
   };
 
-  const handleCopyPageLink = () => {
-    const url = getPageUrl(selectedVer);
-    navigator.clipboard.writeText(url);
-    setCopiedLink(true);
-    if (showToast) showToast(`Copied direct ${selectedVer.toUpperCase()} page link!`, 'success');
-    setTimeout(() => setCopiedLink(false), 2000);
+  // 🔗 VERSION-SPECIFIC SOCIAL SHARE & LINK PREVIEW GENERATOR
+  const handleShareVersion = (vTag = selectedVer) => {
+    const url = getPageUrl(vTag);
+    const build = downloads[vTag] || downloads.v3;
+    const title = `Download ${build.releaseName || `CS Launcher ${vTag.toUpperCase()}`} APK (${build.fileSize})`;
+    const text = `Download official ${build.releaseName} (${build.fileSize}) for Android! Play Minecraft Java with 60+ FPS. Direct link: ${url}`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: text,
+        url: url
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(url);
+      setCopiedLink(true);
+      if (showToast) showToast(`Copied /download/${vTag} direct link!`, 'success');
+      setTimeout(() => setCopiedLink(false), 2000);
+    }
   };
 
   const handleCopyDirectApk = () => {
@@ -69,7 +82,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
       {/* 🚀 QUICK VERSION SELECTOR TABS (/download/v3, /download/v2, /download/v1) */}
       <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 18 }}>
         <button
-          className={`btn-mc-3d ${selectedVer === 'v3' ? 'active-tab-glow' : ''}`}
+          className="btn-mc-3d"
           style={{
             padding: '8px 16px',
             fontSize: '0.8rem',
@@ -83,7 +96,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
         </button>
 
         <button
-          className={`btn-mc-3d ${selectedVer === 'v2' ? 'active-tab-glow' : ''}`}
+          className="btn-mc-3d"
           style={{
             padding: '8px 16px',
             fontSize: '0.8rem',
@@ -97,7 +110,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
         </button>
 
         <button
-          className={`btn-mc-3d ${selectedVer === 'v1' ? 'active-tab-glow' : ''}`}
+          className="btn-mc-3d"
           style={{
             padding: '8px 16px',
             fontSize: '0.8rem',
@@ -119,11 +132,11 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
           </div>
 
           <div style={{ display: 'flex', gap: 6 }}>
-            {/* Copy Direct Page URL (/download/v1, /download/v2, /download/v3) */}
+            {/* Copy / Share Direct Version Link (/download/v1, /download/v2, /download/v3) */}
             <button 
               className="social-icon-btn" 
-              onClick={handleCopyPageLink}
-              title={`Copy /download/${selectedVer} page link`}
+              onClick={() => handleShareVersion(selectedVer)}
+              title={`Share /download/${selectedVer} link with custom preview`}
               style={{ width: 32, height: 32 }}
             >
               {copiedLink ? <Check size={14} color="#55FF55" /> : <Share2 size={14} />}
@@ -251,13 +264,24 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 10, borderTop: '1px solid #241c52', flexWrap: 'wrap', gap: 8 }}>
-                  <button
-                    className="btn-mc-3d"
-                    style={{ padding: '6px 12px', fontSize: '0.72rem', background: '#18143a' }}
-                    onClick={() => handleSelectVersion(k)}
-                  >
-                    <span>View /download/{k} Details →</span>
-                  </button>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    <button
+                      className="btn-mc-3d"
+                      style={{ padding: '6px 12px', fontSize: '0.72rem', background: '#18143a' }}
+                      onClick={() => handleSelectVersion(k)}
+                    >
+                      <span>View /download/{k} →</span>
+                    </button>
+
+                    <button
+                      className="social-icon-btn"
+                      style={{ width: 30, height: 30 }}
+                      onClick={() => handleShareVersion(k)}
+                      title={`Share /download/${k} link`}
+                    >
+                      <Share2 size={13} />
+                    </button>
+                  </div>
 
                   <button 
                     className="btn-mc-3d"

@@ -9,23 +9,33 @@ export default function Header({ branding, activeTab, onNavigate }) {
   const cleanName = rawName.replace(/\s+v\d+(\.\d+)*\b/gi, '').trim() || "CS Launcher";
   const logoUrl = branding.logoImage || "https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b765.png";
 
-  const getPageUrl = () => {
+  const getShareData = () => {
     const base = window.location.origin;
-    return activeTab === 'home' ? `${base}/` : `${base}/${activeTab}`;
+    let url = activeTab === 'home' ? `${base}/` : `${base}/${activeTab}`;
+    let title = `${cleanName} — Minecraft Java on Android`;
+    let text = `Download official ${cleanName} APK on Android. Play Minecraft Java with 60+ FPS!`;
+
+    if (activeTab === 'download') {
+      title = `${cleanName} V3 APK — Official Latest Download`;
+      text = `Download official ${cleanName} V3 APK (185.8 MB) for Android!`;
+    } else if (activeTab === 'features') {
+      title = `${cleanName} — Skin & Cape Changer`;
+      text = `Dynamic custom skin & cape applicator for Minecraft Java on Android!`;
+    } else if (activeTab === 'videos') {
+      title = `${cleanName} — Video Guides & Showcases`;
+      text = `Watch ${cleanName} gameplay showcases and setup tutorials!`;
+    }
+
+    return { url, title, text };
   };
 
   const handleShare = () => {
-    const pageUrl = getPageUrl();
-    const tabName = activeTab ? activeTab.charAt(0).toUpperCase() + activeTab.slice(1) : 'Home';
+    const { url, title, text } = getShareData();
 
     if (navigator.share) {
-      navigator.share({
-        title: `${cleanName} — ${tabName}`,
-        text: `Download ${cleanName} on Android!`,
-        url: pageUrl
-      }).catch(() => {});
+      navigator.share({ title, text, url }).catch(() => {});
     } else {
-      navigator.clipboard.writeText(pageUrl);
+      navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
@@ -34,7 +44,7 @@ export default function Header({ branding, activeTab, onNavigate }) {
   return (
     <header className="app-header">
       <div className="header-container">
-        {/* Left: Brand Logo & ONLY "CS Launcher" (No extra sub-text) */}
+        {/* Left: Brand Logo & ONLY "CS Launcher" */}
         <div className="brand-wrapper" onClick={() => onNavigate('home')}>
           <div className="brand-icon-box">
             <img 
@@ -47,7 +57,7 @@ export default function Header({ branding, activeTab, onNavigate }) {
           </div>
         </div>
 
-        {/* Right: Actions (About, Discord, Share) — Clean & Minimalist */}
+        {/* Right: Actions (About, Discord, Share) */}
         <div className="header-actions">
           {/* About Link */}
           <button 
