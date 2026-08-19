@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700;800;900&display=swap');
 
-/* ═════════════════════════════════════════════════════════════
-   CS LAUNCHER — PRO GAMING UI (MCTOOLS THEME)
-   Clean Normal Case Typography (NO ALL-CAPS) • Fixed Background
-   Zero Overflow • Ultra-Smooth Fluid Micro-Animations
-   ═════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════
+   CS LAUNCHER — AUTHENTIC MC-TOOLS.NET MINECRAFT GAMING THEME
+   Mojangles Font • 3-Layer Animated Sky • 2-Column Grid Cards • 3D Bevels
+   Clean Normal Case Typography • Zero Overflow • 60 FPS Fluid Motion
+   ══════════════════════════════════════════════════════════════════════ */
 
 @font-face {
   font-family: 'Mojangles';
@@ -13,32 +13,46 @@
   src: url('data:font/woff2;base64,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') format('woff2');
 }
 
-
-
 :root {
   --mc-font: 'Mojangles', 'Silkscreen', 'Press Start 2P', monospace;
   --font-gaming: 'Space Grotesk', -apple-system, sans-serif;
 
-  /* Deep Gaming Theme */
-  --mc-bg: #0f0c29;
-  --mc-card: #1b143f;
-  --mc-card-border: #2c2263;
-  --mc-btn: #2d2466;
-  --mc-btn-hover: #3e3288;
-  --mc-btn-green: #237829;
-  --mc-btn-green-hover: #2e8b34;
+  /* MCTools Deep Sky Palette */
+  --sky-a: #0f0c29;
+  --sky-b: #1a1540;
+  --sky-c: #24205a;
+  --cloud: #2a2650;
+  --cloud-sh: #1e1a3d;
 
-  /* Colors */
-  --mc-yellow: #ffff55;
+  /* Panel & Surfaces */
+  --panel-bg: rgba(26, 21, 56, 0.65);
+  --panel-border: #2e2852;
+  --panel-hi: #3d3568;
+  --panel-lo: #14102a;
+  --mc-card: #1c1543;
+  --mc-card-border: #000000;
+  
+  /* Buttons */
+  --btn-bg: #5b3daa;
+  --btn-hi: #7b5dca;
+  --btn-lo: #3a2580;
+  --btn-green: #237829;
+  --btn-green-hi: #5cad3e;
+  --btn-green-lo: #184e10;
+
+  /* Minecraft Accent Colors */
   --mc-gold: #ffaa00;
+  --mc-yellow: #ffff55;
   --mc-green: #55ff55;
   --mc-purple: #b388ff;
   --mc-cyan: #55ffff;
+  --mc-red: #ff5555;
   --mc-white: #ffffff;
-  --mc-grey: #a8a8bc;
+  --mc-grey: #a09cc0;
+  --mc-dark: #0e0b24;
 
-  --header-height: 64px;
-  --bottom-nav-height: 68px;
+  --header-height: 60px;
+  --bottom-nav-height: 66px;
 }
 
 *, *::before, *::after {
@@ -47,12 +61,12 @@
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   font-family: var(--mc-font) !important;
-  text-transform: none !important; /* Strictly no all-caps */
+  text-transform: none !important; /* Strict Title/Normal case */
 }
 
 html {
   font-family: var(--mc-font);
-  background-color: var(--mc-bg);
+  background-color: var(--sky-a);
   color: var(--mc-white);
   font-size: 14px;
   scroll-behavior: smooth;
@@ -63,62 +77,203 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   max-width: 100vw;
-  background-color: var(--mc-bg);
+  background-color: var(--sky-a);
   position: relative;
   overflow-x: hidden;
-  padding-bottom: calc(var(--bottom-nav-height) + 20px);
+  padding-bottom: calc(var(--bottom-nav-height) + 24px);
 }
 
-/* ─── FIXED CLEAN BACKGROUND (Zero Giant Logo Glitches) ─── */
-.bg-layer-container {
+/* ══════════════════════════════════════════════════════════════════════
+   🌌 AUTHENTIC MC-TOOLS.NET BACKGROUND ANIMATION SYSTEM
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mc-sky-viewport {
   position: fixed;
   inset: 0;
-  z-index: -2;
-  overflow: hidden;
+  z-index: 0;
   pointer-events: none;
-  background: #0f0c29;
+  overflow: hidden;
 }
 
-.bg-layer-gif {
+.mc-sky-gradient {
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(180deg, #0d0a24 0%, #161238 35%, #1f174c 70%, #120d2c 100%);
+  z-index: 0;
+}
+
+/* Starfield */
+.mc-stars-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mc-star {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 1px;
+  image-rendering: pixelated;
+}
+
+.mc-star.tw {
+  animation: mcTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes mcTwinkle {
+  0% { opacity: 0.2; transform: scale(0.7); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* ☁️ 3-Layer Scrolling Minecraft Pixel Clouds */
+.cloud-scroll {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  max-width: 100vw;
+  contain: layout paint;
+  opacity: 0.85;
+}
+
+.cstrip {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  will-change: transform;
+}
+
+.cstrip-block {
+  position: relative;
+  width: 3200px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.cs1 { animation: mcCloudDrift 110s linear infinite; }
+.cs2 { animation: mcCloudDrift 160s linear infinite; }
+.cs3 { animation: mcCloudDrift 90s linear infinite; }
+
+@keyframes mcCloudDrift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-3200px); }
+}
+
+.c {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.ca {
+  box-shadow: 20px 0 0 0.5px var(--cloud), 30px 0 0 0.5px var(--cloud), 40px 0 0 0.5px var(--cloud),
+              10px 10px 0 0.5px var(--cloud), 20px 10px 0 0.5px var(--cloud), 30px 10px 0 0.5px var(--cloud), 40px 10px 0 0.5px var(--cloud), 50px 10px 0 0.5px var(--cloud),
+              0 20px 0 0.5px var(--cloud), 10px 20px 0 0.5px var(--cloud), 20px 20px 0 0.5px var(--cloud), 30px 20px 0 0.5px var(--cloud), 40px 20px 0 0.5px var(--cloud), 50px 20px 0 0.5px var(--cloud), 60px 20px 0 0.5px var(--cloud),
+              0 30px 0 0.5px var(--cloud-sh), 10px 30px 0 0.5px var(--cloud-sh), 20px 30px 0 0.5px var(--cloud-sh), 30px 30px 0 0.5px var(--cloud-sh), 40px 30px 0 0.5px var(--cloud-sh), 50px 30px 0 0.5px var(--cloud-sh), 60px 30px 0 0.5px var(--cloud-sh);
+}
+
+.cb {
+  box-shadow: 30px 0 0 0.5px var(--cloud), 40px 0 0 0.5px var(--cloud),
+              10px 10px 0 0.5px var(--cloud), 20px 10px 0 0.5px var(--cloud), 30px 10px 0 0.5px var(--cloud), 40px 10px 0 0.5px var(--cloud), 50px 10px 0 0.5px var(--cloud), 60px 10px 0 0.5px var(--cloud),
+              0 20px 0 0.5px var(--cloud), 10px 20px 0 0.5px var(--cloud), 20px 20px 0 0.5px var(--cloud), 30px 20px 0 0.5px var(--cloud), 40px 20px 0 0.5px var(--cloud), 50px 20px 0 0.5px var(--cloud), 60px 20px 0 0.5px var(--cloud), 70px 20px 0 0.5px var(--cloud),
+              0 30px 0 0.5px var(--cloud-sh), 10px 30px 0 0.5px var(--cloud-sh), 20px 30px 0 0.5px var(--cloud-sh), 30px 30px 0 0.5px var(--cloud-sh), 40px 30px 0 0.5px var(--cloud-sh), 50px 30px 0 0.5px var(--cloud-sh), 60px 30px 0 0.5px var(--cloud-sh), 70px 30px 0 0.5px var(--cloud-sh);
+}
+
+.cc {
+  box-shadow: 20px 0 0 0.5px var(--cloud), 30px 0 0 0.5px var(--cloud), 40px 0 0 0.5px var(--cloud), 50px 0 0 0.5px var(--cloud),
+              10px 10px 0 0.5px var(--cloud), 20px 10px 0 0.5px var(--cloud), 30px 10px 0 0.5px var(--cloud), 40px 10px 0 0.5px var(--cloud), 50px 10px 0 0.5px var(--cloud), 60px 10px 0 0.5px var(--cloud),
+              0 20px 0 0.5px var(--cloud), 10px 20px 0 0.5px var(--cloud), 20px 20px 0 0.5px var(--cloud), 30px 20px 0 0.5px var(--cloud), 40px 20px 0 0.5px var(--cloud), 50px 20px 0 0.5px var(--cloud), 60px 20px 0 0.5px var(--cloud), 70px 20px 0 0.5px var(--cloud), 80px 20px 0 0.5px var(--cloud),
+              0 30px 0 0.5px var(--cloud-sh), 10px 30px 0 0.5px var(--cloud-sh), 20px 30px 0 0.5px var(--cloud-sh), 30px 30px 0 0.5px var(--cloud-sh), 40px 30px 0 0.5px var(--cloud-sh), 50px 30px 0 0.5px var(--cloud-sh), 60px 30px 0 0.5px var(--cloud-sh), 70px 30px 0 0.5px var(--cloud-sh), 80px 30px 0 0.5px var(--cloud-sh);
+}
+
+/* ⛰️ Minecraft Stepped Mountain & Ridge Silhouette */
+.mc-mountain-ridge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mc-mountain-svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.08; /* Subtle ambient depth */
-  filter: brightness(0.5) contrast(1.2);
+  display: block;
 }
 
-.bg-layer-overlay {
-  position: fixed;
+/* 🔥 Floating Minecraft Embers / Sparks */
+.mc-embers-layer {
+  position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 15%, rgba(45, 30, 95, 0.4) 0%, rgba(15, 12, 41, 0.98) 75%),
-              linear-gradient(180deg, rgba(15, 12, 41, 0.6) 0%, #0f0c29 100%);
-  z-index: -1;
+  z-index: 4;
   pointer-events: none;
 }
 
-/* ─── APP HEADER ─── */
+.mc-floating-ember {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: mcFloatUp linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes mcFloatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(15px) rotate(45deg);
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(-10px) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   🕹️ NAVBAR HEADER (EXACT MC-TOOLS.NET PROPORTIONS)
+   ══════════════════════════════════════════════════════════════════════ */
+
 .app-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background: rgba(20, 16, 52, 0.96);
-  backdrop-filter: blur(20px);
-  border-bottom: 2px solid #000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  background: rgba(10, 8, 22, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid #14102a;
+  box-shadow: 0 1px 12px rgba(180, 144, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.6);
   z-index: 100;
   display: flex;
   align-items: center;
 }
 
 .header-container {
-  max-width: 1000px;
+  max-width: 960px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,15 +286,17 @@ body {
   gap: 10px;
   cursor: pointer;
   min-width: 0;
+  text-decoration: none;
 }
 
-/* Fixed 38px Logo Box */
 .brand-icon-box {
-  width: 38px;
-  height: 38px;
-  background: #181438;
+  width: 34px;
+  height: 34px;
+  background: #14102a;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.2), inset -2px -2px 0 rgba(0, 0, 0, 0.6);
+  border-top-color: #3d3568;
+  border-left-color: #3d3568;
+  box-shadow: 2px 2px 0 #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,193 +308,336 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: pixelated;
 }
 
 .brand-title {
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: var(--mc-yellow);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--mc-gold);
+  letter-spacing: 2px;
   text-shadow: 2px 2px 0 #000;
+  line-height: 1;
 }
 
-.brand-version-pill {
-  font-size: 0.64rem;
-  padding: 2px 6px;
-  background: #100d28;
-  border: 1px solid #000;
-  color: var(--mc-green);
+.brand-title:hover {
+  color: var(--mc-yellow);
 }
 
 .brand-tagline {
-  font-size: 0.64rem;
+  font-size: 0.6rem;
   color: var(--mc-grey);
+  margin-top: 2px;
 }
 
-/* ─── 🕹️ HERO BOX (MCTOOLS STYLE) ─── */
-.mctools-hero-box {
-  background: #19143a;
-  border: 3px solid #000;
-  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.2), inset -3px -3px 0 rgba(0, 0, 0, 0.7), 0 8px 24px rgba(0, 0, 0, 0.6);
-  padding: 24px 16px 20px;
-  margin-bottom: 22px;
+/* Nav Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link-btn {
+  background: none;
+  border: none;
+  color: var(--mc-grey);
+  font-size: 0.68rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #000;
+  transition: color 0.15s ease;
+}
+
+.nav-link-btn:hover {
+  color: var(--mc-white);
+}
+
+.nav-discord-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(88, 101, 242, 0.15);
+  border: 2px solid #2e2852;
+  border-radius: 4px;
+  color: #a8b5ff;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.nav-discord-btn:hover {
+  border-color: #5865f2;
+  background: rgba(88, 101, 242, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.nav-tools-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  background: rgba(26, 21, 56, 0.8);
+  border: 2px solid #000;
+  border-top-color: #3a2f6a;
+  border-left-color: #3a2f6a;
+  box-shadow: 2px 2px 0 #000;
+  color: var(--mc-white);
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-tools-btn:hover {
+  background: rgba(36, 28, 74, 0.9);
+  color: var(--mc-yellow);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   🕹️ MCTOOLS HERO TITLE BOX & HERO SECTION
+   ══════════════════════════════════════════════════════════════════════ */
+
+.home-hero-wrap {
   text-align: center;
+  padding: 1.8rem 0 1.2rem;
   width: 100%;
 }
 
-.mctools-title-frame {
+.mctools-title-block {
   display: inline-block;
-  background: #0d0a22;
-  border: 3px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.15), inset -2px -2px 0 rgba(0,0,0,0.6);
-  padding: 10px 24px;
-  margin-bottom: 12px;
-  animation: pulse-title 4s ease-in-out infinite alternate;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.35));
+  border: 3px solid var(--panel-border);
+  border-top-color: var(--panel-hi);
+  border-left-color: var(--panel-hi);
+  border-bottom-color: var(--panel-lo);
+  border-right-color: var(--panel-lo);
+  padding: 12px 32px 10px;
+  box-shadow: 0 6px 0 var(--panel-lo), 0 8px 28px rgba(0, 0, 0, 0.5), 0 0 24px rgba(180, 144, 255, 0.08);
+  margin-bottom: 8px;
+  animation: mcHeroPulse 4s ease-in-out infinite alternate;
 }
 
-@keyframes pulse-title {
+@keyframes mcHeroPulse {
   0% { transform: scale(1); }
-  100% { transform: scale(1.02); }
+  100% { transform: scale(1.015); }
 }
 
-.mctools-title-text {
-  font-size: clamp(1.6rem, 5.5vw, 2.5rem);
-  font-weight: 700;
+.mctools-title-main {
+  font-size: clamp(1.8rem, 6.5vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 4px;
   color: var(--mc-white);
-  text-shadow: 2px 2px 0 #000;
-  letter-spacing: 1px;
+  text-shadow: 3px 3px 0 #000, 0 0 20px rgba(180, 144, 255, 0.15);
+  line-height: 1;
 }
 
-.mctools-subtitle-pill {
+.mctools-sub-pill {
   display: inline-block;
-  background: #4a2890;
-  border: 2px solid #000;
-  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.3), inset -1px -1px 0 rgba(0,0,0,0.5);
-  padding: 4px 14px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--mc-white);
-  margin-bottom: 16px;
+  background: linear-gradient(180deg, var(--btn-bg), #3a2580);
+  border: 3px solid;
+  border-top-color: var(--btn-hi);
+  border-left-color: var(--btn-hi);
+  border-bottom-color: var(--btn-lo);
+  border-right-color: var(--btn-lo);
+  padding: 6px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 0 var(--btn-lo);
 }
 
-/* ─── 🧱 2-COLUMN MINECRAFT CARDS (WITH LEFT COLORED STRIPES) ─── */
-.mctools-section-header {
-  font-size: 1.05rem;
-  font-weight: 700;
+.mctools-sub-text {
+  font-size: 0.72rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.hero-actions-container {
+  max-width: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MCTOOLS SCREENSHOT STYLE)
+   ══════════════════════════════════════════════════════════════════════ */
+
+.section-label-mctools {
+  font-family: var(--mc-font);
+  font-size: 0.95rem;
   color: var(--mc-purple);
-  text-shadow: 2px 2px 0 #000;
-  margin-bottom: 12px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000, 0 0 8px rgba(180, 144, 255, 0.2);
+  margin: 1.6rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid rgba(180, 144, 255, 0.35);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 }
 
 .mctools-grid-2col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   width: 100%;
 }
 
+@media (min-width: 680px) {
+  .mctools-grid-2col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .mctools-grid-2col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Signature MCTools Card */
 .mctools-card {
-  background: #1c1543;
+  --tc-accent: #ffaa00;
+  background: rgba(26, 21, 56, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.14), 
-              inset -2px -2px 0 rgba(0, 0, 0, 0.65),
-              0 4px 12px rgba(0, 0, 0, 0.5);
-  padding: 16px 10px 14px;
+  border-top-color: #3a2f6a;
+  border-left-color: #3a2f6a;
+  border-bottom-color: #000;
+  border-right-color: #000;
+  padding: 1.2rem 0.8rem 1rem;
   text-align: center;
   position: relative;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 110px;
-  cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+  min-height: 120px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.08s steps(2), box-shadow 0.08s steps(2), background-color 0.12s;
+}
+
+/* Left Colored 6px Stripe with 3D inset bevel */
+.mctools-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--tc-accent);
+  box-shadow: inset 1.5px 0 0 rgba(255, 255, 255, 0.4), inset -1.5px 0 0 rgba(0, 0, 0, 0.6);
 }
 
 .mctools-card:hover {
-  background: #251d56;
-  transform: translateY(-3px);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+  background: rgba(36, 28, 74, 0.8);
 }
 
 .mctools-card:active {
-  transform: translateY(2px);
-  box-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.1), inset 2px 2px 0 rgba(0, 0, 0, 0.7);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
 }
 
-/* Left Colored Stripes */
-.mctools-card.stripe-yellow { border-left: 4px solid var(--mc-gold); }
-.mctools-card.stripe-green  { border-left: 4px solid var(--mc-green); }
-.mctools-card.stripe-purple { border-left: 4px solid var(--mc-purple); }
-.mctools-card.stripe-cyan   { border-left: 4px solid var(--mc-cyan); }
-.mctools-card.stripe-red    { border-left: 4px solid var(--mc-text-red); }
+/* Color Stripe Variants */
+.mctools-card.stripe-yellow { --tc-accent: #ffaa00; }
+.mctools-card.stripe-purple { --tc-accent: #b388ff; }
+.mctools-card.stripe-green  { --tc-accent: #55ff55; }
+.mctools-card.stripe-cyan   { --tc-accent: #55ffff; }
+.mctools-card.stripe-orange { --tc-accent: #f97316; }
+.mctools-card.stripe-red    { --tc-accent: #ff5555; }
 
+/* Top Right Badge */
 .mctools-card-badge {
   position: absolute;
   top: 6px;
   right: 6px;
-  background: var(--mc-gold);
+  font-size: 0.56rem;
+  background: var(--tc-accent);
   color: #000;
-  font-size: 0.55rem;
   font-weight: 700;
   padding: 2px 5px;
+  letter-spacing: 1px;
   border: 1px solid #000;
   text-shadow: none;
 }
 
 .mctools-card-icon {
-  margin-bottom: 8px;
+  margin: 4px 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  transition: transform 0.15s ease;
 }
 
 .mctools-card:hover .mctools-card-icon {
-  transform: scale(1.1);
+  transform: translateY(-2px) scale(1.06);
 }
 
 .mctools-card-title {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--mc-yellow);
-  line-height: 1.35;
+  font-size: 0.78rem;
+  color: var(--tc-accent);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #000;
+  line-height: 1.3;
+}
+
+.mctools-card-desc {
+  font-size: 0.58rem;
+  color: var(--mc-grey);
+  margin-top: 4px;
   text-shadow: 1px 1px 0 #000;
 }
 
-/* ─── 🕹️ 3D MINECRAFT BUTTONS ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   🕹️ MINECRAFT 3D IN-GAME BEVELED BUTTONS
+   ══════════════════════════════════════════════════════════════════════ */
+
 .btn-mc-green-3d {
   width: 100%;
+  max-width: 440px;
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: var(--mc-btn-green);
+  background: linear-gradient(180deg, #3c8527, #237829);
   color: var(--mc-white);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.35), 
-              inset -2px -2px 0 rgba(0, 0, 0, 0.65),
-              0 4px 0 #000;
+  border: 3px solid;
+  border-top-color: var(--btn-green-hi);
+  border-left-color: var(--btn-green-hi);
+  border-bottom-color: var(--btn-green-lo);
+  border-right-color: var(--btn-green-lo);
+  box-shadow: 0 4px 0 #11360b, 0 8px 18px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
-  margin-bottom: 12px;
-  transition: all 0.15s ease;
+  transition: all 0.12s ease;
+  text-decoration: none;
 }
 
 .btn-mc-green-3d:hover {
-  background: var(--mc-btn-green-hover);
+  background: linear-gradient(180deg, #48a02f, #2a8b32);
   color: var(--mc-yellow);
   transform: translateY(-1px);
 }
 
 .btn-mc-green-3d:active {
-  transform: translateY(4px);
-  box-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.1), inset 2px 2px 0 rgba(0, 0, 0, 0.7);
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #11360b;
 }
 
 .btn-mc-3d {
@@ -346,67 +646,70 @@ body {
   justify-content: center;
   gap: 6px;
   padding: 8px 14px;
-  background: var(--mc-btn);
+  background: linear-gradient(180deg, #4a3e78, #2a224a);
   color: var(--mc-white);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3), 
-              inset -2px -2px 0 rgba(0, 0, 0, 0.6),
-              0 3px 0 #000;
+  border-top-color: #63549e;
+  border-left-color: #63549e;
+  border-bottom-color: #17122b;
+  border-right-color: #17122b;
+  box-shadow: 0 3px 0 #100b20;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
   text-decoration: none;
-  transition: all 0.15s ease;
+  transition: all 0.12s ease;
 }
 
 .btn-mc-3d:hover {
-  background: var(--mc-btn-hover);
   color: var(--mc-yellow);
+  background: linear-gradient(180deg, #5b4d94, #352b5e);
 }
 
 .btn-mc-3d:active {
-  transform: translateY(3px);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #100b20;
 }
 
-/* ─── MAIN VIEWPORT ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   MAIN VIEWPORT & PAGE CONTAINERS
+   ══════════════════════════════════════════════════════════════════════ */
+
 .app-viewport {
-  max-width: 900px;
+  position: relative;
+  z-index: 10;
+  max-width: 940px;
   width: 100%;
   margin: 0 auto;
   padding: 16px 14px 40px;
 }
 
 .tab-transition-wrapper {
-  animation: mc-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: mcFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   width: 100%;
 }
 
-@keyframes mc-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes mcFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── CARDS & SURFACES ─── */
+/* Panels */
 .app-card {
-  background: #19143a;
+  background: rgba(26, 21, 56, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.14), 
-              inset -2px -2px 0 rgba(0, 0, 0, 0.65),
-              0 6px 16px rgba(0, 0, 0, 0.5);
-  padding: 20px 16px;
+  border-top-color: var(--panel-hi);
+  border-left-color: var(--panel-hi);
+  box-shadow: 3px 3px 0 #000, 0 6px 18px rgba(0, 0, 0, 0.4);
+  padding: 18px 16px;
   margin-bottom: 18px;
   width: 100%;
 }
 
-.app-card-elevated {
-  background: #120e2e;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.7), inset -1px -1px 0 rgba(255, 255, 255, 0.1);
-  padding: 14px;
-}
-
-/* ─── SCREENSHOT GALLERY ─── */
+/* 📸 SCREENSHOT GALLERY */
 .gallery-scroll-container {
   display: flex;
   gap: 12px;
@@ -419,11 +722,12 @@ body {
   flex: 0 0 240px;
   height: 145px;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.7);
-  background: #000;
+  box-shadow: 3px 3px 0 #000;
+  background: #0e0b24;
   scroll-snap-align: start;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease;
+  overflow: hidden;
 }
 
 .gallery-card-item:hover {
@@ -436,13 +740,30 @@ body {
   object-fit: cover;
 }
 
-/* ─── DOWNLOAD HUB: MINECRAFT RELEASE CARD ─── */
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   DOWNLOAD HUB
+   ══════════════════════════════════════════════════════════════════════ */
+
 .featured-release-card {
-  background: #19143a;
+  background: rgba(26, 21, 56, 0.78);
+  backdrop-filter: blur(12px);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.18), 
-              inset -2px -2px 0px rgba(0, 0, 0, 0.6),
-              0 6px 20px rgba(0, 0, 0, 0.6);
+  border-top-color: #3d3568;
+  border-left-color: #3d3568;
+  box-shadow: 3px 3px 0 #000, 0 8px 24px rgba(0, 0, 0, 0.5);
   padding: 22px 16px;
   margin-bottom: 22px;
 }
@@ -452,11 +773,10 @@ body {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  background: #120e2e;
+  background: #100d28;
   border: 1px solid #000;
-  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.2), inset -1px -1px 0 rgba(0,0,0,0.6);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
   font-size: 0.65rem;
-  font-weight: 700;
   color: var(--mc-gold);
   margin-bottom: 14px;
 }
@@ -471,7 +791,7 @@ body {
 }
 
 .release-version-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--mc-yellow);
 }
@@ -480,9 +800,9 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  background: #0d0a22;
+  background: #0e0b24;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.7), inset -1px -1px 0 rgba(255,255,255,0.1);
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.7);
   padding: 12px;
   margin-bottom: 16px;
 }
@@ -505,9 +825,9 @@ body {
 }
 
 .changelog-box {
-  background: #0d0a22;
+  background: #0e0b24;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8), inset -1px -1px 0 rgba(255,255,255,0.1);
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.8);
   padding: 12px 14px;
   margin-bottom: 20px;
   border-left: 4px solid var(--mc-yellow);
@@ -522,7 +842,7 @@ body {
 }
 
 .changelog-list li {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--mc-grey);
   display: flex;
   align-items: flex-start;
@@ -536,14 +856,19 @@ body {
   font-size: 0.55rem;
 }
 
-/* ─── VIDEOS ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   VIDEOS & MEDIA
+   ══════════════════════════════════════════════════════════════════════ */
+
 .video-card-item {
-  background: #1c1543;
+  background: rgba(26, 21, 56, 0.75);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.14), inset -2px -2px 0 rgba(0,0,0,0.6);
+  border-top-color: #3a2f6a;
+  border-left-color: #3a2f6a;
+  box-shadow: 3px 3px 0 #000;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease;
 }
 
 .video-card-item:hover {
@@ -578,12 +903,15 @@ body {
   color: #fff;
 }
 
-/* ─── TEAM ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   TEAM
+   ══════════════════════════════════════════════════════════════════════ */
+
 .team-member-card {
-  background: #1c1543;
+  background: rgba(26, 21, 56, 0.75);
   border: 2px solid #000;
-  border-left: 4px solid var(--mc-gold);
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.14), inset -2px -2px 0 rgba(0,0,0,0.6);
+  border-left: 5px solid var(--mc-gold);
+  box-shadow: 3px 3px 0 #000;
   padding: 20px 14px;
   text-align: center;
   display: flex;
@@ -607,11 +935,13 @@ body {
 }
 
 .social-icon-btn {
-  width: 34px;
-  height: 34px;
-  background: var(--mc-btn);
+  width: 32px;
+  height: 32px;
+  background: rgba(26, 21, 56, 0.9);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.6), 0 2px 0 #000;
+  border-top-color: #3a2f6a;
+  border-left-color: #3a2f6a;
+  box-shadow: 2px 2px 0 #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -623,7 +953,7 @@ body {
 }
 
 .social-icon-btn:hover {
-  background: var(--mc-btn-hover);
+  background: rgba(36, 28, 74, 0.95);
   color: var(--mc-yellow);
 }
 
@@ -631,11 +961,14 @@ body {
   transform: translateY(2px);
 }
 
-/* ─── ACCORDION ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   ACCORDION & HELP
+   ══════════════════════════════════════════════════════════════════════ */
+
 .accordion-item {
-  background: #1c1543;
+  background: rgba(26, 21, 56, 0.75);
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
+  box-shadow: 2px 2px 0 #000;
   margin-bottom: 8px;
 }
 
@@ -665,18 +998,23 @@ body {
   line-height: 1.55;
 }
 
-/* ─── TOAST ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   TOAST
+   ══════════════════════════════════════════════════════════════════════ */
+
 .toast-item {
   position: fixed;
   bottom: calc(var(--bottom-nav-height) + 14px);
   left: 50%;
   transform: translateX(-50%);
-  background: #241c52;
+  background: #1c1543;
   border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.7), 0 6px 20px rgba(0,0,0,0.8);
-  padding: 12px 18px;
+  border-top-color: var(--mc-gold);
+  border-left-color: var(--mc-gold);
+  box-shadow: 3px 3px 0 #000, 0 8px 24px rgba(0, 0, 0, 0.8);
+  padding: 10px 18px;
   color: var(--mc-yellow);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -684,15 +1022,20 @@ body {
   z-index: 300;
 }
 
-/* ─── 🎒 MOBILE BOTTOM NAVIGATION (CLEAN LABELS - NO CLIPPING) ─── */
+/* ══════════════════════════════════════════════════════════════════════
+   🎒 MOBILE BOTTOM NAVIGATION
+   ══════════════════════════════════════════════════════════════════════ */
+
 .mobile-bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: var(--bottom-nav-height);
-  background: rgba(20, 16, 52, 0.98);
-  border-top: 2px solid #000;
+  background: rgba(10, 8, 22, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 2px solid #14102a;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.7);
   z-index: 150;
   display: flex;
@@ -739,7 +1082,7 @@ body {
 .app-footer {
   text-align: center;
   padding: 24px 14px 12px;
-  border-top: 2px solid #000;
+  border-top: 2px solid rgba(180, 144, 255, 0.15);
   margin-top: 26px;
 }
 

@@ -1,52 +1,74 @@
 import React from 'react';
-import { Sparkles, Palette } from 'lucide-react';
+import { Palette, Sparkles, CheckCircle2 } from 'lucide-react';
 import AdBanner from './AdBanner';
+import { CapeIcon } from './MinecraftIcons';
 
 export default function Features({ features }) {
   const featureList = features ? Object.entries(features).map(([k, v]) => ({ id: k, ...v })) : [];
 
   return (
     <div className="tab-transition-wrapper">
-      <div style={{ textAlign: 'center', marginBottom: 24 }}>
-        <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '1.7rem', fontWeight: 900 }}>Client Features & Capabilities</h2>
-        <p style={{ fontSize: '0.88rem', color: 'var(--text-grey)', marginTop: 6 }}>
-          Official capabilities and enhancements built into CS Launcher
-        </p>
+      {/* MCTools Styled Section Header */}
+      <div className="home-hero-wrap" style={{ padding: '0.8rem 0 1.2rem' }}>
+        <div className="mctools-title-block">
+          <h2 className="mctools-title-main" style={{ fontSize: 'clamp(1.4rem, 5vw, 2.1rem)' }}>
+            Client Features
+          </h2>
+        </div>
+        <div>
+          <div className="mctools-sub-pill">
+            <span className="mctools-sub-text">Built-in Capabilities</span>
+          </div>
+        </div>
       </div>
 
       {/* Ad Banner */}
       <AdBanner slotId="features-top" format="banner" />
 
       {featureList.length > 0 ? (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: 16 }}>
           {featureList.map((item) => (
             <div key={item.id} className="app-card" style={{ padding: 0, overflow: 'hidden' }}>
               {item.imageUrl && (
-                <div style={{ width: '100%', height: 210, background: '#050508', overflow: 'hidden' }}>
+                <div style={{ width: '100%', height: 200, background: '#09071c', borderBottom: '2px solid #000', overflow: 'hidden' }}>
                   <img 
                     src={item.imageUrl} 
                     alt={item.title || 'Feature'} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                     loading="lazy" 
                   />
                 </div>
               )}
-              <div style={{ padding: 22 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                  <Palette size={18} color="#F59E0B" />
-                  <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.12rem', fontWeight: 800, color: 'var(--text-white)' }}>
-                    {item.title || 'Feature'}
+              <div style={{ padding: 18 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                  <div style={{ width: 34, height: 34, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <CapeIcon size={26} />
+                  </div>
+                  <h3 style={{ fontSize: '0.92rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000' }}>
+                    {item.title || 'Skin and Cape Changer'}
                   </h3>
                 </div>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-grey)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '0.74rem', color: 'var(--mc-grey)', lineHeight: 1.6, textShadow: '1px 1px 0 #000' }}>
                   {item.text || 'Dynamic custom skin & cape applicator for Minecraft Java accounts on Android.'}
                 </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 14 }}>
+                  <span style={{ fontSize: '0.62rem', background: '#0d0a22', border: '1px solid #000', color: 'var(--mc-green)', padding: '3px 8px' }}>
+                    ✓ Java 1.8 - 1.21.x
+                  </span>
+                  <span style={{ fontSize: '0.62rem', background: '#0d0a22', border: '1px solid #000', color: 'var(--mc-cyan)', padding: '3px 8px' }}>
+                    ✓ Custom Capes
+                  </span>
+                  <span style={{ fontSize: '0.62rem', background: '#0d0a22', border: '1px solid #000', color: 'var(--mc-gold)', padding: '3px 8px' }}>
+                    ✓ Offline/Online Mode
+                  </span>
+                </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="app-card" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '28px' }}>
+        <div className="app-card" style={{ textAlign: 'center', color: 'var(--mc-grey)', padding: '28px' }}>
           No extra client features configured.
         </div>
       )}

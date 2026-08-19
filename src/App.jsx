@@ -10,14 +10,14 @@ import Help from './components/Help';
 import BottomNav from './components/BottomNav';
 import VideoModal from './components/VideoModal';
 import Toast from './components/Toast';
+import BackgroundSky from './components/BackgroundSky';
 
 // ─── EXACT REAL GITHUB V3 RELEASE DATA ───
 const APP_DATA = {
   branding: {
-    appName: "CS LAUNCHER",
+    appName: "CS Launcher",
     tagline: "Minecraft Java on Mobile Android",
     logoImage: "https://i.ibb.co/jv7ZS03W/favicon.png",
-    bgImage: "https://i.ibb.co/HvzwkRF/992e6382ef96e29b26397f1b35ccd1e5.gif",
     copyright: "© 2026 Craft Studio Development Group. All Rights Reserved.",
     screenshots: [
       "https://i.ibb.co/6zh10Ph/333231.jpg",
@@ -28,7 +28,7 @@ const APP_DATA = {
     ]
   },
   hero: {
-    badgeText: "CS LAUNCHER V3 OFFICIAL",
+    badgeText: "CS Launcher V3 Official",
     subtitle: "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, cleaner UI, and enhanced Minecraft Java experience on Android.",
     statsBar: "Android 7.0+"
   },
@@ -56,7 +56,7 @@ const APP_DATA = {
   },
   features: {
     "f1": {
-      title: "SKIN AND CAPE CHANGE FEATURE",
+      title: "Skin and Cape Changer",
       imageUrl: "https://i.ibb.co/wN4DmcNH/296556.jpg",
       text: "Dynamic custom skin & cape applicator for Minecraft Java accounts on Android."
     }
@@ -64,20 +64,20 @@ const APP_DATA = {
   team: {
     "m1": {
       name: "ROHIT_45",
-      role: "DEVELOPER",
+      role: "Developer",
       highlight: true,
       avatar: "https://i.ibb.co/zWDH0Jh0/deu21r1-2848045c-3843-4ad6-a7d9-64a1673a7e9f.jpg",
       discord: "https://discord.gg/bpgYQMA59D"
     },
     "m2": {
-      name: "NOT DANGER",
-      role: "FOUNDER",
+      name: "Not Danger",
+      role: "Founder",
       highlight: true,
       avatar: "https://i.ibb.co/Vc45DdMp/db6dabd7053933428b647c0599c14e8f.png"
     },
     "m3": {
       name: "Ender_Warrrior",
-      role: "FOUNDER",
+      role: "Founder",
       highlight: true,
       avatar: "https://i.ibb.co/hJ6HSQQz/Tokyo-Revengers-Mikey-Profile.jpg",
       discord: "https://discord.gg/28mMQTmsg9",
@@ -90,11 +90,11 @@ const APP_DATA = {
       videoId: "vEmRhDehLjQ"
     },
     "v2": {
-      title: "CS Launcher V3 — Minecraft Android Just Got BETTER!",
+      title: "CS Launcher V3 — Minecraft Android Just Got Better!",
       videoId: "DjJKUylHCSA"
     },
     "v3": {
-      title: "I FOUND THE BEST MINECRAFT LAUNCHER FOR ANDROID IN 2026! 🤯🔥",
+      title: "Best Minecraft Java Launcher For Android in 2026",
       videoId: "w8kw54pHgaU"
     }
   },
@@ -248,17 +248,10 @@ export default function App() {
 
   return (
     <div>
-      {/* Background Layer */}
-      <div className="bg-layer-container">
-        <img 
-          className="bg-layer-gif" 
-          src={APP_DATA.branding.bgImage} 
-          alt="Background" 
-        />
-      </div>
-      <div className="bg-layer-overlay"></div>
+      {/* 🌌 Authentic Animated Minecraft Sky Background */}
+      <BackgroundSky />
 
-      {/* Top Header with Clean URL Sharing */}
+      {/* Top Header with mc-tools.net Style Branding */}
       <Header 
         branding={APP_DATA.branding} 
         activeVersion={APP_DATA.latestDownload.version} 

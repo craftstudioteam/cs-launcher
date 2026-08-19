@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
-import { Download, Sparkles, Image, X, Video, Archive, Palette, ShieldCheck, Users } from 'lucide-react';
+import { Download, Sparkles, Image, X, Video, Archive, Palette, ShieldCheck, Users, HelpCircle, ExternalLink } from 'lucide-react';
 import AdBanner from './AdBanner';
+import {
+  TotemIcon,
+  MusicDiscIcon,
+  PaintingIcon,
+  PlayerHeadIcon,
+  CapeIcon,
+  ArmorStandIcon,
+  ApkPackageIcon,
+  ShieldGplIcon,
+  DiscordIcon
+} from './MinecraftIcons';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
   const [lightboxImg, setLightboxImg] = useState(null);
@@ -15,105 +26,140 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
   return (
     <div className="tab-transition-wrapper">
 
-      {/* 🕹️ MCTOOLS RETRO HERO BOX (NORMAL CASE - NO ALL-CAPS) */}
-      <div className="mctools-hero-box">
-        <div className="mctools-title-frame">
-          <div className="mctools-title-text">CS Launcher</div>
+      {/* ══════════════════════════════════════════════════════════════
+          🕹️ AUTHENTIC MCTOOLS HERO TITLE BOX
+          ══════════════════════════════════════════════════════════════ */}
+      <div className="home-hero-wrap">
+        <div className="mctools-title-block">
+          <h1 className="mctools-title-main">CS Launcher</h1>
         </div>
 
         <div>
-          <div className="mctools-subtitle-pill">
-            Minecraft Java on Android
+          <div className="mctools-sub-pill">
+            <span className="mctools-sub-text">Minecraft Java on Android</span>
           </div>
         </div>
 
-        {/* 🟢 Big 3D Green Download Button */}
-        <button 
-          className="btn-mc-green-3d" 
-          onClick={() => onDownload(null, currentVer)}
-        >
-          <Download size={18} />
-          <span>Download APK ({currentVer})</span>
-        </button>
+        {/* 🟢 Big In-Game 3D Green Download Button */}
+        <div className="hero-actions-container">
+          <button 
+            className="btn-mc-green-3d" 
+            onClick={() => onDownload(null, currentVer)}
+          >
+            <Download size={20} />
+            <span>Download APK ({currentVer})</span>
+          </button>
 
-        {/* Status Tag */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '0.66rem', color: 'var(--mc-green)', background: '#0d0a22', padding: '4px 10px', border: '1px solid #000' }}>
-            ● v3 Official Release
-          </span>
-          <span style={{ fontSize: '0.66rem', color: 'var(--mc-gold)', background: '#0d0a22', padding: '4px 10px', border: '1px solid #000' }}>
-            {count.toLocaleString()}+ Downloads
-          </span>
+          {/* Quick Info Badges */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.64rem', color: 'var(--mc-green)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
+              ● v3 Official Release (185.8 MB)
+            </span>
+            <span style={{ fontSize: '0.64rem', color: 'var(--mc-gold)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
+              {count.toLocaleString()}+ Downloads
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* 🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MCTOOLS STYLE) */}
-      <div className="mctools-section-header">
+      {/* ══════════════════════════════════════════════════════════════
+          🧱 2-COLUMN MINECRAFT GRID CARDS (EXACT MC-TOOLS.NET STYLE)
+          ══════════════════════════════════════════════════════════════ */}
+      <div className="section-label-mctools">
         <span>Launcher Tools</span>
+        <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)', letterSpacing: 0 }}>Tap any tool</span>
       </div>
 
       <div className="mctools-grid-2col">
-        {/* Card 1: Download V3 */}
+        {/* Card 1: Download V3 (Yellow Stripe) */}
         <div className="mctools-card stripe-yellow" onClick={() => onDownload(null, currentVer)}>
           <span className="mctools-card-badge">v3</span>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Download size={20} color="#FFAA00" />
-            </div>
+            <ApkPackageIcon size={46} />
           </div>
-          <div className="mctools-card-title">Download APK</div>
+          <div>
+            <div className="mctools-card-title">Download APK</div>
+            <div className="mctools-card-desc">185.8 MB • Android 7+</div>
+          </div>
         </div>
 
-        {/* Card 2: Skin & Cape */}
+        {/* Card 2: Skin & Cape Changer (Purple Stripe) */}
         <div className="mctools-card stripe-purple" onClick={() => onNavigate('features')}>
-          <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#fff' }}>New</span>
+          <span className="mctools-card-badge" style={{ background: 'var(--mc-purple)', color: '#000' }}>NEW</span>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Palette size={20} color="#B388FF" />
-            </div>
+            <CapeIcon size={46} />
           </div>
-          <div className="mctools-card-title">Skin & Cape</div>
+          <div>
+            <div className="mctools-card-title">Skin & Cape</div>
+            <div className="mctools-card-desc">Custom Java Skins</div>
+          </div>
         </div>
 
-        {/* Card 3: Video Tutorials */}
+        {/* Card 3: Video Guides & Showcases (Green Stripe) */}
         <div className="mctools-card stripe-green" onClick={() => onNavigate('videos')}>
           <span className="mctools-card-badge" style={{ background: 'var(--mc-green)', color: '#000' }}>HD</span>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Video size={20} color="#55FF55" />
-            </div>
+            <MusicDiscIcon size={46} />
           </div>
-          <div className="mctools-card-title">Video Guides</div>
+          <div>
+            <div className="mctools-card-title">Video Guides</div>
+            <div className="mctools-card-desc">Gameplay & Setup</div>
+          </div>
         </div>
 
-        {/* Card 4: Archive Builds */}
+        {/* Card 4: Archive Builds (Cyan Stripe) */}
         <div className="mctools-card stripe-cyan" onClick={() => onNavigate('download')}>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Archive size={20} color="#55FFFF" />
-            </div>
+            <PaintingIcon size={46} />
           </div>
-          <div className="mctools-card-title">Old Builds</div>
+          <div>
+            <div className="mctools-card-title">Old Builds</div>
+            <div className="mctools-card-desc">v1.0.0 Archive</div>
+          </div>
         </div>
 
-        {/* Card 5: Team */}
+        {/* Card 5: Craft Studio Team (Yellow Stripe) */}
         <div className="mctools-card stripe-yellow" onClick={() => onNavigate('team')}>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Users size={20} color="#FFAA00" />
-            </div>
+            <PlayerHeadIcon size={46} />
           </div>
-          <div className="mctools-card-title">Craft Team</div>
+          <div>
+            <div className="mctools-card-title">Craft Team</div>
+            <div className="mctools-card-desc">Credits & Pojav</div>
+          </div>
         </div>
 
-        {/* Card 6: Legal */}
+        {/* Card 6: Legal Notice & GPLv3 (Red Stripe) */}
         <div className="mctools-card stripe-red" onClick={() => onNavigate('notice')}>
           <div className="mctools-card-icon">
-            <div style={{ width: 36, height: 36, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <ShieldCheck size={20} color="#FF5555" />
-            </div>
+            <ShieldGplIcon size={46} />
           </div>
-          <div className="mctools-card-title">Legal & GPL</div>
+          <div>
+            <div className="mctools-card-title">Legal & GPL</div>
+            <div className="mctools-card-desc">Open Source GNU</div>
+          </div>
+        </div>
+
+        {/* Card 7: Armor Stand / Setup (Orange Stripe) */}
+        <div className="mctools-card stripe-orange" onClick={() => onNavigate('help')}>
+          <div className="mctools-card-icon">
+            <ArmorStandIcon size={46} />
+          </div>
+          <div>
+            <div className="mctools-card-title">Setup Help</div>
+            <div className="mctools-card-desc">RAM & Controls</div>
+          </div>
+        </div>
+
+        {/* Card 8: Totem / FAQs (Purple Stripe) */}
+        <div className="mctools-card stripe-purple" onClick={() => onNavigate('help')}>
+          <div className="mctools-card-icon">
+            <TotemIcon size={46} />
+          </div>
+          <div>
+            <div className="mctools-card-title">Community FAQ</div>
+            <div className="mctools-card-desc">Discord & Guides</div>
+          </div>
         </div>
       </div>
 
@@ -128,7 +174,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
               <Image size={15} />
               <span>Screenshots</span>
             </div>
-            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>Tap to preview</span>
+            <span style={{ fontSize: '0.62rem', color: 'var(--mc-grey)' }}>Tap to expand</span>
           </div>
           <div className="gallery-scroll-container">
             {screenshots.map((url, idx) => (
@@ -146,13 +192,18 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
       {/* 💬 COMMUNITY DISCORD CARD */}
       {discordUrl && (
-        <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
-          <div>
-            <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
-              Join CS Launcher Discord
+        <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div className="nav-discord-btn" style={{ width: 42, height: 42 }}>
+              <DiscordIcon size={24} color="#fff" />
             </div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--mc-grey)', marginTop: 2 }}>
-              Get instant setup help and updates
+            <div>
+              <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
+                Join CS Launcher Discord
+              </div>
+              <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
+                Get instant help, game configs & updates
+              </div>
             </div>
           </div>
 
@@ -161,9 +212,9 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-mc-3d"
-            style={{ fontSize: '0.72rem', padding: '8px 14px' }}
+            style={{ fontSize: '0.74rem', padding: '8px 14px' }}
           >
-            <span>Join Discord ↗</span>
+            <span>Join Server ↗</span>
           </a>
         </div>
       )}
@@ -172,7 +223,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {lightboxImg && (
         <div className="modal-overlay" onClick={() => setLightboxImg(null)}>
           <div 
-            style={{ maxWidth: '90vw', maxHeight: '85vh', position: 'relative' }}
+            style={{ maxWidth: '92vw', maxHeight: '85vh', position: 'relative' }}
             onClick={(e) => e.stopPropagation()}
           >
             <button 
