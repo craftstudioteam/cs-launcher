@@ -2,7 +2,6 @@ import React from 'react';
 import { Download } from 'lucide-react';
 import AdBanner from './AdBanner';
 import ShowcaseGallery from './ShowcaseGallery';
-import TypewriterText from './TypewriterText';
 import { DiscordIcon } from './MinecraftIcons';
 
 export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
@@ -13,7 +12,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
     <div className="tab-transition-wrapper">
 
       {/* ══════════════════════════════════════════════════════════════
-          🕹️ AUTHENTIC MCTOOLS HERO TITLE BOX WITH TYPEWRITER ANIMATION
+          🕹️ CLEAN & ELEGANT HERO TITLE BOX
           ══════════════════════════════════════════════════════════════ */}
       <div className="home-hero-wrap">
         <div className="mctools-title-block">
@@ -22,9 +21,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
         <div>
           <div className="mctools-sub-pill">
-            <span className="mctools-sub-text">
-              <TypewriterText />
-            </span>
+            <span className="mctools-sub-text">Minecraft Java on Android</span>
           </div>
         </div>
 
@@ -40,10 +37,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
           {/* Quick Info Badges */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.64rem', color: 'var(--mc-green)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--mc-green)', background: '#100d28', padding: '5px 12px', border: '1px solid #282054', borderRadius: 4 }}>
               ● v3 Official Release (185.8 MB)
             </span>
-            <span style={{ fontSize: '0.64rem', color: 'var(--mc-gold)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--mc-gold)', background: '#100d28', padding: '5px 12px', border: '1px solid #282054', borderRadius: 4 }}>
               {count.toLocaleString()}+ Downloads
             </span>
           </div>
@@ -53,7 +50,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {/* 📢 AD BANNER */}
       <AdBanner slotId="hero-mid" format="banner" />
 
-      {/* 📸 MCTOOLS AUTHENTIC AUTO-SLIDING GALLERY CAROUSEL */}
+      {/* 📸 SHOWCASE GALLERY (Homescreen First) */}
       <ShowcaseGallery />
 
       {/* 💬 COMMUNITY DISCORD CARD */}
@@ -64,10 +61,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
               <DiscordIcon size={24} color="#fff" />
             </div>
             <div>
-              <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
+              <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
                 Join CS Launcher Discord
               </div>
-              <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--mc-grey)', marginTop: 2 }}>
                 Get instant help, game configs & updates
               </div>
             </div>
@@ -78,7 +75,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-mc-3d"
-            style={{ fontSize: '0.74rem', padding: '8px 14px' }}
+            style={{ fontSize: '0.78rem', padding: '9px 16px' }}
           >
             <span>Join Server ↗</span>
           </a>
