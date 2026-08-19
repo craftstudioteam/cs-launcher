@@ -1,75 +1,80 @@
 /* ═════════════════════════════════════════════════════════════
-   CS LAUNCHER — 100% AUTHENTIC MINECRAFT 3D RETRO GAMING THEME
-   Full Pixel Typography • Minecraft 3D Beveled Buttons • Deepslate Glass Cards
-   Zero Blue Color • Hotbar Mobile Navigation • 100% Minecraft Feel
+   CS LAUNCHER — PRO MINECRAFT 3D RETRO-MODERN GAMING UI
+   Zero Overflow • Ultra-Fluid Animations • High-End Custom SVGs
+   Strictly Zero Blue Color • 100% Mobile Viewport Compliant
    ═════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* 🎮 100% MINECRAFT PIXEL FONTS */
-  --font-pixel: 'Silkscreen', 'Press Start 2P', monospace;
+  /* Fonts */
+  --font-pixel: 'Silkscreen', monospace;
+  --font-gaming: 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
 
-  /* Minecraft Dark / Deepslate Palette (Strictly No Blue) */
-  --mc-dark-bg: #09090c;
-  --mc-deepslate: #14141c;
-  --mc-card-bg: rgba(20, 20, 28, 0.92);
-  --mc-slot-bg: #0a0a0f;
-  --mc-btn-bg: #3a3a46;
-  --mc-btn-hover: #4e4e5e;
-  --mc-btn-green: #2e7d32;
-  --mc-btn-green-hover: #388e3c;
-  
-  /* Minecraft Typography Colors */
+  /* Minecraft Dark / Obsidian Gaming Colors (ZERO BLUE) */
+  --mc-dark-bg: #07070a;
+  --mc-deepslate: #101016;
+  --mc-card-bg: rgba(18, 18, 26, 0.94);
+  --mc-card-elevated: #161622;
+  --mc-card-hover: #1e1e2c;
+  --mc-slot-bg: #0b0b10;
+
+  /* Minecraft 3D Button Palettes */
+  --mc-btn-grey: #343440;
+  --mc-btn-grey-hover: #444452;
+  --mc-btn-green: #237829;
+  --mc-btn-green-hover: #2e8b34;
+  --mc-btn-gold: #c68a00;
+  --mc-btn-gold-hover: #dca000;
+
+  /* Typography Colors */
   --mc-text-white: #ffffff;
   --mc-text-yellow: #ffff55;
   --mc-text-gold: #ffaa00;
   --mc-text-green: #55ff55;
-  --mc-text-grey: #aaaaaa;
-  --mc-text-darkgrey: #555555;
+  --mc-text-grey: #a6a6bc;
+  --mc-text-muted: #6a6a7e;
   --mc-text-red: #ff5555;
 
-  /* Minecraft Pixel Borders */
-  --mc-border-light: rgba(255, 255, 255, 0.25);
-  --mc-border-dark: rgba(0, 0, 0, 0.7);
-
-  /* Heights */
+  /* Layout */
   --header-height: 64px;
-  --bottom-nav-height: 72px;
+  --bottom-nav-height: 68px;
 }
 
+/* ─── RESET & OVERFLOW PREVENTION (Zero Horizontal Scroll) ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
-  font-family: var(--font-pixel) !important;
-  image-rendering: pixelated;
 }
 
 html {
-  font-family: var(--font-pixel);
+  font-family: var(--font-body);
   background-color: var(--mc-dark-bg);
   color: var(--mc-text-white);
-  font-size: 14px;
+  font-size: 15px;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  text-shadow: 1px 1px 0px #000000;
+  width: 100%;
 }
 
 body {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
   background-color: var(--mc-dark-bg);
   position: relative;
   overflow-x: hidden;
-  padding-bottom: calc(var(--bottom-nav-height) + 24px);
-  user-select: none;
+  padding-bottom: calc(var(--bottom-nav-height) + 20px);
 }
 
-/* Scrollbars */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #08080c; }
-::-webkit-scrollbar-thumb { background: #3a3a46; border: 1px solid #000; }
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--mc-dark-bg); }
+::-webkit-scrollbar-thumb { background: #262634; border: 1px solid #000; }
 
 /* ─── BACKGROUND AMBIENT LAYER ─── */
 .bg-layer-container {
@@ -84,45 +89,46 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.18;
-  filter: grayscale(80%) brightness(0.6);
+  opacity: 0.14;
+  filter: grayscale(85%) brightness(0.6);
   transform: scale(1.04);
 }
 
 .bg-layer-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 15%, rgba(28, 28, 42, 0.5) 0%, rgba(9, 9, 12, 0.98) 75%),
-              linear-gradient(180deg, rgba(9, 9, 12, 0.6) 0%, #09090c 100%);
+  background: radial-gradient(circle at 50% 12%, rgba(28, 28, 42, 0.45) 0%, rgba(7, 7, 10, 0.98) 75%),
+              linear-gradient(180deg, rgba(7, 7, 10, 0.5) 0%, #07070a 100%);
   z-index: -1;
   pointer-events: none;
 }
 
-/* ─── MINECRAFT 3D HEADER ─── */
+/* ─── APP HEADER ─── */
 .app-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background: rgba(16, 16, 24, 0.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 2px solid #000;
-  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: rgba(12, 12, 18, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 0, 0, 0.6);
   z-index: 100;
   display: flex;
   align-items: center;
 }
 
 .header-container {
-  max-width: 1050px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
 }
 
 .brand-wrapper {
@@ -130,15 +136,17 @@ body {
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  user-select: none;
   min-width: 0;
+  flex: 1;
 }
 
 .brand-icon-box {
   width: 38px;
   height: 38px;
-  background: #242432;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.25), inset -2px -2px 0 rgba(0, 0, 0, 0.6);
+  background: #1c1c28;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.2), inset -2px -2px 0 rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,83 +158,102 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
 }
 
 .brand-title {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 0.96rem;
+  font-weight: 900;
   color: var(--mc-text-white);
   display: flex;
   align-items: center;
   gap: 6px;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-version-pill {
-  font-size: 0.65rem;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  font-weight: 700;
   padding: 2px 6px;
-  background: #242432;
+  background: #12121a;
   border: 1px solid #000;
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), inset -1px -1px 0 rgba(0, 0, 0, 0.5);
   color: var(--mc-text-yellow);
+  flex-shrink: 0;
 }
 
 .brand-tagline {
-  font-size: 0.62rem;
-  color: var(--mc-text-grey);
+  font-size: 0.68rem;
+  color: var(--mc-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* ─── 🕹️ MINECRAFT AUTHENTIC 3D BUTTONS ─── */
+/* ─── 🕹️ ZERO-OVERFLOW MINECRAFT 3D BUTTONS ─── */
 .btn-mc-3d {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: var(--mc-btn-bg);
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--mc-btn-grey);
   color: var(--mc-text-white);
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 0.8rem;
+  font-weight: 800;
   text-decoration: none;
   border: 2px solid #000000;
-  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.35), 
-              inset -2px -2px 0px rgba(0, 0, 0, 0.55),
+  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.3), 
+              inset -2px -2px 0px rgba(0, 0, 0, 0.6),
               0 3px 0 #000000;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
-  transition: background 0.1s ease;
+  max-width: 100%;
+  transition: transform 0.1s ease, background 0.1s ease;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .btn-mc-3d:hover {
-  background: var(--mc-btn-hover);
+  background: var(--mc-btn-grey-hover);
   color: var(--mc-text-yellow);
 }
 
 .btn-mc-3d:active {
-  box-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.2), 
+  box-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.15), 
               inset 2px 2px 0px rgba(0, 0, 0, 0.7);
   transform: translateY(3px);
 }
 
-/* 🟢 Primary Green Minecraft Button (Download CTA) */
+/* 🟢 Primary Green Minecraft Download Button */
 .btn-mc-green-3d {
   width: 100%;
-  height: 52px;
+  max-width: 100%;
+  min-height: 52px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   background: var(--mc-btn-green);
   color: var(--mc-text-white);
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 0.95rem;
+  font-weight: 900;
   border: 2px solid #000000;
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.4), 
-              inset -2px -2px 0px rgba(0, 0, 0, 0.6),
+              inset -2px -2px 0px rgba(0, 0, 0, 0.65),
               0 4px 0 #000000;
   cursor: pointer;
   text-shadow: 1px 1px 0 #000;
+  text-align: center;
+  transition: transform 0.1s ease, background 0.1s ease;
 }
 
 .btn-mc-green-3d:hover {
@@ -235,53 +262,63 @@ body {
 }
 
 .btn-mc-green-3d:active {
-  box-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.2), 
-              inset 2px 2px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.15), 
+              inset 2px 2px 0px rgba(0, 0, 0, 0.75);
   transform: translateY(4px);
 }
 
 /* ─── MAIN VIEWPORT ─── */
 .app-viewport {
-  max-width: 980px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 16px 14px 40px;
+  padding: 16px 12px 40px;
+  overflow-x: hidden;
 }
 
 .tab-transition-wrapper {
-  animation: mc-fade-in 0.2s ease-out forwards;
+  animation: mc-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+  max-width: 100%;
 }
 
 @keyframes mc-fade-in {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── 🧱 MINECRAFT 3D CONTAINER CARD ─── */
+/* ─── HERO CONSOLE CARD (100% RESPONSIVE) ─── */
 .hero-card-container {
   background: var(--mc-card-bg);
   border: 2px solid #000000;
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.15), 
-              inset -2px -2px 0px rgba(0, 0, 0, 0.6),
-              0 6px 16px rgba(0, 0, 0, 0.6);
-  padding: 24px 18px 20px;
-  margin-bottom: 20px;
+              inset -2px -2px 0px rgba(0, 0, 0, 0.65),
+              0 6px 18px rgba(0, 0, 0, 0.7);
+  padding: 24px 14px 20px;
+  margin-bottom: 18px;
   text-align: center;
-  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .hero-status-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 5px 12px;
   background: #0d0d14;
-  border: 2px solid #000;
+  border: 2px solid #000000;
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -1px -1px 0 rgba(0,0,0,0.6);
-  font-size: 0.7rem;
+  font-family: var(--font-pixel);
+  font-size: 0.64rem;
   font-weight: 700;
   color: var(--mc-text-green);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .status-dot {
@@ -289,43 +326,48 @@ body {
   height: 8px;
   background: var(--mc-text-green);
   box-shadow: 0 0 8px var(--mc-text-green);
+  flex-shrink: 0;
 }
 
 .hero-main-title {
-  font-size: clamp(1.4rem, 5vw, 2.3rem);
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--mc-text-yellow);
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  font-family: var(--font-gaming);
+  font-size: clamp(1.7rem, 6vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: var(--mc-text-white);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 #000;
+  word-break: break-word;
 }
 
 .hero-main-title span {
-  color: var(--mc-text-white);
+  color: var(--mc-text-yellow);
 }
 
 .hero-desc-text {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--mc-text-grey);
-  line-height: 1.6;
-  max-width: 540px;
-  margin: 0 auto 20px;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0 auto 18px;
+  padding: 0 4px;
 }
 
-/* Structured Mobile Buttons */
+/* Structured Buttons Stack */
 .hero-buttons-stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   max-width: 440px;
-  margin: 0 auto 20px;
+  margin: 0 auto 18px;
 }
 
 .hero-sub-buttons-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 6px;
   width: 100%;
 }
 
@@ -334,14 +376,15 @@ body {
   flex-wrap: wrap;
   gap: 6px;
   justify-content: center;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .hero-feature-chip {
-  font-size: 0.62rem;
-  padding: 4px 10px;
-  background: #101018;
-  border: 1px solid #000;
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  padding: 4px 8px;
+  background: #0f0f16;
+  border: 1px solid #000000;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,0.1), inset -1px -1px 0 rgba(0,0,0,0.5);
   color: var(--mc-text-gold);
 }
@@ -350,63 +393,78 @@ body {
 .stats-bar-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 18px;
+  width: 100%;
 }
 
 .stat-box {
   background: var(--mc-card-bg);
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.12), inset -2px -2px 0 rgba(0,0,0,0.6);
-  padding: 14px 6px;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
+  padding: 12px 6px;
   text-align: center;
+  min-width: 0;
 }
 
 .stat-number {
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 1.15rem;
+  font-weight: 900;
   color: var(--mc-text-yellow);
+  text-shadow: 1px 1px 0 #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stat-label {
-  font-size: 0.58rem;
+  font-family: var(--font-pixel);
+  font-size: 0.52rem;
   color: var(--mc-text-grey);
-  margin-top: 4px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ─── MINECRAFT 3D CARDS ─── */
 .app-card {
   background: var(--mc-card-bg);
   border: 2px solid #000000;
-  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.12), 
+  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1), 
               inset -2px -2px 0px rgba(0, 0, 0, 0.6),
               0 4px 12px rgba(0, 0, 0, 0.5);
-  padding: 20px 16px;
-  margin-bottom: 18px;
+  padding: 18px 14px;
+  margin-bottom: 16px;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .app-card-elevated {
-  background: #181824;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.18), inset -2px -2px 0 rgba(0,0,0,0.6);
+  background: #14141e;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.15), inset -2px -2px 0 rgba(0,0,0,0.6);
 }
 
 /* ─── SCREENSHOT GALLERY ─── */
 .gallery-scroll-container {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-card-item {
-  flex: 0 0 260px;
-  height: 155px;
-  border: 2px solid #000;
+  flex: 0 0 240px;
+  height: 145px;
+  border: 2px solid #000000;
   box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.7);
-  background: #000;
+  background: #000000;
   scroll-snap-align: start;
   cursor: pointer;
 }
@@ -415,18 +473,21 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
+  display: block;
 }
 
-/* ─── DOWNLOAD HUB: MINECRAFT 3D RELEASE CARD ─── */
+/* ─── DOWNLOAD HUB: MINECRAFT RELEASE CARD ─── */
 .featured-release-card {
   background: var(--mc-card-bg);
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.18), 
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.15), 
               inset -2px -2px 0px rgba(0, 0, 0, 0.6),
-              0 6px 20px rgba(0, 0, 0, 0.6);
-  padding: 22px 16px;
-  margin-bottom: 22px;
+              0 6px 18px rgba(0, 0, 0, 0.6);
+  padding: 20px 14px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .featured-badge {
@@ -434,13 +495,14 @@ body {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  background: #181824;
-  border: 1px solid #000;
+  background: #14141e;
+  border: 1px solid #000000;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,0.2), inset -1px -1px 0 rgba(0,0,0,0.6);
-  font-size: 0.65rem;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
   font-weight: 700;
   color: var(--mc-text-gold);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .release-main-row {
@@ -448,13 +510,14 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
 .release-version-title {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 1.5rem;
+  font-weight: 900;
   color: var(--mc-text-yellow);
 }
 
@@ -462,11 +525,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  background: #0a0a10;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.7), inset -1px -1px 0 rgba(255,255,255,0.1);
-  padding: 12px;
-  margin-bottom: 16px;
+  background: #09090e;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.7), inset -1px -1px 0 rgba(255,255,255,0.08);
+  padding: 10px;
+  margin-bottom: 14px;
 }
 
 .spec-item {
@@ -475,25 +538,27 @@ body {
 }
 
 .spec-key {
-  font-size: 0.58rem;
-  color: var(--mc-text-grey);
+  font-family: var(--font-pixel);
+  font-size: 0.54rem;
+  color: var(--mc-text-muted);
   text-transform: uppercase;
 }
 
 .spec-val {
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
   color: var(--mc-text-white);
   margin-top: 2px;
 }
 
 .changelog-box {
-  background: #08080e;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8), inset -1px -1px 0 rgba(255,255,255,0.1);
-  padding: 12px 14px;
-  margin-bottom: 20px;
-  border-left: 4px solid var(--mc-text-yellow);
+  background: #08080c;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8), inset -1px -1px 0 rgba(255,255,255,0.08);
+  padding: 12px;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--mc-text-yellow);
 }
 
 .changelog-list {
@@ -505,7 +570,7 @@ body {
 }
 
 .changelog-list li {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: var(--mc-text-grey);
   display: flex;
   align-items: flex-start;
@@ -516,41 +581,45 @@ body {
 .changelog-list li::before {
   content: "■";
   color: var(--mc-text-yellow);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+  margin-top: 2px;
 }
 
 /* Archive Grid */
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 12px;
-  margin-top: 14px;
+  gap: 10px;
+  margin-top: 12px;
+  width: 100%;
 }
 
 .archive-card {
-  background: #14141c;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.12), inset -2px -2px 0 rgba(0,0,0,0.6);
-  padding: 16px;
+  background: #14141e;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
+  padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .archive-version-tag {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--mc-text-yellow);
 }
 
 /* ─── VIDEOS ─── */
 .video-card-item {
-  background: #14141c;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.12), inset -2px -2px 0 rgba(0,0,0,0.6);
+  background: #14141e;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
   overflow: hidden;
   cursor: pointer;
+  width: 100%;
 }
 
 .video-thumb-wrap {
@@ -565,7 +634,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
 }
 
 .video-play-overlay {
@@ -576,7 +644,7 @@ body {
   width: 44px;
   height: 44px;
   background: rgba(0, 0, 0, 0.75);
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -585,10 +653,10 @@ body {
 
 /* ─── TEAM ─── */
 .team-member-card {
-  background: #14141c;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.12), inset -2px -2px 0 rgba(0,0,0,0.6);
-  padding: 22px 16px;
+  background: #14141e;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
+  padding: 20px 14px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -596,10 +664,10 @@ body {
 }
 
 .team-avatar-box {
-  width: 72px;
-  height: 72px;
-  background: #000;
-  border: 2px solid #fff;
+  width: 68px;
+  height: 68px;
+  background: #000000;
+  border: 2px solid #ffffff;
   margin-bottom: 10px;
   overflow: hidden;
 }
@@ -608,14 +676,13 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
 }
 
 .social-icon-btn {
   width: 36px;
   height: 36px;
-  background: var(--mc-btn-bg);
-  border: 2px solid #000;
+  background: var(--mc-btn-grey);
+  border: 2px solid #000000;
   box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.6), 0 2px 0 #000;
   display: flex;
   align-items: center;
@@ -627,7 +694,7 @@ body {
 }
 
 .social-icon-btn:hover {
-  background: var(--mc-btn-hover);
+  background: var(--mc-btn-grey-hover);
   color: var(--mc-text-yellow);
 }
 
@@ -638,23 +705,25 @@ body {
 /* ─── ACCORDION ─── */
 .accordion-item {
   background: var(--mc-card-bg);
-  border: 2px solid #000;
+  border: 2px solid #000000;
   box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.6);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .accordion-trigger {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px 14px;
   background: none;
   border: none;
   color: var(--mc-text-white);
-  font-size: 0.78rem;
+  font-family: var(--font-gaming);
+  font-size: 0.88rem;
   font-weight: 700;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   cursor: pointer;
 }
 
@@ -663,20 +732,21 @@ body {
 }
 
 .accordion-content {
-  padding: 0 16px 14px;
-  font-size: 0.74rem;
+  padding: 0 14px 14px;
+  font-size: 0.82rem;
   color: var(--mc-text-grey);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ─── INPUTS ─── */
 .app-input {
   width: 100%;
-  background: #08080e;
-  border: 2px solid #000;
-  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8), inset -1px -1px 0 rgba(255,255,255,0.1);
+  background: #08080d;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8), inset -1px -1px 0 rgba(255,255,255,0.08);
   padding: 12px 14px;
-  font-size: 0.78rem;
+  font-family: inherit;
+  font-size: 0.85rem;
   color: var(--mc-text-white);
   outline: none;
   margin-bottom: 12px;
@@ -692,13 +762,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
 }
 
 .modal-dialog {
-  background: #181824;
-  border: 3px solid #000;
-  box-shadow: inset 3px 3px 0 rgba(255,255,255,0.25), inset -3px -3px 0 rgba(0,0,0,0.7), 0 8px 30px rgba(0,0,0,0.9);
+  background: #161622;
+  border: 3px solid #000000;
+  box-shadow: inset 3px 3px 0 rgba(255,255,255,0.2), inset -3px -3px 0 rgba(0,0,0,0.7), 0 8px 30px rgba(0,0,0,0.9);
   max-width: 480px;
   width: 100%;
   overflow: hidden;
@@ -709,7 +779,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #000000;
 }
 
 .modal-body {
@@ -728,20 +798,22 @@ body {
 /* ─── TOAST ─── */
 .toast-item {
   position: fixed;
-  bottom: calc(var(--bottom-nav-height) + 16px);
+  bottom: calc(var(--bottom-nav-height) + 14px);
   left: 50%;
   transform: translateX(-50%);
-  background: #242432;
-  border: 2px solid #000;
+  background: #1c1c28;
+  border: 2px solid #000000;
   box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.7), 0 6px 20px rgba(0,0,0,0.8);
   padding: 12px 18px;
   color: var(--mc-text-yellow);
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-family: var(--font-gaming);
+  font-size: 0.82rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 10px;
   z-index: 300;
+  max-width: 90vw;
 }
 
 /* ─── 🎮 MINECRAFT HOTBAR MOBILE BOTTOM NAVIGATION ─── */
@@ -751,9 +823,9 @@ body {
   left: 0;
   width: 100%;
   height: var(--bottom-nav-height);
-  background: rgba(14, 14, 20, 0.96);
-  border-top: 2px solid #000;
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), 0 -4px 14px rgba(0, 0, 0, 0.7);
+  background: rgba(10, 10, 15, 0.96);
+  border-top: 2px solid #000000;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.1), 0 -4px 14px rgba(0, 0, 0, 0.7);
   z-index: 150;
   display: flex;
   align-items: center;
@@ -764,14 +836,15 @@ body {
   background: none;
   border: none;
   color: var(--mc-text-grey);
-  font-size: 0.58rem;
+  font-family: var(--font-pixel);
+  font-size: 0.54rem;
   font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
   cursor: pointer;
-  padding: 6px 4px;
+  padding: 6px 2px;
   position: relative;
   flex: 1 1 0px;
   min-width: 0;
@@ -786,8 +859,8 @@ body {
 
 .nav-tab-btn.active {
   color: var(--mc-text-yellow);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #000000;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,0.2), inset -1px -1px 0 rgba(0,0,0,0.6);
 }
 
@@ -799,12 +872,12 @@ body {
 /* ─── FOOTER ─── */
 .app-footer {
   text-align: center;
-  padding: 24px 16px 14px;
-  border-top: 2px solid #000;
-  margin-top: 30px;
+  padding: 24px 14px 12px;
+  border-top: 2px solid #000000;
+  margin-top: 26px;
 }
 
 .footer-credits {
-  font-size: 0.68rem;
-  color: var(--mc-text-grey);
+  font-size: 0.72rem;
+  color: var(--mc-text-muted);
 }

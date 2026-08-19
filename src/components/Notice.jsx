@@ -6,10 +6,6 @@ import {
   AlertTriangle, 
   ExternalLink, 
   Code, 
-  CheckCircle2, 
-  Lock, 
-  ChevronDown, 
-  Info,
   Award,
   Globe
 } from 'lucide-react';
@@ -25,17 +21,17 @@ export default function Notice({ branding, activeVersion }) {
   return (
     <div className="tab-transition-wrapper">
       {/* 🛡️ TOP HEADER */}
-      <div style={{ textAlign: 'center', marginBottom: 24 }}>
-        <div className="featured-badge" style={{ marginBottom: 12 }}>
+      <div style={{ textAlign: 'center', marginBottom: 20 }}>
+        <div className="featured-badge" style={{ marginBottom: 10 }}>
           <ShieldCheck size={14} color="#55FF55" />
-          <span>OFFICIAL COMPLIANCE & NOTICES</span>
+          <span>LEGAL COMPLIANCE</span>
         </div>
 
-        <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>
+        <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 900, color: 'var(--mc-text-yellow)' }}>
           LEGAL NOTICE & LICENSES
         </h2>
-        <p style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', marginTop: 6, maxWidth: 580, margin: '6px auto 0' }}>
-          Complete licensing disclosures, upstream PojavLauncher attribution, and terms.
+        <p style={{ fontSize: '0.78rem', color: 'var(--mc-text-grey)', marginTop: 4, maxWidth: 540, margin: '4px auto 0' }}>
+          Open source licensing, PojavLauncher attribution, and terms of use.
         </p>
       </div>
 
@@ -44,84 +40,84 @@ export default function Notice({ branding, activeVersion }) {
 
       {/* 1. PROJECT IDENTITY */}
       <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
           <Award size={18} color="#FFAA00" />
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>PROJECT IDENTITY & OWNERSHIP</h3>
+          <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '0.98rem', fontWeight: 800, color: 'var(--mc-text-yellow)' }}>PROJECT OWNERSHIP</h3>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #000' }}>
-            <span style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)' }}>PROJECT:</span>
-            <span style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--mc-text-white)' }}>{cleanName} ({ver})</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #000' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--mc-text-grey)' }}>PROJECT:</span>
+            <span style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--mc-text-white)' }}>{cleanName} ({ver})</span>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #000' }}>
-            <span style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)' }}>ORGANIZATION:</span>
-            <span style={{ fontSize: '0.76rem', color: 'var(--mc-text-white)' }}>Craft Studio Development Group</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #000' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--mc-text-grey)' }}>ORGANIZATION:</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--mc-text-white)' }}>Craft Studio Team</span>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #000' }}>
-            <span style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)' }}>DEVELOPER:</span>
-            <span style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--mc-text-gold)' }}>ROHIT_45</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #000' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--mc-text-grey)' }}>DEVELOPER:</span>
+            <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.8rem', fontWeight: 800, color: 'var(--mc-text-gold)' }}>ROHIT_45</span>
           </div>
         </div>
 
-        <p style={{ fontSize: '0.65rem', color: 'var(--mc-text-grey)', marginTop: 12 }}>
+        <p style={{ fontSize: '0.68rem', color: 'var(--mc-text-muted)', marginTop: 10 }}>
           {branding.copyright || "Copyright © 2026 Craft Studio Development Group."}
         </p>
       </div>
 
       {/* 2. UPSTREAM POJAVLAUNCHER ATTRIBUTION */}
       <div className="app-card" style={{ borderLeft: '4px solid var(--mc-text-yellow)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
           <Code size={18} color="#FFFF55" />
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>UPSTREAM POJAVLAUNCHER ATTRIBUTION</h3>
+          <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '0.98rem', fontWeight: 800, color: 'var(--mc-text-yellow)' }}>POJAVLAUNCHER ATTRIBUTION</h3>
         </div>
 
-        <p style={{ fontSize: '0.76rem', color: 'var(--mc-text-grey)', lineHeight: 1.6, marginBottom: 14 }}>
+        <p style={{ fontSize: '0.8rem', color: 'var(--mc-text-grey)', lineHeight: 1.55, marginBottom: 12 }}>
           <strong>CS Launcher</strong> is based on and contains code derived from the upstream open-source <strong>PojavLauncher</strong> project licensed under GNU GPLv3.
         </p>
 
-        <div className="app-card-elevated" style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '0.65rem', color: 'var(--mc-text-grey)' }}>UPSTREAM REPOSITORY:</span>
-            <a href="https://github.com/PojavLauncherTeam/PojavLauncher" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.7rem', color: 'var(--mc-text-yellow)' }}>
+        <div className="app-card-elevated" style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 4 }}>
+            <span style={{ fontSize: '0.7rem', color: 'var(--mc-text-grey)' }}>REPOSITORY:</span>
+            <a href="https://github.com/PojavLauncherTeam/PojavLauncher" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.74rem', color: 'var(--mc-text-yellow)', wordBreak: 'break-all' }}>
               github.com/PojavLauncherTeam ↗
             </a>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '0.65rem', color: 'var(--mc-text-grey)' }}>LICENSE:</span>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--mc-text-green)' }}>GNU GPLv3 (Copyleft)</span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--mc-text-grey)' }}>LICENSE:</span>
+            <span style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--mc-text-green)' }}>GNU GPLv3 (Copyleft)</span>
           </div>
         </div>
       </div>
 
       {/* 3. GNU GPLv3 LICENSE INFO */}
       <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
           <Scale size={18} color="#55FF55" />
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>GNU GPLv3 LICENSE</h3>
+          <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '0.98rem', fontWeight: 800, color: 'var(--mc-text-yellow)' }}>GNU GPLv3 LICENSE</h3>
         </div>
 
-        <p style={{ fontSize: '0.76rem', color: 'var(--mc-text-grey)', lineHeight: 1.6, marginBottom: 14 }}>
+        <p style={{ fontSize: '0.8rem', color: 'var(--mc-text-grey)', lineHeight: 1.55, marginBottom: 12 }}>
           This project is licensed under the <strong>GNU General Public License Version 3 (GPLv3)</strong>.
         </p>
 
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <a 
             href="https://www.gnu.org/licenses/gpl-3.0.html" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-mc-3d"
-            style={{ fontSize: '0.7rem', padding: '8px 14px' }}
+            style={{ fontSize: '0.74rem', padding: '8px 12px' }}
           >
-            <span>VIEW OFFICIAL GPLv3 LICENSE ↗</span>
+            <span>VIEW GPLv3 LICENSE ↗</span>
           </a>
 
           <button 
             type="button"
             className="btn-mc-3d"
-            style={{ fontSize: '0.7rem', padding: '8px 14px' }}
+            style={{ fontSize: '0.74rem', padding: '8px 12px' }}
             onClick={() => setShowFullLicense(!showFullLicense)}
           >
             <span>{showFullLicense ? 'HIDE PREAMBLE' : 'VIEW PREAMBLE'}</span>
@@ -129,7 +125,7 @@ export default function Notice({ branding, activeVersion }) {
         </div>
 
         {showFullLicense && (
-          <div style={{ marginTop: 12, padding: 12, background: '#000', border: '1px solid #333', fontSize: '0.66rem', color: 'var(--mc-text-grey)', lineHeight: 1.5, maxHeight: 180, overflowY: 'auto' }}>
+          <div style={{ marginTop: 10, padding: 10, background: '#000', border: '1px solid #333', fontSize: '0.68rem', color: 'var(--mc-text-grey)', lineHeight: 1.5, maxHeight: 180, overflowY: 'auto' }}>
             <p style={{ color: '#fff', marginBottom: 4 }}>GNU GENERAL PUBLIC LICENSE — Version 3, 29 June 2007</p>
             <p>Copyright © 2007 Free Software Foundation, Inc.</p>
             <p style={{ marginTop: 4 }}>
@@ -141,25 +137,25 @@ export default function Notice({ branding, activeVersion }) {
 
       {/* 4. TRADEMARKS */}
       <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
           <Globe size={18} color="#fff" />
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>TRADEMARK DISCLAIMER</h3>
+          <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '0.98rem', fontWeight: 800, color: 'var(--mc-text-yellow)' }}>TRADEMARKS</h3>
         </div>
 
-        <p style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '0.78rem', color: 'var(--mc-text-grey)', lineHeight: 1.55 }}>
           "Minecraft", "Mojang", and related assets are trademarks of <strong>Mojang Studios</strong> and <strong>Microsoft Corporation</strong>. CS Launcher is an independent open-source client utility and is not affiliated with or endorsed by Mojang Studios or Microsoft.
         </p>
       </div>
 
       {/* 5. NO WARRANTY */}
-      <div className="app-card" style={{ borderColor: '#550000' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8, color: 'var(--mc-text-red)' }}>
+      <div className="app-card" style={{ borderColor: '#660000' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, color: 'var(--mc-text-red)' }}>
           <AlertTriangle size={16} />
-          <span style={{ fontSize: '0.85rem', fontWeight: 700 }}>NO WARRANTY DISCLAIMER</span>
+          <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.88rem', fontWeight: 800 }}>DISCLAIMER OF WARRANTY</span>
         </div>
 
-        <p style={{ fontSize: '0.66rem', color: 'var(--mc-text-grey)', lineHeight: 1.5, textTransform: 'uppercase' }}>
-          THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY.
+        <p style={{ fontSize: '0.7rem', color: 'var(--mc-text-muted)', lineHeight: 1.5, textTransform: 'uppercase', fontFamily: 'JetBrains Mono' }}>
+          THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR LIABILITY.
         </p>
       </div>
     </div>

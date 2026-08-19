@@ -22,9 +22,11 @@ export default function DownloadHub({ latest, archive, onDownload }) {
 
   return (
     <div className="tab-transition-wrapper">
-      <div style={{ textAlign: 'center', marginBottom: 24 }}>
-        <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>DOWNLOAD CS LAUNCHER APK</h2>
-        <p style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', marginTop: 6 }}>
+      <div style={{ textAlign: 'center', marginBottom: 20 }}>
+        <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 900, color: 'var(--mc-text-yellow)' }}>
+          DOWNLOAD CS LAUNCHER
+        </h2>
+        <p style={{ fontSize: '0.78rem', color: 'var(--mc-text-grey)', marginTop: 4 }}>
           Direct official GitHub release build for Minecraft Java on Android
         </p>
       </div>
@@ -34,14 +36,14 @@ export default function DownloadHub({ latest, archive, onDownload }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="featured-badge">
             <span className="status-dot"></span>
-            <span>LATEST OFFICIAL RELEASE</span>
+            <span>LATEST OFFICIAL BUILD</span>
           </div>
 
           <button 
             className="social-icon-btn" 
             onClick={handleCopyApkLink}
             title="Copy Direct APK Download Link"
-            style={{ width: 32, height: 32, marginBottom: 12 }}
+            style={{ width: 32, height: 32, marginBottom: 10 }}
           >
             {copiedLink ? <Check size={14} color="#55FF55" /> : <Copy size={14} />}
           </button>
@@ -52,12 +54,12 @@ export default function DownloadHub({ latest, archive, onDownload }) {
             <div className="release-version-title">
               CS LAUNCHER {latest.version || 'v3'}
             </div>
-            <div style={{ fontSize: '0.72rem', color: 'var(--mc-text-grey)', marginTop: 4 }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--mc-text-grey)', marginTop: 2 }}>
               {latest.releaseName || 'CS Launcher V3'} • {latest.releaseDate || 'August 2026'}
             </div>
           </div>
           <div>
-            <span className="brand-version-pill" style={{ fontSize: '0.72rem', padding: '4px 10px' }}>
+            <span className="brand-version-pill" style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
               {latest.fileSize || '185.8 MB'}
             </span>
           </div>
@@ -87,7 +89,7 @@ export default function DownloadHub({ latest, archive, onDownload }) {
 
         {/* Changelog */}
         <div className="changelog-box">
-          <div style={{ fontSize: '0.74rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--mc-text-yellow)', letterSpacing: '0.5px' }}>
+          <div style={{ fontFamily: 'Silkscreen', fontSize: '0.68rem', fontWeight: 700, color: 'var(--mc-text-yellow)', letterSpacing: '0.5px' }}>
             What's New in V3 Release:
           </div>
           <ul className="changelog-list">
@@ -97,7 +99,7 @@ export default function DownloadHub({ latest, archive, onDownload }) {
           </ul>
         </div>
 
-        {/* 🟢 3D Green Minecraft Download Button */}
+        {/* 🟢 3D Green Minecraft Download Button (Zero Overflow) */}
         <button 
           className="btn-mc-green-3d"
           onClick={() => onDownload(latest.downloadUrl, latest.version || 'v3')}
@@ -112,35 +114,35 @@ export default function DownloadHub({ latest, archive, onDownload }) {
 
       {/* Archive / Previous Versions Section */}
       {archiveEntries.length > 0 && (
-        <div style={{ marginTop: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '1rem', fontWeight: 700, color: 'var(--mc-text-yellow)', marginBottom: 14 }}>
-            <Archive size={18} />
-            <span>PREVIOUS VERSION ARCHIVE</span>
+        <div style={{ marginTop: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.92rem', fontWeight: 800, color: 'var(--mc-text-yellow)', marginBottom: 12, fontFamily: 'Space Grotesk' }}>
+            <Archive size={16} />
+            <span>PREVIOUS BUILD ARCHIVE</span>
           </div>
 
           <div className="archive-grid">
             {archiveEntries.map(([key, item]) => (
               <div key={key} className="archive-card">
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
                     <div>
                       <div className="archive-version-tag">CS Launcher {item.version || 'v1.0'}</div>
-                      <div style={{ fontSize: '0.65rem', color: 'var(--mc-text-grey)', marginTop: 2 }}>
+                      <div style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)', marginTop: 2 }}>
                         {item.releaseName || 'Legacy Build'} • {item.releaseDate || '2026'}
                       </div>
                     </div>
                     <span className="brand-version-pill">{item.fileSize || 'APK'}</span>
                   </div>
-                  <div className="archive-desc" style={{ marginTop: 10, fontSize: '0.72rem', color: 'var(--mc-text-grey)' }}>
+                  <div className="archive-desc" style={{ marginTop: 8, fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.45 }}>
                     {item.changelog || 'Original PojavLauncher base build'}
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 10, borderTop: '1px solid #000' }}>
-                  <span style={{ fontSize: '0.64rem', color: 'var(--mc-text-grey)' }}>{item.compatibility || 'Android 7+'}</span>
+                  <span style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)' }}>{item.compatibility || 'Android 7+'}</span>
                   <button 
                     className="btn-mc-3d"
-                    style={{ padding: '6px 12px', fontSize: '0.7rem' }}
+                    style={{ padding: '6px 12px', fontSize: '0.72rem' }}
                     onClick={() => onDownload(item.downloadUrl, item.version || 'Archive')}
                   >
                     <Download size={12} />

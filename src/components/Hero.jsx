@@ -32,7 +32,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
   return (
     <div className="tab-transition-wrapper">
 
-      {/* 🎮 100% MINECRAFT 3D HERO CARD */}
+      {/* 🎮 100% RESPONSIVE MINECRAFT HERO CARD */}
       <div className="hero-card-container">
         <div className="hero-status-tag">
           <span className="status-dot"></span>
@@ -44,17 +44,17 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </h1>
 
         <p className="hero-desc-text">
-          {hero.subtitle || "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, and enhanced Minecraft Java experience on Android."}
+          {hero.subtitle || "The all-new CS Launcher V3 is here! Improved launcher performance, better profile management, cleaner UI, and enhanced Minecraft Java experience on Android."}
         </p>
 
-        {/* Structured Minecraft 3D Buttons Stack */}
+        {/* Structured Minecraft 3D Buttons Stack (Zero Overflow Guarantee) */}
         <div className="hero-buttons-stack">
           <button 
             className="btn-mc-green-3d" 
             onClick={() => onDownload(null, currentVer)}
           >
             <Download size={18} />
-            <span>DOWNLOAD CS LAUNCHER ({currentVer.toUpperCase()})</span>
+            <span>DOWNLOAD V3 (185.8 MB)</span>
           </button>
 
           <div className="hero-sub-buttons-grid">
@@ -92,7 +92,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </div>
       </div>
 
-      {/* 📊 LIVE MINECRAFT STATS STRIP */}
+      {/* 📊 LIVE MINECRAFT STATS STRIP (No Overflow) */}
       <div className="stats-bar-grid">
         <div className="stat-box">
           <div className="stat-number">
@@ -119,11 +119,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
       {screenshots.length > 0 && (
         <div className="app-card">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, fontSize: '0.95rem', color: 'var(--mc-text-yellow)' }}>
-              <Image size={16} />
-              <span>LAUNCHER SCREENSHOTS</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, fontSize: '0.9rem', color: 'var(--mc-text-yellow)' }}>
+              <Image size={15} />
+              <span>SCREENSHOTS</span>
             </div>
-            <span style={{ fontSize: '0.62rem', color: 'var(--mc-text-grey)' }}>TAP TO PREVIEW</span>
+            <span style={{ fontSize: '0.6rem', color: 'var(--mc-text-grey)' }}>TAP TO PREVIEW</span>
           </div>
           <div className="gallery-scroll-container">
             {screenshots.map((url, idx) => (
@@ -139,29 +139,29 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
         </div>
       )}
 
-      {/* ⚡ CORE CAPABILITIES (MINECRAFT 3D CARDS) */}
+      {/* ⚡ CORE CAPABILITIES (HIGH-TECH CARDS) */}
       <div className="app-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14, fontWeight: 700, fontSize: '0.95rem', color: 'var(--mc-text-yellow)' }}>
-          <Zap size={16} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 12, fontWeight: 700, fontSize: '0.9rem', color: 'var(--mc-text-yellow)' }}>
+          <Zap size={15} />
           <span>LAUNCHER HIGHLIGHTS</span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
-          <div className="app-card-elevated" style={{ padding: 16 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-yellow)', fontSize: '0.85rem' }}>
-              <Zap size={16} color="#FFFF55" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
+          <div className="app-card-elevated" style={{ padding: 14 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-yellow)', fontSize: '0.85rem' }}>
+              <Zap size={15} color="#FFFF55" />
               <span>MAXIMUM FPS BOOST</span>
             </div>
-            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.55 }}>
+            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.5 }}>
               Custom rendering pipeline tuned for maximum frames per second on mobile GPUs.
             </div>
           </div>
 
-          <div className="app-card-elevated" style={{ padding: 16 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-gold)', fontSize: '0.85rem' }}>
-              <Palette size={16} color="#FFAA00" />
+          <div className="app-card-elevated" style={{ padding: 14 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, marginBottom: 6, color: 'var(--mc-text-gold)', fontSize: '0.85rem' }}>
+              <Palette size={15} color="#FFAA00" />
               <span>SKIN & CAPE CHANGER</span>
             </div>
-            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.55 }}>
+            <div style={{ fontSize: '0.74rem', color: 'var(--mc-text-grey)', lineHeight: 1.5 }}>
               Dynamic custom skin and HD cape applicator for offline and online Minecraft Java accounts.
             </div>
           </div>
@@ -170,12 +170,12 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
       {/* 💬 COMMUNITY DISCORD CARD */}
       {discordUrl && (
-        <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <div>
-            <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>
-              JOIN CS LAUNCHER DISCORD
+        <div className="app-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
+          <div style={{ minWidth: 180, flex: 1 }}>
+            <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-text-yellow)' }}>
+              JOIN DISCORD COMMUNITY
             </div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)', marginTop: 4 }}>
+            <div style={{ fontSize: '0.68rem', color: 'var(--mc-text-grey)', marginTop: 2 }}>
               Get instant support, updates, and setup guides
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-mc-3d"
-            style={{ fontSize: '0.74rem', padding: '8px 16px' }}
+            style={{ fontSize: '0.72rem', padding: '8px 14px' }}
           >
             <span>JOIN DISCORD ↗</span>
           </a>
