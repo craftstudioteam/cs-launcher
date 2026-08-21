@@ -4,15 +4,16 @@ import AdBanner from './AdBanner';
 import ShowcaseGallery from './ShowcaseGallery';
 import { DiscordIcon } from './MinecraftIcons';
 
-export default function Hero({ hero, branding, activeVersion, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
-  const currentVer = activeVersion || 'v3';
+export default function Hero({ hero, branding, activeVersion, defaultDownloadUrl, liveDownloadCount, discordUrl, onNavigate, onDownload }) {
+  const currentVer = activeVersion || 'v3.1';
   const count = liveDownloadCount || 4091;
+  const dlUrl = defaultDownloadUrl || "https://github.com/craftstudioteam/CS-LAUNCHER-v3/releases/download/v3.1/CS-LAUNCHER-V3.1.apk";
 
   return (
     <div className="tab-transition-wrapper">
 
       {/* ══════════════════════════════════════════════════════════════
-          🕹️ CLEAN & ELEGANT HERO TITLE BOX
+          🕹️ CLEAN HERO TITLE BOX
           ══════════════════════════════════════════════════════════════ */}
       <div className="home-hero-wrap">
         <div className="mctools-title-block">
@@ -25,11 +26,11 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
           </div>
         </div>
 
-        {/* 🟢 Big In-Game 3D Green Download Button */}
+        {/* 🟢 Big In-Game 3D Green Download Button (Defaults to V3.1) */}
         <div className="hero-actions-container">
           <button 
             className="btn-mc-green-3d" 
-            onClick={() => onDownload(null, currentVer)}
+            onClick={() => onDownload(dlUrl, currentVer)}
           >
             <Download size={20} />
             <span>Download APK ({currentVer})</span>
@@ -37,10 +38,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
 
           {/* Quick Info Badges */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.72rem', color: 'var(--mc-green)', background: '#100d28', padding: '5px 12px', border: '1px solid #282054', borderRadius: 4 }}>
-              ● v3 Official Release (185.8 MB)
+            <span style={{ fontSize: '0.64rem', color: 'var(--mc-green)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
+              ● {currentVer} Official Release (CS Client)
             </span>
-            <span style={{ fontSize: '0.72rem', color: 'var(--mc-gold)', background: '#100d28', padding: '5px 12px', border: '1px solid #282054', borderRadius: 4 }}>
+            <span style={{ fontSize: '0.64rem', color: 'var(--mc-gold)', background: '#0e0b24', padding: '4px 10px', border: '1px solid #000', boxShadow: '2px 2px 0 #000' }}>
               {count.toLocaleString()}+ Downloads
             </span>
           </div>
@@ -61,10 +62,10 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
               <DiscordIcon size={24} color="#fff" />
             </div>
             <div>
-              <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
+              <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--mc-yellow)' }}>
                 Join CS Launcher Discord
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--mc-grey)', marginTop: 2 }}>
+              <div style={{ fontSize: '0.66rem', color: 'var(--mc-grey)', marginTop: 2 }}>
                 Get instant help, game configs & updates
               </div>
             </div>
@@ -75,7 +76,7 @@ export default function Hero({ hero, branding, activeVersion, liveDownloadCount,
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-mc-3d"
-            style={{ fontSize: '0.78rem', padding: '9px 16px' }}
+            style={{ fontSize: '0.74rem', padding: '8px 14px' }}
           >
             <span>Join Server ↗</span>
           </a>

@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Copy, Check, Share2, Sparkles, Archive, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Download, Copy, Check, Share2, Archive } from 'lucide-react';
 import AdBanner from './AdBanner';
 
 export default function DownloadHub({ downloads, routeParams, liveDownloadCount, onNavigate, onDownload, showToast }) {
-  // Determine selected version from URL route (/download/v1, /download/v2, /download/v3)
-  const initialVer = routeParams.version ? routeParams.version.toLowerCase() : 'v3';
-  const [selectedVer, setSelectedVer] = useState(downloads[initialVer] ? initialVer : 'v3');
+  // Determine selected version from URL route (/download/v3.1, /download/v3, /download/v2, /download/v1)
+  const initialVer = routeParams.version ? routeParams.version.toLowerCase() : 'v3.1';
+  const defaultKey = downloads[initialVer] ? initialVer : (initialVer === 'v3' ? 'v3.1' : 'v3.1');
+  const [selectedVer, setSelectedVer] = useState(defaultKey);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedApkUrl, setCopiedApkUrl] = useState(false);
 
   // Sync state when route changes
   useEffect(() => {
-    if (routeParams.version && downloads[routeParams.version.toLowerCase()]) {
-      setSelectedVer(routeParams.version.toLowerCase());
+    if (routeParams.version) {
+      const v = routeParams.version.toLowerCase();
+      if (downloads[v]) {
+        setSelectedVer(v);
+      } else if (v === 'v3' || v === '3') {
+        setSelectedVer('v3.1');
+      }
     }
   }, [routeParams.version, downloads]);
 
-  const activeBuild = downloads[selectedVer] || downloads.v3;
+  const activeBuild = downloads[selectedVer] || downloads["v3.1"];
 
   const handleSelectVersion = (vTag) => {
     setSelectedVer(vTag);
@@ -31,7 +37,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
   // 🔗 VERSION-SPECIFIC SOCIAL SHARE & LINK PREVIEW GENERATOR
   const handleShareVersion = (vTag = selectedVer) => {
     const url = getPageUrl(vTag);
-    const build = downloads[vTag] || downloads.v3;
+    const build = downloads[vTag] || downloads["v3.1"];
     const title = `Download ${build.releaseName || `CS Launcher ${vTag.toUpperCase()}`} APK (${build.fileSize})`;
     const text = `Download official ${build.releaseName} (${build.fileSize}) for Android! Play Minecraft Java with 60+ FPS. Direct link: ${url}`;
 
@@ -79,48 +85,62 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
         </div>
       </div>
 
-      {/* 🚀 QUICK VERSION SELECTOR TABS (/download/v3, /download/v2, /download/v1) */}
+      {/* 🚀 QUICK VERSION SELECTOR TABS (/download/v3.1, /download/v3, /download/v2, /download/v1) */}
       <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 18 }}>
         <button
           className="btn-mc-3d"
           style={{
-            padding: '8px 16px',
-            fontSize: '0.8rem',
+            padding: '8px 14px',
+            fontSize: '0.78rem',
+            background: selectedVer === 'v3.1' ? '#237829' : '#18143a',
+            borderColor: selectedVer === 'v3.1' ? '#5cad3e' : '#2e2664',
+            color: selectedVer === 'v3.1' ? '#ffff55' : '#fff'
+          }}
+          onClick={() => handleSelectVersion('v3.1')}
+        >
+          <span>V3.1 (Latest)</span>
+        </button>
+
+        <button
+          className="btn-mc-3d"
+          style={{
+            padding: '8px 14px',
+            fontSize: '0.78rem',
             background: selectedVer === 'v3' ? '#237829' : '#18143a',
             borderColor: selectedVer === 'v3' ? '#5cad3e' : '#2e2664',
             color: selectedVer === 'v3' ? '#ffff55' : '#fff'
           }}
           onClick={() => handleSelectVersion('v3')}
         >
-          <span>V3 (Latest)</span>
+          <span>V3.0</span>
         </button>
 
         <button
           className="btn-mc-3d"
           style={{
-            padding: '8px 16px',
-            fontSize: '0.8rem',
+            padding: '8px 14px',
+            fontSize: '0.78rem',
             background: selectedVer === 'v2' ? '#5b3daa' : '#18143a',
             borderColor: selectedVer === 'v2' ? '#7b5dca' : '#2e2664',
             color: selectedVer === 'v2' ? '#ffff55' : '#fff'
           }}
           onClick={() => handleSelectVersion('v2')}
         >
-          <span>V2 (Stable)</span>
+          <span>V2.0</span>
         </button>
 
         <button
           className="btn-mc-3d"
           style={{
-            padding: '8px 16px',
-            fontSize: '0.8rem',
+            padding: '8px 14px',
+            fontSize: '0.78rem',
             background: selectedVer === 'v1' ? '#0891b2' : '#18143a',
             borderColor: selectedVer === 'v1' ? '#38bdf8' : '#2e2664',
             color: selectedVer === 'v1' ? '#ffff55' : '#fff'
           }}
           onClick={() => handleSelectVersion('v1')}
         >
-          <span>V1 (Legacy)</span>
+          <span>V1.0</span>
         </button>
       </div>
 
@@ -132,7 +152,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
           </div>
 
           <div style={{ display: 'flex', gap: 6 }}>
-            {/* Copy / Share Direct Version Link (/download/v1, /download/v2, /download/v3) */}
+            {/* Copy / Share Direct Version Link */}
             <button 
               className="social-icon-btn" 
               onClick={() => handleShareVersion(selectedVer)}
@@ -186,7 +206,7 @@ export default function DownloadHub({ downloads, routeParams, liveDownloadCount,
           </div>
           <div className="spec-item">
             <span className="spec-key">Status</span>
-            <span className="spec-val" style={{ color: selectedVer === 'v3' ? 'var(--mc-green)' : 'var(--mc-gold)' }}>
+            <span className="spec-val" style={{ color: selectedVer === 'v3.1' || selectedVer === 'v3' ? 'var(--mc-green)' : 'var(--mc-gold)' }}>
               {activeBuild.status || 'Verified'}
             </span>
           </div>

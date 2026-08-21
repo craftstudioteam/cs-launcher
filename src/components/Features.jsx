@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Palette, Zap } from 'lucide-react';
 import AdBanner from './AdBanner';
 
 export default function Features({ features }) {
@@ -7,7 +7,7 @@ export default function Features({ features }) {
 
   return (
     <div className="tab-transition-wrapper">
-      {/* MCTools Styled Section Header */}
+      {/* 🕹️ Header Section */}
       <div className="home-hero-wrap" style={{ padding: '0.8rem 0 1.2rem' }}>
         <div className="mctools-title-block">
           <h2 className="mctools-title-main" style={{ fontSize: 'clamp(1.4rem, 5vw, 2.1rem)' }}>
@@ -16,7 +16,7 @@ export default function Features({ features }) {
         </div>
         <div>
           <div className="mctools-sub-pill">
-            <span className="mctools-sub-text">Built-in Capabilities</span>
+            <span className="mctools-sub-text">CS Client & Built-in Capabilities</span>
           </div>
         </div>
       </div>
@@ -39,14 +39,18 @@ export default function Features({ features }) {
               <div style={{ padding: 18 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                   <div style={{ width: 38, height: 38, background: '#0e0b24', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <img src="/icons/icon-capebuilder.png" alt="Cape Icon" style={{ height: 30, width: 'auto', imageRendering: 'pixelated' }} />
+                    {item.title.toLowerCase().includes('client') ? (
+                      <img src="/icons/icon-converter.png" alt="Client Icon" style={{ height: 28, width: 'auto', imageRendering: 'pixelated' }} />
+                    ) : (
+                      <img src="/icons/icon-capebuilder.png" alt="Cape Icon" style={{ height: 28, width: 'auto', imageRendering: 'pixelated' }} />
+                    )}
                   </div>
                   <h3 style={{ fontSize: '0.92rem', color: 'var(--mc-yellow)', textShadow: '1px 1px 0 #000', lineHeight: 1.3 }}>
-                    {item.title || 'Skin and Cape Changer'}
+                    {item.title || 'CS Feature'}
                   </h3>
                 </div>
                 <p style={{ fontSize: '0.74rem', color: 'var(--mc-grey)', lineHeight: 1.6, textShadow: '1px 1px 0 #000' }}>
-                  {item.text || 'Dynamic custom skin & cape applicator for Minecraft Java accounts on Android.'}
+                  {item.text}
                 </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 14 }}>
@@ -54,7 +58,7 @@ export default function Features({ features }) {
                     ✓ Java 1.8 - 1.21.x
                   </span>
                   <span style={{ fontSize: '0.62rem', background: '#0d0a22', border: '1px solid #000', color: 'var(--mc-cyan)', padding: '3px 8px' }}>
-                    ✓ Custom Capes
+                    ✓ 60+ FPS Boosting
                   </span>
                   <span style={{ fontSize: '0.62rem', background: '#0d0a22', border: '1px solid #000', color: 'var(--mc-gold)', padding: '3px 8px' }}>
                     ✓ Offline/Online Mode

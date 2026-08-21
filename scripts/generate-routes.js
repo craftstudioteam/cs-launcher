@@ -6,10 +6,17 @@ const LOGO_URL = 'https://i.ibb.co/ccSzBW5P/file-00000000e1cc821195ed9a7324d2b76
 
 const ROUTES = [
   {
+    path: 'download/v3.1',
+    version: 'v3.1',
+    title: 'Download CS Launcher V3.1 APK (Latest) — Minecraft Java on Android',
+    description: 'Download official CS Launcher V3.1 APK (185.8 MB) for Android with built-in CS Client, 60+ FPS boosting, custom skins, and HD capes.',
+    image: LOGO_URL
+  },
+  {
     path: 'download/v3',
     version: 'v3',
-    title: 'Download CS Launcher V3 APK (Latest) — Minecraft Java on Android',
-    description: 'Download official CS Launcher V3 APK (185.8 MB) for Android. Play Minecraft Java Edition with 60+ FPS, custom skins, HD capes, and zero lag.',
+    title: 'Download CS Launcher V3.1 APK (Latest) — Minecraft Java on Android',
+    description: 'Download official CS Launcher V3.1 APK (185.8 MB) for Android with built-in CS Client, 60+ FPS boosting, custom skins, and HD capes.',
     image: LOGO_URL
   },
   {
@@ -28,15 +35,15 @@ const ROUTES = [
   },
   {
     path: 'download',
-    title: 'Download CS Launcher APK (V3, V2, V1) — Official Releases',
-    description: 'Official download hub for CS Launcher APK. Direct downloads for V3 Latest (185.8 MB), V2 Stable (160 MB), and V1 Archive (300 MB) on Android.',
+    title: 'Download CS Launcher APK (V3.1, V2, V1) — Official Releases',
+    description: 'Official download hub for CS Launcher APK. Direct downloads for V3.1 Latest (185.8 MB with CS Client), V2 Stable (160 MB), and V1 Archive (300 MB) on Android.',
     image: LOGO_URL
   },
   {
     path: 'features',
-    title: 'CS Launcher Features — Skin & Cape Changer on Android',
-    description: 'Explore CS Launcher capabilities: dynamic custom Minecraft Java skin applicator, HD capes, and 60+ FPS optimizations on Android.',
-    image: 'https://i.ibb.co/spqkyRXb/skin-and-Cap.jpg'
+    title: 'CS Client & Features — CS Launcher on Android',
+    description: 'Explore CS Launcher capabilities: built-in CS Client with FPS boosting, dynamic custom Minecraft Java skin applicator, and HD capes on Android.',
+    image: 'https://i.ibb.co/20dMMmQJ/In-game-mod-eresource-pack-shades-download.jpg'
   },
   {
     path: 'videos',
